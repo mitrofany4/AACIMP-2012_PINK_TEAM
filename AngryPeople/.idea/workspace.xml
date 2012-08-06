@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81ef6796-1354-4fff-9c9a-f27acaf4c1e9" name="Default" comment="Merge remote-tracking branch 'origin/gh-pages' into gh-pages&#10;&#10;Conflicts:&#10;&#9;AngryPeople/aacimp.html&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/AACIMP-2012_PINK_TEAM.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/AngryPeople.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/walking_man.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/people.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/walking_man.js" />
-      <change type="DELETED" beforePath="E:\AACIMP-2012_PINK_TEAM\AngryPeople\aacimp.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PeopleMovements.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/people.html" afterPath="$PROJECT_DIR$/people.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/walking_man.js" afterPath="$PROJECT_DIR$/walking_man.js" />
     </list>
     <list id="d6ed9cb2-f215-4338-af50-6961e6eead66" name="Failed commit: Default" comment="Merge remote-tracking branch 'origin/gh-pages' into gh-pages&#10;&#10;Conflicts:&#10;&#9;AngryPeople/aacimp.html&#10;" />
     <ignored path="AngryPeople.iws" />
@@ -44,10 +28,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="PeopleMovements.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PeopleMovements.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="28" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc;n#getRandomInt#0" expanded="false" />
+                <element signature="n#!!block;n#getRandomInt#0" expanded="false" />
+                <element signature="n#!!block;n#getRandom#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="people.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/people.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="31" selection-start="586" selection-end="586" vertical-scroll-proportion="-15.038462">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="walking_man.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/walking_man.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="1" selection-start="410" selection-end="410" vertical-scroll-proportion="1.0928962">
+            <state line="10" column="14" selection-start="231" selection-end="231" vertical-scroll-proportion="0.18579236">
               <folding />
             </state>
           </provider>
@@ -77,6 +83,8 @@
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/Moves.js" />
+        <option value="$PROJECT_DIR$/people.html" />
+        <option value="$PROJECT_DIR$/PeopleMovements.js" />
         <option value="$PROJECT_DIR$/walking_man.js" />
       </list>
     </option>
@@ -247,7 +255,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32933104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32933104" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24944155" sideWeight="0.67066896" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24944155" sideWeight="0.67066896" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -323,14 +331,34 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PeopleMovements.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="28" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc;n#getRandomInt#0" expanded="false" />
+            <element signature="n#!!block;n#getRandomInt#0" expanded="false" />
+            <element signature="n#!!block;n#getRandom#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/people.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="173" selection-end="173" vertical-scroll-proportion="0.3" />
+        <state line="24" column="31" selection-start="586" selection-end="586" vertical-scroll-proportion="-15.038462">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/walking_man.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="1" selection-start="410" selection-end="410" vertical-scroll-proportion="1.0928962">
+        <state line="10" column="14" selection-start="231" selection-end="231" vertical-scroll-proportion="0.18579236">
           <folding />
         </state>
       </provider>

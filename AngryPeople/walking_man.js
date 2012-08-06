@@ -6,17 +6,15 @@
  * To change this template use File | Settings | File Templates.
  */
 // create a Person
-function newPerson(pos){
+function newPerson(pos,dir){
     return{
-    speed  : 1,
+    speed  : 5,
 //    xacc   : 0,
     ypos   : 10,
     xpos   : pos,
-    dir    : "left"
-    };
+    dir    : dir
+        };
 }
-
-
 
 function navigate(person){
     if (person.dir === "left"){
