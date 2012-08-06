@@ -2,7 +2,7 @@ spit = document.getElementById("spit");
 var drop = newSpit();
 
 draw = function(drop) {
-    spit.style.left = drop.xpos + 'px';
+    spit.style.left = drop.xpos;
     spit.style.top = drop.ypos + 'px';
 };
 
