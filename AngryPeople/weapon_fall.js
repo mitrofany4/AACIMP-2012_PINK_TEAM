@@ -1,7 +1,8 @@
 spit = document.getElementById("spit");
-var drop = newSpit();
+var drop = newSpit()
+    position = parseInt(spit.style.top);
 draw = function(drop) {
-    spit.style.left = drop.xpos + 'px'
+    spit.style.left = drop.xpos + 'px';
     spit.style.top = drop.ypos + 'px';
 };
 
