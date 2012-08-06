@@ -1,14 +1,16 @@
 spit = document.getElementById("spit");
-var drop = newSpit()
-    position = parseInt(spit.style.top);
-draw = function(drop) {
-    spit.style.left = drop.xpos + 'px';
-    spit.style.top = drop.ypos + 'px';
-};
+var drop = newSpit();
 
-update = function() {
-    updateSpit(drop);
-    draw(drop);
-};
+document.body.addEventListener("mousedown", function(event) {
+    draw = function(drop) {
+        spit.style.left = drop.xpos + 'px';
+        spit.style.top = drop.ypos + 'px';
+    };
 
-setInterval(update, 50);
+    update = function() {
+        updateSpit(drop);
+        draw(drop);
+    };
+
+    setInterval(update, 50);
+});
