@@ -54,4 +54,8 @@ function rightAction(){
     }
 }
 
+// get hero cordinates
+function getHeroPostiton(){
+    return heroModel.position;
+}
 
