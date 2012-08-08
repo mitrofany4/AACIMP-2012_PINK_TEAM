@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>game area</title>
+    <link rel="stylesheet" type="text/css" href="templetes.css" />
+</head>
+<body>
+
+<div style="background-color: green; width: 800px; height:600px; position: absolute;">
+    <!--Weapon and Menu Controls-->
+    <div id="weaponpanel" style="background-color: blue; width: 120px; height:120px; position: inherit;   ">
+    </div>
+    <div id="menubutton" style="background-color: blue; width: 120px; height:120px; position: inherit;  left: 680px; ">
+    </div>
+
+    <!--Buttons Control-->
+    <div
+            id="leftcontrolbutton"
+            onmousedown = "mouseIsDown = true; leftAction()"
+            onmousemove = "mouseIsDown = true"
+            onmouseup = "mouseIsDown = false"
+            style="background-color: pink; width: 120px; height:300px; position: inherit; top:120px;   ">
+    </div>
+    <div
+            id="rightcontrolbutton"
+            onmousedown="mouseIsDown = true; rightAction()"
+            onmousemove = "mouseIsDown = true"
+            onmouseup = "mouseIsDown = false"
+            style="background-color: pink; width: 120px; height:300px; position: inherit; top:120px; left: 680px;  ">
+    </div>
+
+    <!--Balcony-->
+    <div id="balcony" style="background-color: black; width: 560px; height:50px; position: inherit; top: 70px; left: 120px;  " >
+    </div>
+
+    <!--Info zone-->
+    <div id="infopanel" style="background-color: orange; position: inherit; top:200px; left: 200px;
+    width: 400px; height: 150px; border-radius: 10px; ">
+
+    <table width="100%"  >
+        <tr>
+            <td>
+            LEVEL &nbsp
+            </td>
+            <td id="time">
+            Time: &nbsp <span>1</span>:<span>00</span>
+            </td>
+        </tr>
+        <tr>
+            <td id="progress">
+            Progress
+                <span></span>
+                /
+                <span></span>
+            </td>
+            <td>
+            Medals: &nbsp
+            </td>
+        </tr>
+        <script type="text/javascript" >
+            var levellimeit = 10;
+            var seconds = 60;
+            function progress (first, second )
+            {
+                var pr= document.getElementById('progress');
+                pr.children[0].innerHTML=first;
+                pr.children[1].innerHTML=second;
+            }
+            progress(0,10);
+            function leveltime()
+            {
+                seconds-=1;
+                var minutes = Math.floor(seconds / 60);
+                var timer = document.getElementById('time');
+                timer.children[0].innerHTML=minutes;
+                timer.children[1].innerHTML=seconds;
+            }
+            setInterval(leveltime,1000);
+
+        </script>
+    </table>
+    </div>
+
+    <!-- Hero -->
+    <div id="hero" style="left:120px; top:20px;"></div>
+
+    <!--Weapon paper ball-->
+    <div id = "spit" style = "background-color: white; position: absolute; border-radius: 20px; height: 20px; width: 20px">
+    </div>
+
+</div>
+
+<script src = "HeroMovements.js" type="text/javascript"> </script>
+<script src = "weapon.js" type = "text/javascript"></script>
+<script src = "weapon_fall.js" type="text/javascript"></script>
+</body>
+</html>
