@@ -1,4 +1,4 @@
-spit = document.getElementById("spit");
+//spit = document.getElementById("spit");
 //var drop;
 var intervalID;
 var block = false;
@@ -14,7 +14,7 @@ function mouseCoordinatesChecking(x, y){
 }
 
 document.body.addEventListener("mousedown", function(event) {
-
+    //setWeapon();
     // checking if mouse is in a game zone
     if (mouseCoordinatesChecking(event.pageX, event.pageY) && !block){
         // new spit position
