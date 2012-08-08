@@ -1,3 +1,9 @@
+function start() {
+    var ga = document.getElementById('gamearea');
+    ga.style.visibility = 'hidden;'
+}
+
+
 var levellimeit = 10;
 var seconds = 60;
 function levelchange (level) {
@@ -29,3 +35,5 @@ function leveltime()
                 }
 }
 var intervid  = setInterval(leveltime,1000);
+
+
