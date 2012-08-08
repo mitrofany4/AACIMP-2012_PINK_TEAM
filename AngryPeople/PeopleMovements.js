@@ -14,18 +14,21 @@ function getRandom() {
     return Math.random();
 }
 // person appearance coordinates generation
+function rand_X(){
+    return rand_X = getRandomInt(50, window.outerWidth - 70);
+}
 
-var randX = getRandomInt(50, window.outerWidth - 70);
 
 // person movement direction generation
+function rand_dir(){
 var randInt = getRandom();
 
 if (randInt >= 0.5) {
-    var randdir = "right";
+    return rand_dir = "right";
 } else {
-    randdir = "left"
+    return rand_dir = "left"
 }
-
+}
 // Setup human element and ordinary model
 var ordinary = newPerson(randX,randdir);
 human = document.getElementById("human");
@@ -48,13 +51,32 @@ set_dir(ordinary);
 
 // movement loop
 
-function myTimeoutFunction()
+function myTimeoutFunction(person,human)
 {
-    if ((ordinary.xpos>15)&&(ordinary.xpos<=window.outerWidth-85)){
+    if ((person.xpos>15)&&(person.xpos<=window.outerWidth-85)){
         update();
     }
     else {
         human.style.visibility="hidden"
     }
     setTimeout(myTimeoutFunction, 50);
+}
+function chosetype(){
+    randInt = getRandom();
+    if (randInt >= 0.5) {
+        var randtype = 1;
+    } else {
+        randtype = 0
+    }
+}
+
+function peopleapp(num,types){
+   var ArrPerson = new Array(num);
+   var DivHuman = new Array(num);
+   for(var i=1;i<=num;i++){
+         var randX = getRandomInt(50, window.outerWidth - 70);
+
+         ArrPerson[i]=newPerson(rand_X(),rand_dir());
+
+   }
 }
