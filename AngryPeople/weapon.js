@@ -1,4 +1,4 @@
-gravity = 0.2;
+gravity = 0.5;
 
 function newSpit(xpos, ypos){
     return {
@@ -20,6 +20,7 @@ function updateSpit(obj){
         obj.ypos = 510;
         obj.yvel = 0;
         obj.yacc = 0;
+        block = false;
         //obj.xvel = 0;
     }
 }
