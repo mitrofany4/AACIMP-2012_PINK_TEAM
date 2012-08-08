@@ -24,6 +24,6 @@ document.body.addEventListener("mousedown", function(event) {
         draw(drop);
     };
 
-    // sets update inderval until new spit creating
+    // sets update interval until new spit creating
     intervalID = setInterval(update, 50);
 });
