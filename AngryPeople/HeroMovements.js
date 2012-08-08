@@ -19,7 +19,6 @@ var heroModel = {
 // a man on the balcony
 var heroObject;
 var balcony;
-var mouseIsDown;
 var heroInterval;
 
 // initialize the balcony and hero html-objects
