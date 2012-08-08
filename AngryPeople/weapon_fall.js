@@ -1,29 +1,43 @@
 spit = document.getElementById("spit");
-var drop;
+//var drop;
 var intervalID;
 
+// checking the mouse in a gamezone
+function mouseCoordinatesChecking(x, y){
+    // gamefield - except the control buttons
+    var topBarrier = balconyPos;
+    var leftBarrier = document.getElementById("leftcontrolbutton").offsetWidth;
+    var rightBarrier = document.getElementById("rightcontrolbutton").offsetLeft;
+
+    return (x > leftBarrier && x < rightBarrier && y > topBarrier);
+}
+
 document.body.addEventListener("mousedown", function(event) {
-    // new spit position
-    var heroPosX = getHeroPostiton();
-    var heroPosY = balconyPos;
 
-    // stops old update
-    clearInterval(intervalID);
+    // checking if mouse is in a game zone
+    if (mouseCoordinatesChecking(event.pageX, event.pageY)){
+        // new spit position
+        var heroPosX = getHeroPostiton();
+        var heroPosY = balconyPos;
 
-    // creates a new spit
-    drop = newSpit(heroPosX, heroPosY);
+        // stops old update
+        clearInterval(intervalID);
 
-    draw = function(drop) {
-        spit.style.left = drop.xpos + 'px';
-        spit.style.top = drop.ypos + 'px';
-    };
+        // creates a new spit
+        var drop = newSpit(heroPosX, heroPosY);
 
-    // updates coordinates and redraw the object
-    update = function() {
-        updateSpit(drop);
-        draw(drop);
-    };
+        draw = function(drop) {
+            spit.style.left = drop.xpos + 'px';
+            spit.style.top = drop.ypos + 'px';
+        };
 
-    // sets update interval until new spit creating
-    intervalID = setInterval(update, 50);
+        // updates coordinates and redraw the object
+        update = function() {
+            updateSpit(drop);
+            draw(drop);
+        };
+
+        // sets update interval until new spit creating
+        intervalID = setInterval(update, 50);
+    }
 });
