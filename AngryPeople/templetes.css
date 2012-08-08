@@ -7,3 +7,31 @@
     height: 50px;
     background-image:url('hero.jpg');
 }
+
+#spit_icon {
+    position: absolute;
+    width: 25px;
+    height: 38px;
+    background-image: url('spit_icon.png');
+}
+
+#waterbomb_icon {
+    position: inherit;
+    width: 25px;
+    height: 26px;
+    background-image: url('waterbomb_icon.png');
+}
+
+#spit {
+    position: absolute;
+    width: 25px;
+    height: 38px;
+    background-image: url('spit_icon.png');
+}
+
+#waterbomb {
+    position: inherit;
+    width: 25px;
+    height: 26px;
+    background-image: url('waterbomb_icon.png');
+}

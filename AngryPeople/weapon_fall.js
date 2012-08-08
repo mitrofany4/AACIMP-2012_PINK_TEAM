@@ -1,5 +1,3 @@
-spit = document.getElementById("spit");
-//var drop;
 var intervalID;
 var block = false;
 
@@ -14,7 +12,6 @@ function mouseCoordinatesChecking(x, y){
 }
 
 document.body.addEventListener("mousedown", function(event) {
-
     // checking if mouse is in a game zone
     if (mouseCoordinatesChecking(event.pageX, event.pageY) && !block){
         // new spit position
@@ -26,7 +23,12 @@ document.body.addEventListener("mousedown", function(event) {
 
 
         // creates a new spit
-        var drop = newSpit(heroPosX, heroPosY);
+        if (heroModel.weaponInUse == 0){
+            var drop = newSpit(heroPosX, heroPosY, 0.1);
+        }
+        else if (heroModel.weaponInUse == 1){
+            var drop = newSpit(heroPosX, heroPosY, 1);
+        }
 
         draw = function(drop) {
             spit.style.left = drop.xpos + 'px';
