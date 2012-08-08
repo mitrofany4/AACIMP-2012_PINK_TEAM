@@ -5,12 +5,17 @@
  * Time: 11:06
  * To change this template use File | Settings | File Templates.
  */
+
+// balcony top position
+const balconyPos = document.getElementById("balcony").offsetTop;
+
 // a hero structure
 var heroModel = {
     position:    120,
     state:       "up",
     weaponInUse: "paperBalls"
 };
+
 // a man on the balcony
 //var heroModel = hero;
 var heroObject;
@@ -55,7 +60,7 @@ function rightAction(){
     }
 }
 
-// get hero cordinates
+// get hero x cordinate
 function getHeroPostiton(){
     return heroModel.position;
 }
