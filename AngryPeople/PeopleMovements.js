@@ -44,7 +44,7 @@ update = function() {
     draw(ordinary);
 };
 
-navigate(ordinary);
+set_dir(ordinary);
 
 // movement loop
 

@@ -16,7 +16,7 @@ function newPerson(pos,dir){
         };
 }
 
-function navigate(person){
+function set_dir(person){
     if (person.dir === "left"){
         person.speed *= (-1);
     }

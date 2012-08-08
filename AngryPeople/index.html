@@ -35,7 +35,51 @@
     </div>
 
     <!--Info zone-->
-    <div id="infopanel" style="background-color: orange; position: inherit; top:200px; left: 200px; width: 400px; height: 150px;">
+    <div id="infopanel" style="background-color: orange; position: inherit; top:200px; left: 200px;
+    width: 400px; height: 150px; border-radius: 10px; ">
+
+    <table width="100%"  >
+        <tr>
+            <td>
+            LEVEL &nbsp
+            </td>
+            <td id="time">
+            Time: &nbsp <span>1</span>:<span>00</span>
+            </td>
+        </tr>
+        <tr>
+            <td id="progress">
+            Progress
+                <span></span>
+                /
+                <span></span>
+            </td>
+            <td>
+            Medals: &nbsp
+            </td>
+        </tr>
+        <script type="text/javascript" >
+            var levellimeit = 10;
+            var seconds = 60;
+            function progress (first, second )
+            {
+                var pr= document.getElementById('progress');
+                pr.children[0].innerHTML=first;
+                pr.children[1].innerHTML=second;
+            }
+            progress(0,10);
+            function leveltime()
+            {
+                seconds-=1;
+                var minutes = Math.floor(seconds / 60);
+                var timer = document.getElementById('time');
+                timer.children[0].innerHTML=minutes;
+                timer.children[1].innerHTML=seconds;
+            }
+            setInterval(leveltime,1000);
+
+        </script>
+    </table>
     </div>
 
     <!-- Hero -->
