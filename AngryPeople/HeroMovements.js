@@ -15,6 +15,7 @@ var heroModel = {
 //var heroModel = hero;
 var heroObject;
 var balcony;
+var mouseIsDown = false;
 
 // initialize the balcony and hero html-objects
 function initObjects(){
@@ -28,7 +29,7 @@ function leftAction(){
     // checking if the object is out of balcony
     var absoluteLeftBarrier = balcony.offsetLeft;
     if (heroModel.position >= absoluteLeftBarrier){
-         // hero position without 'px'
+        // hero position without 'px'
         var position = parseInt(heroObject.style.left);
         position -= 10;
         // js-object
@@ -58,4 +59,3 @@ function rightAction(){
 function getHeroPostiton(){
     return heroModel.position;
 }
-
