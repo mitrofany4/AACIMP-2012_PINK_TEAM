@@ -17,10 +17,10 @@ var heroModel = {
 };
 
 // a man on the balcony
-//var heroModel = hero;
 var heroObject;
 var balcony;
-var mouseIsDown = false;
+var mouseIsDown;
+var heroInterval;
 
 // initialize the balcony and hero html-objects
 function initObjects(){
@@ -58,6 +58,19 @@ function rightAction(){
         // html-object
         heroObject.style.left = position + 'px';
     }
+}
+
+// clinging
+function clingLeft() {
+    heroInterval = setInterval(leftAction, 50);
+}
+function clingRight(){
+    heroInterval = setInterval(leftAction, 50);
+}
+
+// stops clinging
+function endOfTouch(){
+    clearInterval(heroInterval);
 }
 
 // get hero x cordinate
