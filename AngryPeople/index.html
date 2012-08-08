@@ -17,12 +17,14 @@
     <!--Buttons Control-->
     <div
             id="leftcontrolbutton"
-            onmousedown = "mouseIsDown = true; leftAction()"
+            onmousedown = "clingLeft()"
+            onmouseup = "endOfTouch()"
             style="background-color: pink; width: 120px; height:300px; position: inherit; top:120px;   ">
     </div>
     <div
             id="rightcontrolbutton"
-            onmousedown="mouseIsDown = true; rightAction()"
+            onmousedown = "clingRight()"
+            onmouseup = "endOfTouch()"
             style="background-color: pink; width: 120px; height:300px; position: inherit; top:120px; left: 680px;  ">
     </div>
 
