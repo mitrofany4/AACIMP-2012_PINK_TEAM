@@ -14,7 +14,6 @@ function mouseCoordinatesChecking(x, y){
 }
 
 document.body.addEventListener("mousedown", function(event) {
-
     // checking if mouse is in a game zone
     if (mouseCoordinatesChecking(event.pageX, event.pageY) && !block){
         // new spit position

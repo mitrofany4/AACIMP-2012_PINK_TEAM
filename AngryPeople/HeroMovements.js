@@ -13,7 +13,7 @@ const balconyPos = document.getElementById("balcony").offsetTop;
 var heroModel = {
     position:    120,
     state:       "up",
-    weaponInUse: "paperBalls"
+    weaponInUse: 0
 };
 
 // a man on the balcony
