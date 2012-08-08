@@ -24,7 +24,6 @@ document.body.addEventListener("mousedown", function(event) {
         // stops old update
         clearInterval(intervalID);
 
-
         // creates a new spit
         var drop = newSpit(heroPosX, heroPosY);
 
