@@ -9,11 +9,13 @@ function mouseCoordinatesChecking(x, y){
     var leftBarrier = document.getElementById("leftcontrolbutton").offsetWidth;
     var rightBarrier = document.getElementById("rightcontrolbutton").offsetLeft;
 
+
     return (x > leftBarrier && x < rightBarrier && y > topBarrier);
 }
 
 document.body.addEventListener("mousedown", function(event) {
 
+    mouseCoordinatesChecking(0,0);
     // checking if mouse is in a game zone
     if (mouseCoordinatesChecking(event.pageX, event.pageY)){
         // new spit position
