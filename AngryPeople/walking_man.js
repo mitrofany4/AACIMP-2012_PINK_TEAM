@@ -7,27 +7,27 @@
  */
 // create a Person
 
-var ordinary_url = 'walking_man.png';
+var ordinary_url = "url('walking_man.png')";
 
 function newPerson(pos,dir){
     return{
     speed  : 5,
 //    xacc   : 0,
-    ypos   : 10,
+    ypos   : 20,
     xpos   : pos,
     dir    : dir
         };
 }
 
-function set_dir(person){
-    if (person.dir === "left"){
-        person.speed *= (-1);
+function set_dir(____person){
+    if (____person.dir === "left"){
+        ____person.speed *= (-1);
     }
 }
-function updatePerson(person){
+function updatePerson(___person){
 
     // Navigation
-    if ((person.xpos < Math.abs(person.speed) + 15) || (person.xpos > Math.abs(person.speed) + 15))
-        person.xpos += person.speed;
+    if ((___person.xpos < Math.abs(___person.speed) + 15) || (___person.xpos > Math.abs(___person.speed) + 15))
+        ___person.xpos += ___person.speed;
 
 }
