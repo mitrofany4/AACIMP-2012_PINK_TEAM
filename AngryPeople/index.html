@@ -75,8 +75,14 @@
                 var timer = document.getElementById('time');
                 timer.children[0].innerHTML=minutes;
                 timer.children[1].innerHTML=seconds;
+                    if (seconds == 0) {
+                        <!--Time Over functions-->
+                        alert('TIME OVER');
+                        clearInterval(intervid);
+                        car ser = 5;
+                    }
             }
-            setInterval(leveltime,1000);
+            var intervid  = setInterval(leveltime,1000);
 
         </script>
     </table>
