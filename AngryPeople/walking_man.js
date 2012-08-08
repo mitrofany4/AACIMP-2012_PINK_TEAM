@@ -6,6 +6,9 @@
  * To change this template use File | Settings | File Templates.
  */
 // create a Person
+
+var ordinary_url = 'walking_man.png';
+
 function newPerson(pos,dir){
     return{
     speed  : 5,
