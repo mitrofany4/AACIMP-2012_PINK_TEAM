@@ -1,4 +1,4 @@
-var intervalID;
+var intervalID = 0;
 var block = false;
 
 // checking the mouse in a gamezone
@@ -44,7 +44,7 @@ document.body.addEventListener("mousedown", function(event) {
 
         // updates coordinates and redraw the object
         update = function() {
-            updateSpit(drop);
+            (drop);
             draw(drop);
         };
 
