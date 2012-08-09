@@ -8,6 +8,8 @@
 
 // balcony top position
 const balconyPos = document.getElementById("balcony").offsetTop;
+var rightButton = document.getElementById("rightcontrolbutton");
+var leftButton = document.getElementById("leftcontrolbutton");
 
 // a hero structure
 var heroModel = {
@@ -67,10 +69,8 @@ function clingRight(){
     heroInterval = setInterval(rightAction, 50);
 }
 
-var leftButton = document.getElementById("leftcontrolbutton");
-leftButton.addEventListener("touchstart", clingLeft());
 
-var rightButton = document.getElementById("rightcontrolbutton");
+leftButton.addEventListener("touchstart", clingLeft());
 rightButton.addEventListener("touchstart", clingRight());
 
 // stops clinging
