@@ -67,10 +67,17 @@ function clingRight(){
     heroInterval = setInterval(rightAction, 50);
 }
 
+var leftButton = document.getElementById("leftcontrolbutton");
+leftButton.addEventListener("touchstart", clingLeft());
+
+var rightButton = document.getElementById("rightcontrolbutton");
+rightButton.addEventListener("touchstart", clingRight());
+
 // stops clinging
 function endOfTouch(){
     clearInterval(heroInterval);
 }
+document.body.addEventListener("touchend", endOfTouch());
 
 // get hero x cordinate
 function getHeroPostiton(){
