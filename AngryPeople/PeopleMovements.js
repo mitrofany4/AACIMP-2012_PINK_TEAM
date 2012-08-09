@@ -36,16 +36,15 @@ if (randInt >= 0.5) {
 
 // Copy the "logical" object's position to the
 // element in the DOM
-draw = function(____person,____human) {
+draw_human = function(____person,____human) {
     ____human.style.left = ____person.xpos+'px';
     ____human.style.bottom = ____person.ypos+'px';
 };
 
 //calculation of next coordinates and redrawing
-
-update = function(__person,__human) {
+update_human = function(__person,__human) {
     updatePerson(__person);
-    draw(__person,__human);
+    draw_human(__person,__human);
 };
 
 function chosetype(){
@@ -82,7 +81,7 @@ function peoplemovement(_person,_human)
 
     var interval=setInterval(function(){
         if ((_person.xpos>15)&&(_person.xpos<=window.outerWidth-85)){
-            update(_person,_human);
+            update_human(_person,_human);
         }
         else {
             _human.style.visibility="hidden";
@@ -101,7 +100,7 @@ function peopleappear(num){
         addDiv(i);
         DivHuman[i]=document.getElementById("human"+ i.toString());
         set_ordinary(DivHuman[i]);
-        draw(ArrPerson[i],DivHuman[i]);
+        draw_human(ArrPerson[i],DivHuman[i]);
         peoplemovement(ArrPerson[i],DivHuman[i]);
         i++;
         }
