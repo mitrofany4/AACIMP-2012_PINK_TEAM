@@ -2,12 +2,20 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+    <meta name="viewport"  content="width=800, height=600,  initial-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+    <script src="optimizationmobile.js" ></script>
+
+
     <title>game area</title>
     <link rel="stylesheet" type="text/css" href="templetes.css" />
 </head>
 <body onload="peopleappear(5)">
 
-<div style="background-color: green; width: 800px; height:600px; position: absolute;">
+<div onclick="fireAction()" style="background-color: green; width: 800px; height:600px; position: absolute;">
     <!--Weapon and Menu Controls-->
     <div id="weaponpanel" style="background-color: blue; width: 120px; height:120px; position: inherit;   ">
     </div>
