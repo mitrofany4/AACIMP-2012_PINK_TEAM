@@ -24,13 +24,20 @@ document.body.addEventListener("mousedown", function(event) {
 
         // creates a new spit
         if (heroModel.weaponInUse == 0){
-            var drop = newSpit(heroPosX, heroPosY, 0.1);
+            var drop = newSpit(heroPosX + 5, heroPosY, 0.1);
         }
         else if (heroModel.weaponInUse == 1){
             var drop = newSpit(heroPosX, heroPosY, 1);
         }
 
+        // object drawing
         draw = function(drop) {
+            if (spit.style.left == 0 + 'px' || spit.style.top == 510 + 'px'){
+                spit.style.opacity = 0;
+            }
+            else {
+                spit.style.opacity = 1;
+            }
             spit.style.left = drop.xpos + 'px';
             spit.style.top = drop.ypos + 'px';
         };

@@ -1,4 +1,4 @@
-var drop;
+// weapon choosing
 function setSpit (){
     heroModel.weaponInUse = 0;
     spit = document.getElementById("spit");

@@ -10,28 +10,28 @@
 
 #spit_icon {
     position: absolute;
-    width: 25px;
-    height: 38px;
+    width: 30px;
+    height: 30px;
     background-image: url('spit_icon.png');
 }
 
 #waterbomb_icon {
     position: inherit;
-    width: 25px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
     background-image: url('waterbomb_icon.png');
 }
 
 #spit {
     position: absolute;
-    width: 25px;
-    height: 38px;
-    background-image: url('spit_icon.png');
+    width: 10px;
+    height: 17px;
+    background-image: url('spit.png');
 }
 
 #waterbomb {
     position: inherit;
-    width: 25px;
-    height: 26px;
-    background-image: url('waterbomb_icon.png');
+    width: 23px;
+    height: 23px;
+    background-image: url('waterbomb.png');
 }
