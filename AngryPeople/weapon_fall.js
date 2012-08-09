@@ -59,8 +59,3 @@ document.body.addEventListener("mousedown", function(event) {
     mousePosY = event.pageY
 });
 
-// when the weapon falls trying to check if there anyone
-function hitAction(weaponPosX){
-
-    //check here...
-}

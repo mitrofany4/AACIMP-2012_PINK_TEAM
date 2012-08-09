@@ -1,3 +1,9 @@
+function start() {
+    var ga = document.getElementById('gamearea');
+    ga.style.visibility = 'hidden;'
+}
+
+
 var levellimeit = 10;
 var seconds = 60;
 function levelchange (level) {
@@ -25,7 +31,12 @@ function leveltime()
                 if (seconds == 0) {
                 <!--Time Over functions-->
 //                alert('TIME OVER');
-                clearInterval(intervid);
+
+
+                    clearInterval(intervid);
+                    $.mobile.changePage( "main.html#mainpage", { transition: "slideup"} );
                 }
 }
 var intervid  = setInterval(leveltime,1000);
+
+
