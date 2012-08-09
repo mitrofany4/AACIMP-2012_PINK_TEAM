@@ -24,7 +24,7 @@ document.body.addEventListener("mousedown", function(event) {
 
         // creates a new spit
         if (heroModel.weaponInUse == 0){
-            var drop = newSpit(heroPosX, heroPosY, 0.1);
+            var drop = newSpit(heroPosX + 5, heroPosY, 0.1);
         }
         else if (heroModel.weaponInUse == 1){
             var drop = newSpit(heroPosX, heroPosY, 1);
