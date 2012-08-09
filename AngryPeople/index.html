@@ -5,7 +5,7 @@
     <title>game area</title>
     <link rel="stylesheet" type="text/css" href="templetes.css" />
 </head>
-<body>
+<body onload="peopleappear(5)">
 
 <div style="background-color: green; width: 800px; height:600px; position: absolute;">
     <!--Weapon and Menu Controls-->
@@ -74,6 +74,9 @@
     <div id="spit_icon" onmousedown="setSpit()" style="left:0px; top:0px;"></div>
     <div id="waterbomb_icon" onmousedown="setBomb()" style="left:0px; top: 32px;"></div>
 
+    <!--People-->
+    <div id="humans"></div>
+
 </div>
 
 <script src = "HeroMovements.js" type="text/javascript"> </script>
@@ -81,5 +84,7 @@
 <script src = "weapon_fall.js" type="text/javascript"></script>
 <script src = "infopanel.js" type="text/javascript"></script>
 <script src = "weapon_choose.js" type="text/javascript"></script>
+<script src="walking_man.js" type="text/javascript"></script>
+<script src="PeopleMovements.js" type="text/javascript"></script>
 </body>
 </html>

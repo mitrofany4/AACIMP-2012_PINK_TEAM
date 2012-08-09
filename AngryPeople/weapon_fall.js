@@ -1,4 +1,4 @@
-var intervalID;
+
 var block = false;
 
 // checking the mouse in a gamezone
@@ -17,7 +17,7 @@ document.body.addEventListener("mousedown", function(event) {
         // new spit position
         var heroPosX = getHeroPostiton();
         var heroPosY = balconyPos;
-
+        var intervalID;
         // stops old update
         clearInterval(intervalID);
 
