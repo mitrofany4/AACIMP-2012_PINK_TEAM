@@ -2,6 +2,20 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+    <meta name="viewport"
+          content="width=800, height=600,
+  initial-scale=1.0, user-scalable=no">
+    <script type="text/javascript">
+        document.body.addEventListener('touchmove', function(event) {
+            event.preventDefault();
+        }, false);
+        setTimeout(function () {
+            window.scrollTo(0, 1);
+        }, 1000);
+        canvas.addEventListener('touchmove', function(event) {
+            renderTouches(event.touches);
+        }, false);
+    </script>
     <title>game area</title>
     <link rel="stylesheet" type="text/css" href="templetes.css" />
 </head>
