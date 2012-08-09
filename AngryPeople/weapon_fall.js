@@ -44,7 +44,7 @@ document.body.addEventListener("mousedown", function(event) {
 
         // updates coordinates and redraw the object
         update = function() {
-            (drop);
+            updateSpit(drop);
             draw(drop);
         };
 
