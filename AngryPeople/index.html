@@ -16,7 +16,17 @@
 
 <div onclick="fireAction()" style="background-color: green; width: 800px; height:600px; position: absolute;">
     <!--Weapon and Menu Controls-->
-    <div id="weaponpanel" style="background-color: blue; width: 120px; height:120px; position: inherit;   ">
+    <div id="weaponpanel" style="background-color: blue; width: 120px; height:120px; position: inherit;">
+        <table width="100%" height = "100%">
+            <tr align="center">
+                <td id="spit_icon" onmousedown="setSpit()"></td>
+                <td> - 0</td>
+            </tr>
+            <tr align="center">
+                <td id="waterbomb_icon" onmousedown="setBomb();"></td>
+                <td id = "bomb_count"> - <span> 3 </span> </td>
+            </tr>
+        </table>
     </div>
     <div id="menubutton" style="background-color: blue; width: 120px; height:120px; position: inherit;  left: 680px; ">
     </div>
@@ -76,10 +86,6 @@
     <!--Sideway-->
     <div  style="position: inherit; width: 800px; height: 20px;
     top: 580px; background-color: #dcdcdc;  "></div>
-
-    <!--Weapon_icons-->
-    <div id="spit_icon" onmousedown="setSpit()" style="left:0px; top:0px;"></div>
-    <div id="waterbomb_icon" onmousedown="setBomb()" style="left:0px; top: 32px;"></div>
 
     <!--People-->
     <div id="humans"></div>

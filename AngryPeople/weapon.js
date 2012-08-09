@@ -5,6 +5,7 @@ function newSpit(xpos, ypos, gravity){
         yvel : 0,
         yacc : 0,
         gravity : gravity
+
     };
 }
 
@@ -18,6 +19,6 @@ function updateSpit(obj){
         obj.yvel = 0;
         obj.yacc = 0;
         block = false;
-        hitAction(obj.xpos);
+        //hitAction(obj.xpos);
     }
 }
