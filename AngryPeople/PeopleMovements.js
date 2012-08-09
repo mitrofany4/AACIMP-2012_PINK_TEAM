@@ -7,9 +7,10 @@
  */
 var randX;
 var randInt;
-var randdir;
+
 var ArrPerson = new Array();
 var DivHuman = new Array();
+var ArrProgress = new Array();
 
 // randoms
 function getRandomInt(min, max) {
@@ -60,8 +61,8 @@ function chosetype(){
 //add a new div element of person
 function addDiv(_i){
     var ni = document.getElementById("humans");
-    newDiv = document.createElement("div");
-    name="human"+_i.toString();
+    var newDiv = document.createElement("div");
+    var name="human"+_i.toString();
     newDiv.setAttribute('id',name);
 //    my_div = document.getElementById("human"+_i.toString());
 //    document.body.insertBefore(newDiv, my_div);
@@ -76,6 +77,22 @@ function set_ordinary(human){
     human.style.position='absolute';
 //    human.style.bottom='100px'
 }
+
+// progressbar drawing for everybody
+
+function draw_progressbar(_i,human,percent){
+    var newDiv = document.createElement("progress");
+    var name="Bar"+_i.toString();
+    newDiv.setAttribute('id',name);
+    newDiv.style.width=human.offsetWidth+'px';
+    newDiv.style.height="12px";
+    newDiv.style.position="inherit";
+    newDiv.style.top="-15px";
+    newDiv.setAttribute("width","40px")
+    newDiv.setAttribute("value",percent.toString());
+    human.appendChild(newDiv);
+}
+
 //movement of every person
 function peoplemovement(_person,_human)
 {
@@ -102,6 +119,7 @@ function peopleappear(num){
         DivHuman[i]=document.getElementById("human"+ i.toString());
         set_ordinary(DivHuman[i]);
         draw(ArrPerson[i],DivHuman[i]);
+        draw_progressbar(i,DivHuman[i],i*20);
         peoplemovement(ArrPerson[i],DivHuman[i]);
         i++;
         }
