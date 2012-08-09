@@ -23,6 +23,7 @@ function fireAction(){
         // stops old update
         clearInterval(intervalID);
 
+
         // creates a new spit
         if (heroModel.weaponInUse == 0){
             var drop = newSpit(heroPosX + 5, heroPosY, 0.1);

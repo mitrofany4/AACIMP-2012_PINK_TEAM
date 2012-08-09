@@ -116,6 +116,7 @@ function peopleappear(num){
             DivHuman[i]=document.getElementById("human"+ i.toString());
             set_ordinary(DivHuman[i]);
             draw_human(ArrPerson[i],DivHuman[i]);
+            draw_progressbar(i,DivHuman[i],i*5);
             peoplemovement(ArrPerson[i],DivHuman[i]);
             i++;
         }
