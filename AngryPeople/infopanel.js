@@ -24,7 +24,7 @@ function leveltime()
                 timer.children[1].innerHTML=seconds;
                 if (seconds == 0) {
                 <!--Time Over functions-->
-                alert('TIME OVER');
+//                alert('TIME OVER');
                 clearInterval(intervid);
                 }
 }
