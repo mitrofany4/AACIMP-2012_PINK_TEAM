@@ -18,5 +18,6 @@ function updateSpit(obj){
         obj.yvel = 0;
         obj.yacc = 0;
         block = false;
+        hitAction(obj.xpos);
     }
 }

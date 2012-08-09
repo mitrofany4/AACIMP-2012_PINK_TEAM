@@ -95,16 +95,17 @@ function peopleappear(num){
 
     var interval=setInterval(function(){
         if (i<num){
-        ArrPerson[i]=newPerson(rand_X(),rand_dir());
-        set_dir(ArrPerson[i]);
-        addDiv(i);
-        DivHuman[i]=document.getElementById("human"+ i.toString());
-        set_ordinary(DivHuman[i]);
-        draw_human(ArrPerson[i],DivHuman[i]);
-        peoplemovement(ArrPerson[i],DivHuman[i]);
-        i++;
+            ArrPerson[i]=newPerson(rand_X(),rand_dir());
+            set_dir(ArrPerson[i]);
+            addDiv(i);
+            DivHuman[i]=document.getElementById("human"+ i.toString());
+            set_ordinary(DivHuman[i]);
+            draw_human(ArrPerson[i],DivHuman[i]);
+            peoplemovement(ArrPerson[i],DivHuman[i]);
+            i++;
         }
-       else {clearInterval(interval);
+        else {
+            clearInterval(interval);
         }
     },5000);
 }
