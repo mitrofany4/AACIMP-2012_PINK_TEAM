@@ -10,7 +10,7 @@ var randInt;
 var randdir;
 var ArrPerson = new Array();
 var DivHuman = new Array();
-var ArrProgress = new Array();
+
 // randoms
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -42,7 +42,6 @@ draw_human = function(____person,____human) {
 };
 
 //calculation of next coordinates and redrawing
-
 update_human = function(__person,__human) {
     updatePerson(__person);
     draw_human(__person,__human);
@@ -111,18 +110,17 @@ function peopleappear(num){
 
     var interval=setInterval(function(){
         if (i<num){
-        ArrPerson[i]=newPerson(rand_X(),rand_dir());
-        set_dir(ArrPerson[i]);
-        addDiv(i);
-        DivHuman[i]=document.getElementById("human"+ i.toString());
-        set_ordinary(DivHuman[i]);
-        draw_human(ArrPerson[i],DivHuman[i]);
-        draw_progressbar(i,DivHuman[i],i*20);
-        peoplemovement(ArrPerson[i],DivHuman[i]);
-        i++;
-
+            ArrPerson[i]=newPerson(rand_X(),rand_dir());
+            set_dir(ArrPerson[i]);
+            addDiv(i);
+            DivHuman[i]=document.getElementById("human"+ i.toString());
+            set_ordinary(DivHuman[i]);
+            draw_human(ArrPerson[i],DivHuman[i]);
+            peoplemovement(ArrPerson[i],DivHuman[i]);
+            i++;
         }
-       else {clearInterval(interval);
+        else {
+            clearInterval(interval);
         }
     },5000);
 }

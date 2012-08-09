@@ -1,5 +1,7 @@
-
+var intervalID;
 var block = false;
+
+var mousePosX = 0, mousePosY = 0;
 
 // checking the mouse in a gamezone
 function mouseCoordinatesChecking(x, y){
@@ -11,16 +13,15 @@ function mouseCoordinatesChecking(x, y){
     return (x > leftBarrier && x < rightBarrier && y > topBarrier);
 }
 
-document.body.addEventListener("mousedown", function(event) {
+function fireAction(){
     // checking if mouse is in a game zone
-    if (mouseCoordinatesChecking(event.pageX, event.pageY) && !block){
+    if (mouseCoordinatesChecking(mousePosX, mousePosY) && !block){
         // new spit position
         var heroPosX = getHeroPostiton();
         var heroPosY = balconyPos;
-        var intervalID;
+
         // stops old update
         clearInterval(intervalID);
-
 
         // creates a new spit
         if (heroModel.weaponInUse == 0){
@@ -52,4 +53,9 @@ document.body.addEventListener("mousedown", function(event) {
         intervalID = setInterval(update, 50);
         block = true;
     }
+}
+document.body.addEventListener("mousedown", function(event) {
+    mousePosX = event.pageX;
+    mousePosY = event.pageY
 });
+
