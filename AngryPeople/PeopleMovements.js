@@ -10,6 +10,7 @@ var randInt;
 var randdir;
 var ArrPerson = new Array();
 var DivHuman = new Array();
+var peopleNum = 5;
 
 // randoms
 function getRandomInt(min, max) {

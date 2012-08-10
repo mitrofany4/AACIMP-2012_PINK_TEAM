@@ -5,7 +5,6 @@ function newSpit(xpos, ypos, gravity){
         yvel : 0,
         yacc : 0,
         gravity : gravity
-
     };
 }
 

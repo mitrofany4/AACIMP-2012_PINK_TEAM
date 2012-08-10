@@ -12,7 +12,7 @@
     <title>game area</title>
     <link rel="stylesheet" type="text/css" href="templetes.css" />
 </head>
-<body onload="peopleappear(5)">
+<body onload="peopleappear(peopleNum)">
 
 <div onclick="fireAction()" style="background-color: green; width: 800px; height:600px; position: absolute;">
     <!--Weapon and Menu Controls-->
@@ -80,8 +80,8 @@
     <div id="hero" style="left:120px; top:20px;"></div>
 
     <!--Weapon-->
-    <div id="spit" style = "opasity: 0; left:0px; top:0px;"></div>
-    <div id="waterbomb" style = "opasity: 0; left:0px; top: 32px;"></div>
+    <div id="spit" style = "opasity: 0;"></div>
+    <div id="waterbomb" style = "opasity: 0;"></div>
 
     <!--Sideway-->
     <div  style="position: inherit; width: 800px; height: 20px;

@@ -25,6 +25,27 @@ function countChange (count){
     }
 }
 
+function hitEvent (){
+    var i = 0;
+    if (spit.style.top > 490 + 'px'){
+        console.log(spit.style.top);
+        if (spit.style.left > ArrPerson[i].xpos + 'px' && spit.style.left < ArrPerson[i].xpos + 69 + 'px'){
+            console.log('Hit!');
+            console.log(i);
+            spit.style.opacity = 0;
+            return true;
+        }
+        else {
+            spit.style.opacity = 1;
+            return false;
+        }
+    }
+    else {
+        spit.style.opacity = 1;
+        return false;
+    }
+}
+
 function fireAction(){
     // checking if mouse is in a game zone
     if (mouseCoordinatesChecking(mousePosX, mousePosY) && !block){
@@ -49,15 +70,26 @@ function fireAction(){
 
         // object drawing
         draw = function(drop) {
+            var i = 0;
             if (drop.amount != 0){
-                if (spit.style.left == 0 + 'px' || spit.style.top == 510 + 'px'){
-                    spit.style.opacity = 0;
+                    //if (spit.style.left == 0 + 'px' || spit.style.top == 510 + 'px'){
+
+                spit.style.left = drop.xpos + 'px';
+                spit.style.top = drop.ypos + 'px';
+                if (spit.style.top > 490 + 'px'){
+                    console.log(spit.style.top);
+                    if (spit.style.left > ArrPerson[i].xpos + 'px' && spit.style.left < ArrPerson[i].xpos + 69 + 'px'){
+                        console.log('Hit!');
+                        console.log(i);
+                        spit.style.opacity = 0;
+                    }
+                    else {
+                        spit.style.opacity = 1;
+                    }
                 }
                 else {
                     spit.style.opacity = 1;
                 }
-                spit.style.left = drop.xpos + 'px';
-                spit.style.top = drop.ypos + 'px';
             }
         };
 
