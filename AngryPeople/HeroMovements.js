@@ -22,6 +22,7 @@ var heroModel = {
 var heroObject;
 var balcony;
 var heroInterval;
+var mouseIsDown;
 
 // initialize the balcony and hero html-objects
 function initObjects(){
@@ -43,6 +44,7 @@ function leftAction(){
         // html-object
         heroObject.style.left = position + 'px';
     }
+    mouseIsDown = true;
 }
 
 // movement to the right
@@ -59,6 +61,7 @@ function rightAction(){
         // html-object
         heroObject.style.left = position + 'px';
     }
+    mouseIsDown = true;
 }
 
 // clinging
@@ -69,15 +72,16 @@ function clingRight(){
     heroInterval = setInterval(rightAction, 50);
 }
 
-
-leftButton.addEventListener("touchstart", clingLeft());
-rightButton.addEventListener("touchstart", clingRight());
-
 // stops clinging
 function endOfTouch(){
     clearInterval(heroInterval);
+    mouseIsDown = false;
 }
-document.body.addEventListener("touchend", endOfTouch());
+
+function bodyEndOfTouch(){
+    if (mouseIsDown)
+        clearInterval(heroInterval);
+}
 
 // get hero x cordinate
 function getHeroPostiton(){
