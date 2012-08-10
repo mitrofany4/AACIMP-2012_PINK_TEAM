@@ -7,10 +7,8 @@
  */
 var randX;
 var randInt;
-var randdir;
 var ArrPerson = new Array();
 var DivHuman = new Array();
-var peopleNum = 5;
 
 // randoms
 function getRandomInt(min, max) {
@@ -22,7 +20,8 @@ function getRandom() {
 }
 // person appearance coordinates generation
 function rand_X(){
-    return getRandomInt(50, window.outerWidth - 70);
+    var xxx=document.getElementById("gamearea");
+    return getRandomInt(50, xxx.offsetWidth - 70);
 }
 // person movement direction generation
 function rand_dir(){
@@ -37,15 +36,15 @@ if (randInt >= 0.5) {
 
 // Copy the "logical" object's position to the
 // element in the DOM
-draw_human = function(____person,____human) {
-    ____human.style.left = ____person.xpos+'px';
-    ____human.style.bottom = ____person.ypos+'px';
+draw_human = function(person, human) {
+    human.style.left = person.xpos+'px';
+    human.style.bottom = person.ypos+'px';
 };
 
 //calculation of next coordinates and redrawing
-update_human = function(__person,__human) {
-    updatePerson(__person);
-    draw_human(__person,__human);
+update_human = function(person,human) {
+    person.update();
+    draw_human(person,human);
 };
 
 function chosetype(){
@@ -81,7 +80,8 @@ function peoplemovement(_person,_human)
 {
 
     var interval=setInterval(function(){
-        if ((_person.xpos>15)&&(_person.xpos<=window.outerWidth-85)){
+        var xxx=document.getElementById("gamearea");
+        if ((_person.xpos>15)&&(_person.xpos<=xxx.offsetWidth-85)){
             update_human(_person,_human);
         }
         else {
@@ -111,8 +111,7 @@ function peopleappear(num){
 
     var interval=setInterval(function(){
         if (i<num){
-            ArrPerson[i]=newPerson(rand_X(),rand_dir());
-            set_dir(ArrPerson[i]);
+            ArrPerson[i]=new Ordinary(rand_X(),rand_dir());
             addDiv(i);
             DivHuman[i]=document.getElementById("human"+ i.toString());
             set_ordinary(DivHuman[i]);

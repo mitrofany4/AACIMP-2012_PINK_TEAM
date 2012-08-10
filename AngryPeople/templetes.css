@@ -35,3 +35,21 @@
     height: 23px;
     background-image: url('waterbomb.png');
 }
+
+#rightcontrolbutton {
+    position:   inherit;
+    width:      120px;
+    height:     300px;
+    top:        120px;
+    left:       680px;
+    background-color: pink;
+}
+
+#leftcontrolbutton {
+    position:   inherit;
+    width:      120px;
+    height:     300px;
+    left :      0px;
+    top:        120px;
+    background-color: pink;
+}
