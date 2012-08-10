@@ -8,8 +8,6 @@
 
 // balcony top position
 const balconyPos = document.getElementById("balcony").offsetTop;
-var rightButton = document.getElementById("rightcontrolbutton");
-var leftButton = document.getElementById("leftcontrolbutton");
 
 // a hero structure
 var heroModel = {
@@ -23,6 +21,7 @@ var heroObject;
 var balcony;
 var heroInterval;
 var mouseIsDown;
+
 
 // initialize the balcony and hero html-objects
 function initObjects(){
@@ -67,10 +66,28 @@ function rightAction(){
 // clinging
 function clingLeft() {
     heroInterval = setInterval(leftAction, 50);
+
 }
 function clingRight(){
     heroInterval = setInterval(rightAction, 50);
 }
+
+// event Handlers For Mouse and touch events
+$("#rightcontrolbutton").bind('vmousedown', function(){
+    clingRight();
+});
+
+$("#rightcontrolbutton").bind('vmousup', function(){
+    endOfTouch();
+});
+
+$("#leftcontrolbutton").bind('vmousedown', function(){
+    clingLeft();
+});
+
+$("#leftcontrolbutton").bind('vmouseup', function(){
+    endOfTouch();
+});
 
 // stops clinging
 function endOfTouch(){
