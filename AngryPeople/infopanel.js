@@ -4,7 +4,6 @@ function start() {
 }
 
 
-var levellimeit = 10;
 var seconds = 60;
 function levelchange (level) {
     var levelnum = document.getElementById('levelnumber');
@@ -34,7 +33,7 @@ function leveltime()
 
 
                     clearInterval(intervid);
-                    $.mobile.changePage( "main.html#mainpage", { transition: "slideup"} );
+//                    $.mobile.changePage( "index.html", { transition: "slideup"} );
                 }
 }
 var intervid  = setInterval(leveltime,1000);

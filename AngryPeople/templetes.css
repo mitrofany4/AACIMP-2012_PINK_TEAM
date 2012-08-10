@@ -6,6 +6,8 @@
     width: 21px;
     height: 50px;
     background-image:url('hero.jpg');
+    /*left:120px;*/
+    /*top:20px;"*/
 }
 
 #spit_icon {
@@ -27,6 +29,9 @@
     width: 10px;
     height: 17px;
     background-image: url('spit.png');
+    opasity: 0.0;
+    left:0px;
+    top:0px;
 }
 
 #waterbomb {
@@ -34,6 +39,9 @@
     width: 23px;
     height: 23px;
     background-image: url('waterbomb.png');
+    opasity: 0;
+    left:0px;
+    top: 32px;
 }
 
 #rightcontrolbutton {
@@ -52,4 +60,45 @@
     left :      0px;
     top:        120px;
     background-color: pink;
+}
+
+#gamearea {
+    background-color: green;
+    width: 800px;
+    height:600px;
+    position: absolute;
+}
+
+#weaponpanel {
+    background-color: blue;
+    width: 120px;
+    height:120px;
+    position: inherit;
+}
+
+#menubutton {
+    background-color: blue;
+    width: 120px;
+    height:120px;
+    position: inherit;
+    left: 680px;
+}
+
+#balcony {
+    background-color: black;
+    width: 560px;
+    height:50px;
+    position: inherit;
+    top: 70px;
+    left: 120px;
+}
+#infopanel {
+    background-color: orange;
+    position: inherit;
+    top:200px;
+    left: 200px;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    opacity: 0.75
 }
