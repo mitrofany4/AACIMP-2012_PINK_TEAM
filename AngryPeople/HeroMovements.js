@@ -8,6 +8,8 @@
 
 // balcony top position
 const balconyPos = document.getElementById("balcony").offsetTop;
+var rightButton = document.getElementById("rightcontrolbutton");
+var leftButton = document.getElementById("leftcontrolbutton");
 
 // a hero structure
 var heroModel = {
@@ -20,6 +22,7 @@ var heroModel = {
 var heroObject;
 var balcony;
 var heroInterval;
+var mouseIsDown;
 
 // initialize the balcony and hero html-objects
 function initObjects(){
@@ -41,6 +44,7 @@ function leftAction(){
         // html-object
         heroObject.style.left = position + 'px';
     }
+    mouseIsDown = true;
 }
 
 // movement to the right
@@ -57,6 +61,7 @@ function rightAction(){
         // html-object
         heroObject.style.left = position + 'px';
     }
+    mouseIsDown = true;
 }
 
 // clinging
@@ -70,6 +75,12 @@ function clingRight(){
 // stops clinging
 function endOfTouch(){
     clearInterval(heroInterval);
+    mouseIsDown = false;
+}
+
+function bodyEndOfTouch(){
+    if (mouseIsDown)
+        clearInterval(heroInterval);
 }
 
 // get hero x cordinate
