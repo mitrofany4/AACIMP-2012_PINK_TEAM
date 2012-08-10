@@ -26,7 +26,7 @@ function rand_X(){
 // person movement direction generation
 function rand_dir(){
  var randInt = getRandom();
-
+ var randdir;
 if (randInt >= 0.5) {
     return randdir = "right";
 } else {
@@ -81,7 +81,7 @@ function peoplemovement(_person,_human)
 
     var interval=setInterval(function(){
         var xxx=document.getElementById("gamearea");
-        if ((_person.xpos>15)&&(_person.xpos<=xxx.offsetWidth-85)){
+        if ((_person.xpos>15)&&(_person.xpos<=xxx.offsetWidth-80)){
             update_human(_person,_human);
         }
         else {
@@ -111,7 +111,15 @@ function peopleappear(num){
 
     var interval=setInterval(function(){
         if (i<num){
-            ArrPerson[i]=new Ordinary(rand_X(),rand_dir());
+            var d=rand_dir();
+            if (d=="right"){
+                ArrPerson[i]=new Ordinary(60,"right");
+            }
+            else {
+                var xxx=document.getElementById("gamearea");
+                ArrPerson[i]=new Ordinary(xxx.offsetWidth-80,"left");
+            }
+      //      ArrPerson[i]=new Ordinary(rand_X(),rand_dir());
             addDiv(i);
             DivHuman[i]=document.getElementById("human"+ i.toString());
             set_ordinary(DivHuman[i]);
