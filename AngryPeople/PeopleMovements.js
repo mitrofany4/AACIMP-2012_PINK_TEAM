@@ -128,7 +128,7 @@ function draw_progressbar(_i,human,percent){
 // appearance of num people with interval 5000 msc
 function peopleappear(num){
     var i=0;
-
+    window.scrollTo(0,1);
     var interval=setInterval(function(){
         if (i<num){
             var d=rand_dir();
