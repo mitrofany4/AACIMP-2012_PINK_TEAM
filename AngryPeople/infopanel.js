@@ -1,4 +1,3 @@
-window.scrollTo(0,1);
 var seconds = 60;
 
 function levelchange (level) {
@@ -25,13 +24,13 @@ function leveltime1 () {
                 timer.children[1].innerHTML=seconds;
                 if (seconds == 0) {
 //                <!--Time Over functions-->
-                alert('TIME OVER');
-//                    clearInterval(intervid1);
+//                alert('TIME OVER');
+                    clearInterval(intervid1);
 //                    $.mobile.changePage( "index.html", { transition: "slideup"} );
-
-                }
-                setTimeout(leveltime1(),1000);
+                } else
+    setTimeout(leveltime1,1000);
 }
+leveltime1();
 //var intervid1  = setInterval(leveltime1,1000);
 
 
