@@ -11,7 +11,7 @@ var ArrPerson = new Array(); //array of person models
 var DivHuman = new Array(); // array of people`s divs
 var num=10;  //count of people
 var people_in_window=0;
-
+var angry=0; //number of 100% angry people
 var speedd=3000;
 
 // randoms
@@ -101,8 +101,11 @@ function angry_update(_i,value){
 
     ArrPerson[_i].percent+=value*ArrPerson[_i].koef;
 
-    if (ArrPerson[_i].percent>100){
+    if (ArrPerson[_i].percent>=100){
         ArrPerson[_i].percent=100;
+        angry++;
+        progress(angry,num);
+        DivHuman[_i].style.display="none";
     }
     draw_progressbar(_i,DivHuman[_i],ArrPerson[_i].percent);
 
