@@ -29,7 +29,7 @@ function initObjects(){
     heroObject = document.getElementById("hero");
 }
 
-// movment to the left
+// movement to the left
 function leftAction(){
     initObjects();
     // checking if the object is out of balcony
@@ -89,6 +89,9 @@ $("#leftcontrolbutton").bind('vmouseup', function(){
     endOfTouch();
 });
 
+$("#gamearea").bind('vmouseup', function(){
+    bodyEndOfTouch();
+});
 // stops clinging
 function endOfTouch(){
     clearInterval(heroInterval);

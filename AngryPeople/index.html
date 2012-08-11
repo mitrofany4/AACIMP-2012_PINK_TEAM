@@ -6,16 +6,16 @@
 
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
 
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
-    <script src="optimizationmobile.js" ></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+    <script type="text/javascript" src="optimizationmobile.js" ></script>
 
     <title>game area</title>
     <link rel="stylesheet" type="text/css" href="templetes.css" />
 </head>
 <body onload="peopleappear(num )">
 
-<div id="gamearea" onclick="fireAction()" onmouseup="bodyEndOfTouch()" >
+<div id="gamearea" onclick="fireAction()">
 
     <!--Weapon and Menu Controls-->
     <div id="weaponpanel" >
@@ -30,27 +30,24 @@
             </tr>
         </table>
     </div>
-    <div id="menubutton" style="background-color: blue; width: 120px; height:120px; position: inherit;  left: 680px; ">
+    <div id="menubutton" align="center">
+        <table>
+            <tr>
+            <td valign="middle">
+                <h1>
+                    Menu
+                </h1>
+            </td>
+            </tr>
+        </table>
     </div>
 
     <!--Buttons Control-->
-    <div
-            id="leftcontrolbutton">
-            <!--onmousedown = "clingLeft()"
-            onmouseup = "endOfTouch()"-->
-
-    </div>
-    <div
-            id="rightcontrolbutton">
-            <!--
-            onmousedown = "clingRight()"
-            onmouseup = "endOfTouch()"
-            -->
-    </div>
+    <div id="leftcontrolbutton"> </div>
+    <div id="rightcontrolbutton"> </div>
 
     <!--Balcony-->
-    <div id="balcony" >
-    </div>
+    <div id="balcony"></div>
 
     <!--Info zone-->
     <div id="infopanel" >
@@ -89,9 +86,10 @@
     top: 580px; background-color: #dcdcdc;  "></div>
 
     <!--People-->
-    <div id="humans" ></div>
+    <div id="humans"></div>
 
 </div>
+
 
 <script src = "HeroMovements.js" type="text/javascript"> </script>
 <script src = "weapon.js" type = "text/javascript"></script>

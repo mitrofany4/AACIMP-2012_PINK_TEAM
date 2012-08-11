@@ -1,9 +1,8 @@
 function start() {
-    var ga = document.getElementById('gamearea');
-    ga.style.visibility = 'hidden;'
+
 }
 
-
+window.scrollTo(0,1);
 var seconds = 60;
 function levelchange (level) {
     var levelnum = document.getElementById('levelnumber');
