@@ -50,7 +50,9 @@
     height:     300px;
     top:        120px;
     left:       680px;
-    background-color: pink;
+    background-color: #E60042;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
 }
 
 #leftcontrolbutton {
@@ -59,7 +61,9 @@
     height:     300px;
     left :      0px;
     top:        120px;
-    background-color: pink;
+    background-color: #E60042;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
 #gamearea {
@@ -70,22 +74,31 @@
 }
 
 #weaponpanel {
-    background-color: blue;
+    background-color: #fff873;
+    opacity: 0.75;
     width: 120px;
     height:120px;
     position: inherit;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
 }
 
 #menubutton {
-    background-color: blue;
+    background-color: #fff873;
+    opacity: 0.75;
     width: 120px;
     height:120px;
     position: inherit;
     left: 680px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
 #balcony {
-    background-color: black;
+    background: -moz-linear-gradient(top, #b5bdc8 0%, #828c95 36%, #28343b 100%);
+    background: -webkit-linear-gradient(top, #b5bdc8 0%, #828c95 36%, #28343b 100%);
+    background: -o-linear-gradient(top, #b5bdc8 0%, #828c95 36%, #28343b 100%);
+
     width: 560px;
     height:50px;
     position: inherit;
@@ -93,7 +106,7 @@
     left: 120px;
 }
 #infopanel {
-    background-color: orange;
+    background-color: #62E200;
     position: inherit;
     top:200px;
     left: 200px;

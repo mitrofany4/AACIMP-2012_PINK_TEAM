@@ -6,14 +6,14 @@
 
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
 
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
-    <script src="optimizationmobile.js" ></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+    <script type="text/javascript" src="optimizationmobile.js" ></script>
 
     <title>game area</title>
     <link rel="stylesheet" type="text/css" href="templetes.css" />
 </head>
-<body onload="peopleappear(5)">
+<body onload="peopleappear(5)" >
 
 <div id="gamearea" onclick="fireAction()">
 
@@ -30,7 +30,16 @@
             </tr>
         </table>
     </div>
-    <div id="menubutton" style="background-color: blue; width: 120px; height:120px; position: inherit;  left: 680px; ">
+    <div id="menubutton" align="center">
+        <table>
+            <tr>
+            <td valign="middle">
+                <h1>
+                    Menu
+                </h1>
+            </td>
+            </tr>
+        </table>
     </div>
 
     <!--Buttons Control-->
@@ -80,6 +89,7 @@
     <div id="humans"></div>
 
 </div>
+
 
 <script src = "HeroMovements.js" type="text/javascript"> </script>
 <script src = "weapon.js" type = "text/javascript"></script>
