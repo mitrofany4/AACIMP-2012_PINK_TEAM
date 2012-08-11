@@ -11,7 +11,7 @@ const balconyPos = document.getElementById("balcony").offsetTop;
 
 // a hero structure
 var heroModel = {
-    position:    120,
+    position:    500,
     state:       "up",
     weaponInUse: 0
 };
@@ -77,7 +77,7 @@ $("#rightcontrolbutton").bind('vmousedown', function(){
     clingRight();
 });
 
-$("#rightcontrolbutton").bind('vmousup', function(){
+$("#rightcontrolbutton").bind('vmouseup', function(){
     endOfTouch();
 });
 
@@ -92,6 +92,7 @@ $("#leftcontrolbutton").bind('vmouseup', function(){
 $("#gamearea").bind('vmouseup', function(){
     bodyEndOfTouch();
 });
+
 // stops clinging
 function endOfTouch(){
     clearInterval(heroInterval);
