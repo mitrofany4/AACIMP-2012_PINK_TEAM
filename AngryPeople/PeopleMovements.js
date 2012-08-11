@@ -92,7 +92,7 @@ function peoplemovement(_person,_human)
             _human.style.visibility="hidden";
             clearInterval(interval);
         }
-    }, 500);
+    }, 50);
 }
 
 //update angry bar

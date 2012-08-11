@@ -44,7 +44,7 @@ function Ordinary(pos,dir){
 
     this.xpos=pos;
     this.ypos=20;
-    this.speed=5;
+    this.speed=2;
     this.dir=dir;
     this.percent=0;
     this.koef=1;
