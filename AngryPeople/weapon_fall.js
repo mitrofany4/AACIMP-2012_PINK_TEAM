@@ -38,7 +38,7 @@ function fireAction(){
 
         // creates a new spit
         if (heroModel.weaponInUse == 0){
-            var drop = newSpit(heroPosX + 5, heroPosY, 0.1);
+            var drop = newSpit(heroPosX + 20, heroPosY, 0.1);
             drop.amount = -1;
         }
         else if (heroModel.weaponInUse == 1){
