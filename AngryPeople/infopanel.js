@@ -24,7 +24,7 @@ function leveltime1 () {
                 else
                 timer.children[1].innerHTML=seconds;
                 if (seconds == 0) {
-                <!--Time Over functions-->
+//                <!--Time Over functions-->
 //                alert('TIME OVER');
                     clearInterval(intervid1);
 //                    $.mobile.changePage( "index.html", { transition: "slideup"} );
