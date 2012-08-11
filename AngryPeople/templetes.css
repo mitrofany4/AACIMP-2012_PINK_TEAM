@@ -13,9 +13,10 @@ body{
 
 #hero {
     position: inherit;
-    width: 21px;
-    height: 50px;
-    background-image:url('hero.jpg');
+    width: 48px;
+    height: 100px;
+    background:url('images/hero.png') 100% 100% no-repeat;
+    background-size: cover;
     /*left:120px;*/
     /*top:20px;"*/
 }
@@ -60,9 +61,9 @@ body{
     height:     300px;
     top:        120px;
     left:       680px;
-    background-color: #E60042;
-    border-top-right-radius: 40px;
-    border-bottom-left-radius: 40px;
+    opacity: 1.0;
+    background: url("images/controlButtonRight.png") 100% 100% no-repeat;
+    background-size: cover;
 }
 
 #leftcontrolbutton {
@@ -71,28 +72,23 @@ body{
     height:     300px;
     left :      0px;
     top:        120px;
-    background-color: #E60042;
-    border-top-left-radius: 40px;
-    border-bottom-right-radius: 40px;
+    opacity: 1.0;
+    background: url("images/controlButtonLeft.png") 100% 100% no-repeat;
+    background-size: cover;
 }
 
 #gamearea {
-    background-color: green;
+    /*background-color: green;*/
     width: 800px;
     height:600px;
     position: absolute;
     background: url("images/background.png") 100% 100% no-repeat;
     background-size: cover;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease;
 }
 
 #weaponpanel {
     background-color: #fff873;
-    opacity: 0.75;
+    opacity: 0.5;
     width: 120px;
     height:120px;
     position: inherit;
@@ -125,7 +121,7 @@ body{
 #infopanel {
     background-color: #fff873;
     position: inherit;
-    top:200px;
+    top:370px;
     left: 200px;
     width: 400px;
     height: 50px;
