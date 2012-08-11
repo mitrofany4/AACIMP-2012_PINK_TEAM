@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta name="viewport" content="user-scalable=no" />
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+    <!--<script type="text/javascript" src="optimizationmobile.js" ></script>-->
+
+    <title>game area</title>
+    <link rel="stylesheet" type="text/css" href="templetes.css" />
+
+
+
+    <script type="text/javascript">
+    window.scrollTo(0,1);
+        function resize(){
+            body_height = $("body").height();
+            body_width = $("body").width();
+
+            div_height =  Math.min(body_height,body_width)
+            $('div.gamearea').css('height',div_height);
+            $('div.gamearea').css('width',div_height);
+        }
+
+        window.onload = function() {
+            resize();
+        };
+
+        window.onresize = function() {
+            resize();
+        };
+   </script>
+
+</head>
+<body onload="peopleappear(num )">
+
+<div id="gamearea" onclick="fireAction()">
+
+    <!--Weapon and Menu Controls-->
+    <div id="weaponpanel" >
+        <table width="100%" height = "100%">
+            <tr align="center">
+                <td id="spit_icon" onmousedown="setSpit()"></td>
+                <td> - 0</td>
+            </tr>
+            <tr align="center">
+                <td id="waterbomb_icon" onmousedown="setBomb();"></td>
+                <td id = "bomb_count"> - <span> 3 </span> </td>
+            </tr>
+        </table>
+    </div>
+    <div id="menubutton" align="center">
+        <table>
+            <tr>
+                <td valign="middle">
+                    <h1>
+                        Menu
+                    </h1>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!--Buttons Control-->
+    <div id="leftcontrolbutton"> </div>
+    <div id="rightcontrolbutton"> </div>
+
+    <!--Balcony-->
+    <div id="balcony"></div>
+
+    <!--Info zone-->
+    <div id="infopanel" >
+
+        <table width="100%"  align="center" >
+            <tr align="center">
+                <td id="levelnumber">
+                    LEVEL &nbsp <span> </span>
+                </td>
+                <td id="time">
+                    Time: &nbsp <span>1</span>:<span>00</span>
+                </td>
+            </tr>
+            <tr align="center">
+                <td id="progress">
+                    Progress
+                    <span></span>
+                    /
+                    <span></span>
+                </td>
+                <td>
+                    Medals: &nbsp NOT
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Hero -->
+    <div id="hero" style="left:500px; top:20px;"></div>
+    <!--Weapon-->
+    <div id="spit" ></div>
+    <div id="waterbomb" ></div>
+
+    <!--Sideway-->
+    <div  style="position: inherit; width: 800px; height: 20px;
+    top: 580px; background-color: #dcdcdc;  "></div>
+
+    <!--People-->
+    <div id="humans"></div>
+
+</div>
+<script src = "HeroMovements.js" type="text/javascript"> </script>
+<script src = "weapon.js" type = "text/javascript"></script>
+<script src = "weapon_fall.js" type="text/javascript"></script>
+<script src = "infopanel.js" type="text/javascript"></script>
+<script src = "weapon_choose.js" type="text/javascript"></script>
+<script src = "walking_man.js" type="text/javascript"></script>
+<script src = "PeopleMovements.js" type="text/javascript"></script>
+</body>
+</html>

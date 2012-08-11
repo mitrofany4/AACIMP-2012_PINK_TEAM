@@ -39,9 +39,15 @@ function updateSpit(obj){
         obj.yacc = 0;
         block = false;
         clearInterval(intervalID);
-        var h=ifHit(obj)
+        var h=ifHit(obj);
+        var val;
+        if (heroModel.weaponInUse == 0){
+            val=20;
+        }else  if (heroModel.weaponInUse == 1){
+                    val=50;
+                }
         if (h!=-1){
-            angry_update(h,20);
+            angry_update(h,val);
         }
     }
         //hitAction(obj.xpos);
