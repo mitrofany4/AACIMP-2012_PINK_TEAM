@@ -82,7 +82,7 @@ body{
     width: 800px;
     height:600px;
     position: absolute;
-    opacity: 0.8;
+    opacity: 1.0;
     background: url("images/background.jpg") 100% 100% no-repeat;
     background-size: cover;
 }
