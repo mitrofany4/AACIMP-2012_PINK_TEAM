@@ -33,7 +33,7 @@ function fireAction(){
         var heroPosY = balconyPos;
 
         // stops old update
-        clearInterval(intervalID);
+        //clearInterval(intervalID);
 
 
         // creates a new spit
@@ -49,6 +49,7 @@ function fireAction(){
 
         // object drawing
         draw = function(drop) {
+
             if (drop.amount != 0){
                 if (spit.style.left == 0 + 'px' || spit.style.top == 510 + 'px'){
                     spit.style.opacity = 0;
@@ -56,6 +57,7 @@ function fireAction(){
                 else {
                     spit.style.opacity = 1;
                 }
+                spit.style.visibility="visible";
                 spit.style.left = drop.xpos + 'px';
                 spit.style.top = drop.ypos + 'px';
             }

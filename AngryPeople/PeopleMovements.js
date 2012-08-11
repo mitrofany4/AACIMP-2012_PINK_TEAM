@@ -7,8 +7,12 @@
  */
 var randX;
 var randInt;
-var ArrPerson = new Array();
-var DivHuman = new Array();
+var ArrPerson = new Array(); //array of person models
+var DivHuman = new Array(); // array of people`s divs
+var num=10;  //count of people
+var people_in_window=0;
+
+var speedd=3000;
 
 // randoms
 function getRandomInt(min, max) {
@@ -88,8 +92,22 @@ function peoplemovement(_person,_human)
             _human.style.visibility="hidden";
             clearInterval(interval);
         }
-    }, 50);
+    }, 500);
 }
+
+//update angry bar
+
+function angry_update(_i,value){
+
+    ArrPerson[_i].percent+=value*ArrPerson[_i].koef;
+
+    if (ArrPerson[_i].percent>100){
+        ArrPerson[_i].percent=100;
+    }
+    draw_progressbar(_i,DivHuman[_i],ArrPerson[_i].percent);
+
+ }
+
 // progressbar drawing for everybody
 
 function draw_progressbar(_i,human,percent){
@@ -99,7 +117,7 @@ function draw_progressbar(_i,human,percent){
     newDiv.style.width=human.offsetWidth+'px';
     newDiv.style.position="inherit";
     newDiv.style.top="-15px";
-    newDiv.innerHTML='<span style="width:'+percent.toString()+'%"></span>';
+    newDiv.innerHTML='<span style="width: '+percent.toString()+'%"></span>';
 
     human.appendChild(newDiv);
 }
@@ -121,9 +139,10 @@ function peopleappear(num){
       //      ArrPerson[i]=new Ordinary(rand_X(),rand_dir());
             addDiv(i);
             DivHuman[i]=document.getElementById("human"+ i.toString());
+            people_in_window++;
             set_ordinary(DivHuman[i]);
             draw_human(ArrPerson[i],DivHuman[i]);
-            draw_progressbar(i,DivHuman[i],45);
+            draw_progressbar(i,DivHuman[i],ArrPerson[i].percent);
             peoplemovement(ArrPerson[i],DivHuman[i]);
             i++;
         }
