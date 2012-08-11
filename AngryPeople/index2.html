@@ -13,6 +13,28 @@
     <title>game area</title>
     <link rel="stylesheet" type="text/css" href="templetes.css" />
 
+
+
+    <script type="text/javascript">
+    window.scrollTo(0,1);
+        function resize(){
+            body_height = $("body").height();
+            body_width = $("body").width();
+
+            div_height =  Math.min(body_height,body_width)
+            $('div.gamearea').css('height',div_height);
+            $('div.gamearea').css('width',div_height);
+        }
+
+        window.onload = function() {
+            resize();
+        };
+
+        window.onresize = function() {
+            resize();
+        };
+   </script>
+
 </head>
 <body onload="peopleappear(num )">
 
@@ -34,11 +56,11 @@
     <div id="menubutton" align="center">
         <table>
             <tr>
-            <td valign="middle">
-                <h1>
-                    Menu
-                </h1>
-            </td>
+                <td valign="middle">
+                    <h1>
+                        Menu
+                    </h1>
+                </td>
             </tr>
         </table>
     </div>
@@ -53,27 +75,27 @@
     <!--Info zone-->
     <div id="infopanel" >
 
-    <table width="100%"  align="center" >
-        <tr align="center">
-            <td id="levelnumber">
-            LEVEL &nbsp <span> </span>
-            </td>
-            <td id="time">
-            Time: &nbsp <span>1</span>:<span>00</span>
-            </td>
-        </tr>
-        <tr align="center">
-            <td id="progress">
-            Progress
-                <span></span>
-                /
-                <span></span>
-            </td>
-            <td>
-            Medals: &nbsp NOT
-            </td>
-        </tr>
-    </table>
+        <table width="100%"  align="center" >
+            <tr align="center">
+                <td id="levelnumber">
+                    LEVEL &nbsp <span> </span>
+                </td>
+                <td id="time">
+                    Time: &nbsp <span>1</span>:<span>00</span>
+                </td>
+            </tr>
+            <tr align="center">
+                <td id="progress">
+                    Progress
+                    <span></span>
+                    /
+                    <span></span>
+                </td>
+                <td>
+                    Medals: &nbsp NOT
+                </td>
+            </tr>
+        </table>
     </div>
 
     <!-- Hero -->
