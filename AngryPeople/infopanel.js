@@ -22,12 +22,12 @@ function leveltime1 () {
                 timer.children[1].innerHTML='0'+seconds;
                 else
                 timer.children[1].innerHTML=seconds;
-                if (seconds == 0) {
+                if (seconds > 0) {
 //                <!--Time Over functions-->
 //                alert('TIME OVER');
-                    clearInterval(intervid1);
+//                    clearInterval(intervid1);
 //                    $.mobile.changePage( "index.html", { transition: "slideup"} );
-                } else
+                }
     setTimeout(leveltime1,1000);
 }
 leveltime1();
