@@ -2,20 +2,25 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta name="viewport"  content="width=800, height=600,  initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="user-scalable=no" />
 
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
 
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
-    <script src="optimizationmobile.js" ></script>
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+    -->
+    <!--<script type="text/javascript" src="optimizationmobile.js" ></script>-->
+
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/jquery-mobile.js" type="text/javascript"></script>
+
 
     <title>game area</title>
     <link rel="stylesheet" type="text/css" href="templetes.css" />
 </head>
 <body onload="peopleappear(num )">
 
-<div id="gamearea" onclick="fireAction()">
+<div id="gamearea" onclick="fireAction()" >
 
     <!--Weapon and Menu Controls-->
     <div id="weaponpanel" >
@@ -46,6 +51,9 @@
     <div id="leftcontrolbutton"> </div>
     <div id="rightcontrolbutton"> </div>
 
+    <!-- Hero -->
+    <div id="hero" style="left:500px; top:20px;"></div>
+
     <!--Balcony-->
     <div id="balcony"></div>
 
@@ -75,8 +83,7 @@
     </table>
     </div>
 
-    <!-- Hero -->
-    <div id="hero" style="left:500px; top:20px;"></div>
+
     <!--Weapon-->
     <div id="spit" ></div>
     <div id="waterbomb" ></div>
@@ -96,5 +103,7 @@
 <script src = "weapon_choose.js" type="text/javascript"></script>
 <script src = "walking_man.js" type="text/javascript"></script>
 <script src = "PeopleMovements.js" type="text/javascript"></script>
+
+
 </body>
 </html>
