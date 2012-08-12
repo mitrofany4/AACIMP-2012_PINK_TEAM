@@ -65,11 +65,17 @@ function rightAction(){
 
 // clinging
 function clingLeft() {
-    heroInterval = setInterval(leftAction, 10);
+    heroInterval = setTimeout(function(){
+        leftAction();
+        clingLeft();
+    }, 20);
 }
 
 function clingRight(){
-    heroInterval = setInterval(rightAction, 10);
+    heroInterval = setTimeout(function(){
+        rightAction();
+        clingRight();
+    }, 20);
 }
 
 // event Handlers For Mouse and touch events
