@@ -5,6 +5,19 @@ html,body{
     height:100%;
 }
 
+.hero1 {
+    position: inherit;
+    width: 48px;
+    height: 100px;
+    background:url('images/hero.png') 100% 100% no-repeat;
+    background-size: cover;
+
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transition-property: left;
+    -webkit-transition-timing-function: linear;
+}
+
+
 body{
     padding:0px;
     margin:0px;
