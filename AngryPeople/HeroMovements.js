@@ -66,8 +66,8 @@ function rightAction(){
 // clinging
 function clingLeft() {
     heroInterval = setInterval(leftAction, 50);
-
 }
+
 function clingRight(){
     heroInterval = setInterval(rightAction, 50);
 }
