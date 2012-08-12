@@ -26,7 +26,7 @@ var mouseIsDown;
 // initialize the balcony and hero html-objects
 function initObjects(){
     balcony = document.getElementById("balcony");
-    heroObject = document.getElementById("hero");
+    heroObject = document.getElementById("hero1");
 }
 
 // movement to the left
@@ -65,11 +65,11 @@ function rightAction(){
 
 // clinging
 function clingLeft() {
-    heroInterval = setInterval(leftAction, 50);
+    heroInterval = setInterval(leftAction, 10);
 }
 
 function clingRight(){
-    heroInterval = setInterval(rightAction, 50);
+    heroInterval = setInterval(rightAction, 10);
 }
 
 // event Handlers For Mouse and touch events
