@@ -5,14 +5,14 @@ function levelchange (level) {
     levelnum.children[0].innerHTML=level;
 }
 
-levelchange(1);
+
 function progress (first, second ) {
                 var pr= document.getElementById('progress');
                 pr.children[0].innerHTML=first;
                 pr.children[1].innerHTML=second;
 }
 
-progress(0,10);
+/*
 function leveltime1 () {
                 seconds-=1;
                 var minutes = Math.floor(seconds / 60);
@@ -30,7 +30,30 @@ function leveltime1 () {
                 }
     setTimeout(leveltime1,1000);
 }
-leveltime1();
+*/
+var timer;
+
+var time;
+function myTimer(){
+    var minutes = Math.floor(seconds / 60);
+/*    time = document.getElementById('time');
+    time.children[0].innerHTML=minutes;
+    if (seconds < 10)
+        time.children[1].innerHTML='0'+seconds;
+    else
+        time.children[1].innerHTML=seconds;*/
+    clearInterval(timer);
+    timer = setInterval(function() {
+        $('#time').text(seconds--);
+        if (seconds == -1) {
+            clearInterval(timer);
+            alert('done');
+        }
+    }   , 1000);
+}
+
+
+
 //var intervid1  = setInterval(leveltime1,1000);
 
 

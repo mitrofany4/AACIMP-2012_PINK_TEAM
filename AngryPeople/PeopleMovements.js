@@ -14,6 +14,14 @@ var people_in_window=0;
 var angry=0; //number of 100% angry people
 var speedd=3000;
 
+//creation of level
+function onCreate(){
+    levelchange(1);
+    progress(0,10);
+    myTimer();
+    peopleappear(num);
+}
+
 // randoms
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
