@@ -42,12 +42,13 @@ function Ordinary(pos,dir){
 
     //variables
 
-    this.xpos=pos;
-    this.ypos=20;
-    this.speed=2;
-    this.dir=dir;
-    this.percent=0;
-    this.koef=1;
+    this.xpos=pos,
+    this.ypos=20,
+    this.speed=2,
+    this.dir=dir,
+    this.percent=0,
+    this.koef=1,
+    this.type="ord"
 
     //functions
     if (this.dir === "left"){
@@ -65,12 +66,14 @@ function Retired(pos,dir){
 
     //variables
 
-    this.xpos=pos;
-    this.ypos=20;
-    this.speed=3;
-    this.dir=dir;
-    this.percent=0;
-    this.koef=0.5
+    this.xpos=pos,
+    this.ypos=20,
+    this.speed=1,
+    this.dir=dir,
+    this.percent=0,
+    this.koef=0.5,
+    this.type="ret"
+
 
     //functions
 
@@ -79,7 +82,7 @@ function Retired(pos,dir){
     }
 
     this.update=function(){
-        if ((this.xpos < Math.abs(this.speed) + 15) || (this.xpos > Math.abs(this.speed) + 15))
+        if ((this.xpos < Math.abs(this.speed) + 20) || (this.xpos > Math.abs(this.speed) + 5))
             this.xpos += this.speed;
 
     }

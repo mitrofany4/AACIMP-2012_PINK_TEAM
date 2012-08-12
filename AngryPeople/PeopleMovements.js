@@ -72,17 +72,24 @@ function addDiv(_i){
     }
 
 //make a css of ordinary person
-function set_ordinary(human,dir){
-    human.style.backgroundImage=ordinary_url;
-    human.style.backgroundRepeat="no-repeat"
-    human.style.width='69px';
-    human.style.height='104px';
+function set_human(human,dir,type){
+
+    human.style.backgroundRepeat="no-repeat";
     human.style.position='absolute';
-    if (dir=="left"){
+
+    if (dir=="left"){   //change direction
         human.style.webkitTransform="scale(-1,1)";
         human.style.transform="scale(-1,1)";
     }
-//    human.style.bottom='100px'
+    if (type=="ord"){
+        human.style.backgroundImage=ordinary_url;
+        human.style.width='69px';
+        human.style.height='104px';
+    } else if (type=="ret"){
+            human.style.backgroundImage=retired_url;
+            human.style.width='94px';
+            human.style.height='104px';
+        }
 }
 
 //make a css of ordinary person
@@ -92,7 +99,7 @@ function set_retired(human,dir){
     human.style.width='94px';
     human.style.height='104px';
     human.style.position='absolute';
-    if (dir=="left"){
+    if (dir=="left"){  //change direction
         human.style.webkitTransform="scale(-1,1)";
         human.style.transform="scale(-1,1)";
     }
@@ -105,7 +112,7 @@ function peoplemovement(_person,_human)
 
     var interval=setInterval(function(){
         var xxx=document.getElementById("gamearea");
-        if ((_person.xpos>15)&&(_person.xpos<=xxx.offsetWidth-80)){
+        if ((_person.xpos>5)&&(_person.xpos<=xxx.offsetWidth-_human.offsetWidth+5)){
             update_human(_person,_human);
         }
         else {
@@ -145,32 +152,77 @@ function draw_progressbar(_i,human,percent){
     human.appendChild(newDiv);
 }
 
-// appearance of num people with interval 5000 msc
-function peopleappear(num){
-    var i=0;
-    window.scrollTo(0,1);
-    var interval=setInterval(function(){
-        if (i<num){
-            var d=rand_dir();
-            if (d=="right"){
-                ArrPerson[i]=new Ordinary(60,"right");
-            }
-            else {
-                var xxx=document.getElementById("gamearea");
-                ArrPerson[i]=new Ordinary(xxx.offsetWidth-80,"left");
-            }
-      //      ArrPerson[i]=new Ordinary(rand_X(),rand_dir());
-            addDiv(i);
-            DivHuman[i]=document.getElementById("human"+ i.toString());
-            people_in_window++;
-            set_ordinary(DivHuman[i],d);
-            draw_human(ArrPerson[i],DivHuman[i]);
-            draw_progressbar(i,DivHuman[i],ArrPerson[i].percent);
-            peoplemovement(ArrPerson[i],DivHuman[i]);
-            i++;
+//set type of person
+
+function get_type(){
+    var type;
+    var d=getRandom();
+
+    if (d>=0.75){
+        type="ord";
+    } else{
+        type="ret";
+    }
+    return type;
+}
+
+//set a new person
+
+function create_person(_i,type) {
+    var d = rand_dir();
+    var xxx = document.getElementById("gamearea");
+
+    if (type == "ord") {
+        if (d == "right") {
+            ArrPerson[_i] = new Ordinary(60, "right");
         }
         else {
-            clearInterval(interval);
+
+            ArrPerson[_i] = new Ordinary(xxx.offsetWidth - 80, "left");
         }
-    },5000);
-}
+
+    }
+
+    else
+        {
+            if (type == "ret") {
+                if (d == "right") {
+                    ArrPerson[_i] = new Retired(60, "right");
+                }
+                else {
+
+                    ArrPerson[_i] = new Retired(xxx.offsetWidth - 90, "left");
+                }
+
+            }
+
+        }
+    addDiv(_i);
+    people_in_window++;
+    DivHuman[_i] = document.getElementById("human" + _i.toString());
+    set_human(DivHuman[_i], ArrPerson[_i].dir, ArrPerson[_i].type);
+
+    }
+
+
+
+
+// appearance of num people with interval 5000 msc
+    function peopleappear(num) {
+        var i = 0;
+        var t;
+        window.scrollTo(0, 1);
+        var interval = setInterval(function () {
+            if (i < num) {
+                t=get_type();
+                create_person(i,t);
+                draw_human(ArrPerson[i],DivHuman[i]);
+                draw_progressbar(i,DivHuman[i],ArrPerson[i].percent);
+                peoplemovement(ArrPerson[i],DivHuman[i]);
+                i++;
+            }
+            else {
+                clearInterval(interval);
+            }
+        }, 5000);
+    }
