@@ -37,9 +37,9 @@ function leftAction(){
     if (heroModel.position >= absoluteLeftBarrier){
         // hero position without 'px'
         var position = parseInt(heroObject.style.left);
-        position -= 10;
+        position -= 30;
         // js-object
-        heroModel.position -= 10;
+        heroModel.position -= 30;
         // html-object
         heroObject.style.left = position + 'px';
     }
@@ -54,9 +54,9 @@ function rightAction(){
     if (heroModel.position <= absoluteRightBarrier){
         // hero position without 'px'
         var position = parseInt(heroObject.style.left);
-        position += 10;
+        position += 30;
         // js-object
-        heroModel.position += 10;
+        heroModel.position += 30;
         // html-object
         heroObject.style.left = position + 'px';
     }
@@ -65,17 +65,17 @@ function rightAction(){
 
 // clinging
 function clingLeft() {
-    heroInterval = setTimeout(function(){
+    //heroInterval = setTimeout(function(){
         leftAction();
-        clingLeft();
-    }, 20);
+    //    clingLeft();
+    //}, 20);
 }
 
 function clingRight(){
-    heroInterval = setTimeout(function(){
+    // heroInterval = setTimeout(function(){
         rightAction();
-        clingRight();
-    }, 20);
+    //    clingRight();
+    //}, 20);
 }
 
 // event Handlers For Mouse and touch events
