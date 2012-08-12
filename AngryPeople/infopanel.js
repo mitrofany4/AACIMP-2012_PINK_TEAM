@@ -28,7 +28,7 @@ function leveltime1 () {
 //                    clearInterval(intervid1);
 //                    $.mobile.changePage( "index.html", { transition: "slideup"} );
                 }
-    setTimeout(leveltime1,1000);
+    //setTimeout(leveltime1,1000);
 }
 leveltime1();
 //var intervid1  = setInterval(leveltime1,1000);
