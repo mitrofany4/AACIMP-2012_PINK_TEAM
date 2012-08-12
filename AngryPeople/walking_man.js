@@ -7,9 +7,9 @@
  */
 // create a Person
 
-var ordinary_url = "url('walking_man.png')";
+var ordinary_url = "url('BigMan.png')";
 var retired_url = "url('retired.png')";
-
+/*
  var retired = {
         xpos    :   0,
         ypos    :   20,
@@ -27,7 +27,7 @@ var ordinary = {
     percent :   0,
     koef    :   1
 }
-/*
+
 function Person(dir,pos){
 
 

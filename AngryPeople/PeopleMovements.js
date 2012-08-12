@@ -72,13 +72,33 @@ function addDiv(_i){
     }
 
 //make a css of ordinary person
-function set_ordinary(human){
+function set_ordinary(human,dir){
     human.style.backgroundImage=ordinary_url;
+    human.style.backgroundRepeat="no-repeat"
     human.style.width='69px';
     human.style.height='104px';
     human.style.position='absolute';
+    if (dir=="left"){
+        human.style.webkitTransform="scale(-1,1)";
+        human.style.transform="scale(-1,1)";
+    }
 //    human.style.bottom='100px'
 }
+
+//make a css of ordinary person
+function set_retired(human,dir){
+    human.style.backgroundImage=retired_url;
+    human.style.backgroundRepeat="no-repeat"
+    human.style.width='94px';
+    human.style.height='104px';
+    human.style.position='absolute';
+    if (dir=="left"){
+        human.style.webkitTransform="scale(-1,1)";
+        human.style.transform="scale(-1,1)";
+    }
+//    human.style.bottom='100px'
+}
+
 //movement of every person
 function peoplemovement(_person,_human)
 {
@@ -143,7 +163,7 @@ function peopleappear(num){
             addDiv(i);
             DivHuman[i]=document.getElementById("human"+ i.toString());
             people_in_window++;
-            set_ordinary(DivHuman[i]);
+            set_ordinary(DivHuman[i],d);
             draw_human(ArrPerson[i],DivHuman[i]);
             draw_progressbar(i,DivHuman[i],ArrPerson[i].percent);
             peoplemovement(ArrPerson[i],DivHuman[i]);

@@ -22,6 +22,7 @@ body{
     padding:0px;
     margin:0px;
     text-align:center;
+
 }
 
 #hero {
@@ -53,9 +54,9 @@ body{
     width: 10px;
     height: 17px;
     background-image: url('spit.png');
-    opasity: 0.0;
-    left:0px;
+    left:50px;
     top:0px;
+    visibility: hidden;
 }
 
 #waterbomb {
@@ -63,7 +64,6 @@ body{
     width: 23px;
     height: 23px;
     background-image: url('waterbomb.png');
-    opasity: 0;
     left:0px;
     top: 32px;
 }

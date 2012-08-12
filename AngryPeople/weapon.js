@@ -17,7 +17,6 @@ function ifHit(obj){
         var xw=DivHuman[i].offsetWidth;
         if ((spit.offsetLeft>=xx)&&(spit.offsetLeft<(xx+xw))){
             p_num=i;
-
         }
     }
         return p_num;
@@ -31,10 +30,10 @@ function updateSpit(obj){
     if (spit.offsetTop > 510) {
 
         spit.style.visibility="hidden";
-        spit.offsetLeft=5;
-        spit.offsetTop=5;
+        spit.style.top=0+'px';
+       // spit.offsetTop=0;
         obj.ypos = 0;
-        obj.xpos = 0;
+        obj.xpos = 100;
         obj.yvel = 0;
         obj.yacc = 0;
         block = false;

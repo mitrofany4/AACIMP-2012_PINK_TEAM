@@ -51,13 +51,13 @@ function fireAction(){
         draw = function(drop) {
 
             if (drop.amount != 0){
-                if (spit.style.left == 0 + 'px' || spit.style.top == 510 + 'px'){
-                    spit.style.opacity = 0;
+                if (spit.style.top == 0 + 'px' || spit.style.offsetTop >510){
+                    spit.style.visibility="hidden";
                 }
                 else {
-                    spit.style.opacity = 1;
+                    spit.style.visibility="visible";
                 }
-                spit.style.visibility="visible";
+             //   spit.style.visibility="visible";
                 spit.style.left = drop.xpos + 'px';
                 spit.style.top = drop.ypos + 'px';
             }
