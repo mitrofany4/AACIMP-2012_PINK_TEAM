@@ -1,10 +1,19 @@
 // weapon choosing
+var spit, waterbomb;
+
 function setSpit (){
     heroModel.weaponInUse = 0;
-    spit = document.getElementById("spit");
 }
 
 function setBomb (){
     heroModel.weaponInUse = 1;
-    spit = document.getElementById("waterbomb");
+}
+
+function returnWeapon (){
+    if (heroModel.weaponInUse = 0){
+        return spit = document.getElementById("spit");
+    }
+    else if (heroModel.weaponInUse = 0){
+        return waterbomb = document.getElementById("waterbomb");
+    }
 }

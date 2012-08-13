@@ -12,7 +12,8 @@ function Weapon(xpos, ypos, gravity){
             for (i=0;i<people_in_window;i++){
                 var xx=DivHuman[i].offsetLeft;
                 var xw=DivHuman[i].offsetWidth;
-                if ((spit.offsetLeft>=xx)&&(spit.offsetLeft<(xx+xw))){
+                if (((spit.offsetLeft>=xx)&&(spit.offsetLeft<(xx+xw))) ||
+                    ((waterbomb.offsetLeft>=xx)&&(waterbomb.offsetLeft<(xx+xw)))){
                     p_num=i;
                 }
             }
@@ -24,10 +25,9 @@ function Weapon(xpos, ypos, gravity){
             this.yvel += this.yacc;
             this.ypos += this.yvel;
 
-            if (spit.offsetTop > 510) {
-                spit.style.visibility="hidden";
-                spit.style.top=0+'px';
-                // spit.offsetTop=0;
+            if (returnWeapon().offsetTop > 510) {
+                returnWeapon().style.visibility="hidden";
+                returnWeapon().style.top=0+'px';
                 this.ypos = 0;
                 this.xpos = 100;
                 this.yvel = 0;
