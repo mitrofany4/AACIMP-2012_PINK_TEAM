@@ -1,0 +1,209 @@
+@charset "windows-1251";
+/* CSS Document */
+html,body{
+    min-height:100%;
+    height:100%;
+}
+
+.hero1 {
+    position: inherit;
+    width: 48px;
+    height: 100px;
+    background:url('../images/hero.png') 100% 100% no-repeat;
+    background-size: cover;
+
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transition-property: left;
+    -webkit-transition-timing-function: linear;
+}
+
+
+body{
+    padding:0px;
+    margin:0px;
+    text-align:center;
+
+}
+
+#hero {
+    position: inherit;
+    width: 48px;
+    height: 100px;
+    background:url('../images/hero.png') 100% 100% no-repeat;
+    background-size: cover;
+    /*left:120px;*/
+    /*top:20px;"*/
+}
+
+#spit_icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/spit_icon.png');
+}
+
+#waterbomb_icon {
+    position: inherit;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/waterbomb_icon.png');
+}
+
+#spit {
+    position: absolute;
+    width: 10px;
+    height: 17px;
+    background-image: url('../images/spit.png');
+    left:50px;
+    top:0px;
+    visibility: hidden;
+}
+
+#waterbomb {
+    position: inherit;
+    width: 23px;
+    height: 23px;
+    background-image: url('../images/waterbomb.png');
+    left:0px;
+    top: 32px;
+}
+
+#rightcontrolbutton {
+    position:   inherit;
+    width:      120px;
+    height:     300px;
+    top:        120px;
+    left:       680px;
+    opacity: 1.0;
+    background: url("../images/controlButtonRight.png") 100% 100% no-repeat;
+    background-size: cover;
+}
+
+#leftcontrolbutton {
+    position:   inherit;
+    width:      120px;
+    height:     300px;
+    left :      0px;
+    top:        120px;
+    opacity: 1.0;
+    background: url("../images/controlButtonLeft.png") 100% 100% no-repeat;
+    background-size: cover;
+}
+
+#gamearea {
+    /*background-color: green;*/
+    width: 800px;
+    height:600px;
+    position: absolute;
+    background: url("../images/background.jpg") 100% 100% no-repeat;
+    background-size: cover;
+}
+
+#weaponpanel {
+    background-color: #fff873;
+    opacity: 0.5;
+    width: 120px;
+    height:120px;
+    position: inherit;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+#menubutton {
+    background-color: #fff873;
+    opacity: 0.3;
+    width: 120px;
+    height:120px;
+    position: inherit;
+    left: 680px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+#balcony {
+    width: 560px;
+    height:50px;
+    position: inherit;
+    top: 70px;
+    left: 120px;
+
+    opacity: 0.7;
+    background: url("../images/balcony.png") 100% 100% no-repeat;
+    background-size: cover;
+}
+#infopanel {
+    background-color: #fff873;
+    position: inherit;
+    top:370px;
+    left: 200px;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    opacity: 0.75
+}
+
+.meter {
+    height: 5px;  /* Can be anything */
+    position: relative;
+    background: #d3d3d3;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    padding: 3px;
+    -webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+    -moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
+    box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+
+.meter > span {
+    display: block;
+    height: 100%;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    -moz-border-radius-topright: 8px;
+    -moz-border-radius-bottomright: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    -webkit-border-top-left-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    -moz-border-radius-topleft: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(43,194,83);
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(43,194,83)),
+        color-stop(1, rgb(84,240,84))
+    );
+    background-image: -webkit-linear-gradient(
+        center bottom,
+        rgb(43,194,83) 37%,
+        rgb(84,240,84) 69%
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(43,194,83) 37%,
+        rgb(84,240,84) 69%
+    );
+    background-image: -ms-linear-gradient(
+        center bottom,
+        rgb(43,194,83) 37%,
+        rgb(84,240,84) 69%
+    );
+    background-image: -o-linear-gradient(
+        center bottom,
+        rgb(43,194,83) 37%,
+        rgb(84,240,84) 69%
+    );
+    -webkit-box-shadow:
+        inset 0 2px 9px  rgba(255,255,255,0.3),
+        inset 0 -2px 6px rgba(0,0,0,0.4);
+    -moz-box-shadow:
+        inset 0 2px 9px  rgba(255,255,255,0.3),
+        inset 0 -2px 6px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+}
