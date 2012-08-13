@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /**
  * Created with JetBrains WebStorm.
  * User: Dimon
