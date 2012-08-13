@@ -7,8 +7,12 @@
  */
 var randX;
 var randInt;
-var ArrPerson = new Array();
-var DivHuman = new Array();
+var ArrPerson = new Array(); //array of person models
+var DivHuman = new Array(); // array of people`s divs
+var num=10;  //count of people
+var people_in_window=0;
+var angry=0; //number of 100% angry people
+var speedd=3000;
 
 // randoms
 function getRandomInt(min, max) {
@@ -26,7 +30,7 @@ function rand_X(){
 // person movement direction generation
 function rand_dir(){
  var randInt = getRandom();
-
+ var randdir;
 if (randInt >= 0.5) {
     return randdir = "right";
 } else {
@@ -68,20 +72,47 @@ function addDiv(_i){
     }
 
 //make a css of ordinary person
-function set_ordinary(human){
-    human.style.backgroundImage=ordinary_url;
-    human.style.width='69px';
+function set_human(human,dir,type){
+
+    human.style.backgroundRepeat="no-repeat";
+    human.style.position='absolute';
+
+    if (dir=="left"){   //change direction
+        human.style.webkitTransform="scale(-1,1)";
+        human.style.transform="scale(-1,1)";
+    }
+    if (type=="ord"){
+        human.style.backgroundImage=ordinary_url;
+        human.style.width='69px';
+        human.style.height='104px';
+    } else if (type=="ret"){
+            human.style.backgroundImage=retired_url;
+            human.style.width='94px';
+            human.style.height='104px';
+        }
+}
+
+//make a css of ordinary person
+function set_retired(human,dir){
+    human.style.backgroundImage=retired_url;
+    human.style.backgroundRepeat="no-repeat"
+    human.style.width='94px';
     human.style.height='104px';
     human.style.position='absolute';
+    if (dir=="left"){  //change direction
+        human.style.webkitTransform="scale(-1,1)";
+        human.style.transform="scale(-1,1)";
+    }
 //    human.style.bottom='100px'
 }
+
 //movement of every person
 function peoplemovement(_person,_human)
 {
 
     var interval=setInterval(function(){
         var xxx=document.getElementById("gamearea");
-        if ((_person.xpos>15)&&(_person.xpos<=xxx.offsetWidth-85)){
+        if ((_person.xpos>5)&&(_person.xpos<=xxx.offsetWidth-_human.offsetWidth+5)){
             update_human(_person,_human);
         }
         else {
@@ -90,38 +121,108 @@ function peoplemovement(_person,_human)
         }
     }, 50);
 }
+
+//update angry bar
+
+function angry_update(_i,value){
+
+    ArrPerson[_i].percent+=value*ArrPerson[_i].koef;
+
+    if (ArrPerson[_i].percent>=100){
+        ArrPerson[_i].percent=100;
+        angry++;
+        progress(angry,num);
+        DivHuman[_i].style.display="none";
+    }
+    draw_progressbar(_i,DivHuman[_i],ArrPerson[_i].percent);
+
+ }
+
 // progressbar drawing for everybody
 
 function draw_progressbar(_i,human,percent){
-    var newDiv = document.createElement("progress");
+    var newDiv = document.createElement("div");
     var name="Bar"+_i.toString();
-    newDiv.setAttribute('id',name);
+    newDiv.className="meter";
     newDiv.style.width=human.offsetWidth+'px';
-    newDiv.style.height="12px";
     newDiv.style.position="inherit";
     newDiv.style.top="-15px";
-    newDiv.setAttribute("width","40px")
-    newDiv.setAttribute("value",percent.toString());
+    newDiv.innerHTML='<span style="width: '+percent.toString()+'%"></span>';
+
     human.appendChild(newDiv);
 }
 
-// appearance of num people with interval 5000 msc
-function peopleappear(num){
-    var i=0;
+//set type of person
 
-    var interval=setInterval(function(){
-        if (i<num){
-            ArrPerson[i]=new Ordinary(rand_X(),rand_dir());
-            addDiv(i);
-            DivHuman[i]=document.getElementById("human"+ i.toString());
-            set_ordinary(DivHuman[i]);
-            draw_human(ArrPerson[i],DivHuman[i]);
-            draw_progressbar(i,DivHuman[i],i*5);
-            peoplemovement(ArrPerson[i],DivHuman[i]);
-            i++;
+function get_type(){
+    var type;
+    var d=getRandom();
+
+    if (d>=0.75){
+        type="ord";
+    } else{
+        type="ret";
+    }
+    return type;
+}
+
+//set a new person
+
+function create_person(_i,type) {
+    var d = rand_dir();
+    var xxx = document.getElementById("gamearea");
+
+    if (type == "ord") {
+        if (d == "right") {
+            ArrPerson[_i] = new Ordinary(60, "right");
         }
         else {
-            clearInterval(interval);
+
+            ArrPerson[_i] = new Ordinary(xxx.offsetWidth - 80, "left");
         }
-    },5000);
-}
+
+    }
+
+    else
+        {
+            if (type == "ret") {
+                if (d == "right") {
+                    ArrPerson[_i] = new Retired(60, "right");
+                }
+                else {
+
+                    ArrPerson[_i] = new Retired(xxx.offsetWidth - 90, "left");
+                }
+
+            }
+
+        }
+    addDiv(_i);
+    people_in_window++;
+    DivHuman[_i] = document.getElementById("human" + _i.toString());
+    set_human(DivHuman[_i], ArrPerson[_i].dir, ArrPerson[_i].type);
+
+    }
+
+
+
+
+// appearance of num people with interval 5000 msc
+    function peopleappear(num) {
+        var i = 0;
+        var t;
+        window.scrollTo(0, 1);
+        var interval = setInterval(function () {
+            if (i < num) {
+                t=get_type();
+                create_person(i,t);
+                draw_human(ArrPerson[i],DivHuman[i]);
+                draw_progressbar(i,DivHuman[i],ArrPerson[i].percent);
+                peoplemovement(ArrPerson[i],DivHuman[i]);
+                i++;
+            }
+            else {
+                clearInterval(interval);
+            }
+        }, 5000);
+    }

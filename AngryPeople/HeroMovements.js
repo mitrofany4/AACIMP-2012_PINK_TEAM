@@ -8,12 +8,10 @@
 
 // balcony top position
 const balconyPos = document.getElementById("balcony").offsetTop;
-var rightButton = document.getElementById("rightcontrolbutton");
-var leftButton = document.getElementById("leftcontrolbutton");
 
 // a hero structure
 var heroModel = {
-    position:    120,
+    position:    500,
     state:       "up",
     weaponInUse: 0
 };
@@ -24,13 +22,14 @@ var balcony;
 var heroInterval;
 var mouseIsDown;
 
+
 // initialize the balcony and hero html-objects
 function initObjects(){
     balcony = document.getElementById("balcony");
-    heroObject = document.getElementById("hero");
+    heroObject = document.getElementById("hero1");
 }
 
-// movment to the left
+// movement to the left
 function leftAction(){
     initObjects();
     // checking if the object is out of balcony
@@ -38,9 +37,9 @@ function leftAction(){
     if (heroModel.position >= absoluteLeftBarrier){
         // hero position without 'px'
         var position = parseInt(heroObject.style.left);
-        position -= 10;
+        position -= 30;
         // js-object
-        heroModel.position -= 10;
+        heroModel.position -= 30;
         // html-object
         heroObject.style.left = position + 'px';
     }
@@ -55,9 +54,9 @@ function rightAction(){
     if (heroModel.position <= absoluteRightBarrier){
         // hero position without 'px'
         var position = parseInt(heroObject.style.left);
-        position += 10;
+        position += 30;
         // js-object
-        heroModel.position += 10;
+        heroModel.position += 30;
         // html-object
         heroObject.style.left = position + 'px';
     }
@@ -66,11 +65,39 @@ function rightAction(){
 
 // clinging
 function clingLeft() {
-    heroInterval = setInterval(leftAction, 50);
+    //heroInterval = setTimeout(function(){
+        leftAction();
+    //    clingLeft();
+    //}, 20);
 }
+
 function clingRight(){
-    heroInterval = setInterval(rightAction, 50);
+    // heroInterval = setTimeout(function(){
+        rightAction();
+    //    clingRight();
+    //}, 20);
 }
+
+// event Handlers For Mouse and touch events
+$("#rightcontrolbutton").bind('vmousedown', function(){
+    clingRight();
+});
+
+$("#rightcontrolbutton").bind('vmouseup', function(){
+    endOfTouch();
+});
+
+$("#leftcontrolbutton").bind('vmousedown', function(){
+    clingLeft();
+});
+
+$("#leftcontrolbutton").bind('vmouseup', function(){
+    endOfTouch();
+});
+
+$("#gamearea").bind('vmouseup', function(){
+    bodyEndOfTouch();
+});
 
 // stops clinging
 function endOfTouch(){
