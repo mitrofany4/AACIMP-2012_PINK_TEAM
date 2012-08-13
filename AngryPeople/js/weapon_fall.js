@@ -1,8 +1,9 @@
 var intervalID;
 var block = false;
-var bombAmount = 3;
-
+var bombAmount = 3,
+    weaponAmount;
 var mousePosX = 0, mousePosY = 0;
+var clickCount = 0;
 
 // checking the mouse in a gamezone
 function mouseCoordinatesChecking(x, y){
@@ -25,7 +26,7 @@ function countChange (count){
     }
 }
 
-function fireAction(){
+function fireAction(di){
     // checking if mouse is in a game zone
     if (mouseCoordinatesChecking(mousePosX, mousePosY) && !block){
         // new spit position
@@ -37,19 +38,22 @@ function fireAction(){
 
 
         // creates a new spit
-        if (heroModel.weaponInUse == 0){
-            var drop = newSpit(heroPosX + 20, heroPosY, 0.1);
-            drop.amount = -1;
-        }
-        else if (heroModel.weaponInUse == 1){
-            var drop = newSpit(heroPosX, heroPosY, 1);
-            drop.amount = bombAmount;
-            countChange(bombAmount);
-        }
-
+        var drop = new Array();
+            if (heroModel.weaponInUse == 0){
+                drop[di] = new Weapon(heroPosX + 20, heroPosY, 0.5);
+                drop[di].amount = -1;
+                weaponAmount = -1;
+                console.log(di);
+            }
+            else if (heroModel.weaponInUse == 1){
+                drop[di] = new Weapon(heroPosX, heroPosY, 1);
+                drop[di].amount = bombAmount;
+                weaponAmount = bombAmount;
+                countChange(bombAmount);
+            }
         // object drawing
-        draw = function(drop) {
 
+        draw = function(drop) {
             if (drop.amount != 0){
                 if (spit.style.top == 0 + 'px' || spit.style.offsetTop >510){
                     spit.style.visibility="hidden";
@@ -57,16 +61,18 @@ function fireAction(){
                 else {
                     spit.style.visibility="visible";
                 }
-             //   spit.style.visibility="visible";
-                spit.style.left = drop.xpos + 'px';
-                spit.style.top = drop.ypos + 'px';
             }
+            else {
+                spit.style.visibility="hidden";
+            }
+            spit.style.left = drop.xpos + 'px';
+            spit.style.top = drop.ypos + 'px';
         };
 
         // updates coordinates and redraw the object
         update = function() {
-            updateSpit(drop);
-            draw(drop);
+            drop[di].weaponUpdate();
+            draw(drop[di]);
         };
 
         // sets update interval until new spit creating
@@ -74,6 +80,13 @@ function fireAction(){
         block = true;
     }
 }
+
+function Shoot(){
+    var cC = clickCount;
+        fireAction(cC);
+        clickCount ++;
+}
+
 document.body.addEventListener("mousedown", function(event) {
     mousePosX = event.pageX;
     mousePosY = event.pageY

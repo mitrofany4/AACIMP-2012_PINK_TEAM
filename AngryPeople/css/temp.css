@@ -5,35 +5,17 @@ html,body{
     height:100%;
 }
 
-.hero1 {
-    position: inherit;
-    width: 48px;
-    height: 100px;
-    background:url('../images/hero.png') 100% 100% no-repeat;
-    background-size: cover;
-
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-transition-property: left;
-    -webkit-transition-timing-function: linear;
-}
-
-
 body{
     padding:0px;
     margin:0px;
     text-align:center;
-
 }
 
 #hero {
     position: inherit;
-    width: 48px;
-    height: 100px;
-    background:url('../images/hero.png') 100% 100% no-repeat;
-    background-size: cover;
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-transition-property: left;
-    -webkit-transition-timing-function: linear;
+    width: 21px;
+    height: 50px;
+    background-image:url('images/hero.png');
     /*left:120px;*/
     /*top:20px;"*/
 }
@@ -42,71 +24,75 @@ body{
     position: absolute;
     width: 30px;
     height: 30px;
-    background-image: url('../images/spit_icon.png');
+    background-image: url('spit_icon.png');
 }
 
 #waterbomb_icon {
     position: inherit;
     width: 30px;
     height: 30px;
-    background-image: url('../images/waterbomb_icon.png');
+    background-image: url('waterbomb_icon.png');
 }
 
 #spit {
     position: absolute;
     width: 10px;
     height: 17px;
-    background-image: url('../images/spit.png');
-    left:50px;
+    background-image: url('spit.png');
+    opasity: 0.0;
+    left:0px;
     top:0px;
-    visibility: hidden;
 }
 
 #waterbomb {
     position: inherit;
     width: 23px;
     height: 23px;
-    background-image: url('../images/waterbomb.png');
+    background-image: url('waterbomb.png');
+    opasity: 0;
     left:0px;
     top: 32px;
 }
 
 #rightcontrolbutton {
-    /*position:   inherit;*/
-    width:      15%;
-    height:     50%;
-    float: right;
-    /*top:        120px;*/
-    /*left:       680px;*/
-    opacity: 1.0;
-    background: url("../images/controlButtonRight.png") 100% 100% no-repeat;
-    background-size: cover;
+    position:   inherit;
+    width:      120px;
+    height:     300px;
+    top:        120px;
+    left:       680px;
+    background-color: #E60042;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
 }
 
 #leftcontrolbutton {
-    /*position:   inherit;*/
-    width:      15%;
-    height:     50%;
-    float: left;
-    /*left :      0px;*/
-    /*top:        120px;*/
-    opacity: 1.0;
-    background: url("../images/controlButtonLeft.png") 100% 100% no-repeat;
-    background-size: cover;
+    position:   inherit;
+    width:      120px;
+    height:     300px;
+    left :      0px;
+    top:        120px;
+    background-color: #E60042;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
-#gamearea {
-    /*background-color: green;*/
+.gamearea {
+    background-color: green;
     width: 800px;
     height:600px;
     position: absolute;
-    background: url("../images/background.jpg") 100% 100% no-repeat;
+    background: url("images/background.jpg") 100% 100% no-repeat;
     background-size: cover;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 #weaponpanel {
     background-color: #fff873;
-    opacity: 0.5;
+    opacity: 0.75;
     width: 120px;
     height:120px;
     position: inherit;
@@ -133,13 +119,13 @@ body{
     left: 120px;
 
     opacity: 0.7;
-    background: url("../images/balcony.png") 100% 100% no-repeat;
+    background: url("images/balcony.png") 100% 100% no-repeat;
     background-size: cover;
 }
 #infopanel {
     background-color: #fff873;
     position: inherit;
-    top:370px;
+    top:200px;
     left: 200px;
     width: 400px;
     height: 50px;

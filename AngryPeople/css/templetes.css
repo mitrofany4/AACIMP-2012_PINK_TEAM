@@ -66,6 +66,7 @@ body{
     background-image: url('waterbomb.png');
     left:0px;
     top: 32px;
+    visibility: hidden;
 }
 
 #rightcontrolbutton {
