@@ -16,6 +16,8 @@ var speedd=3000;
 
 //creation of level
 function onCreate(){
+    // optimizationmobile.js
+    optimizeInterface();
     levelchange(1);
     progress(0,10);
     startTime();
