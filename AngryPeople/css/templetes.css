@@ -9,7 +9,7 @@ html,body{
     position: inherit;
     width: 48px;
     height: 100px;
-    background:url('../images/hero.png') 100% 100% no-repeat;
+    background:url('images/hero.png') 100% 100% no-repeat;
     background-size: cover;
 
     -webkit-transform: translate3d(0, 0, 0);
@@ -29,7 +29,7 @@ body{
     position: inherit;
     width: 48px;
     height: 100px;
-    background:url('../images/hero.png') 100% 100% no-repeat;
+    background:url('images/hero.png') 100% 100% no-repeat;
     background-size: cover;
     /*left:120px;*/
     /*top:20px;"*/
@@ -39,21 +39,21 @@ body{
     position: absolute;
     width: 30px;
     height: 30px;
-    background-image: url('../images/spit_icon.png');
+    background-image: url('spit_icon.png');
 }
 
 #waterbomb_icon {
     position: inherit;
     width: 30px;
     height: 30px;
-    background-image: url('../images/waterbomb_icon.png');
+    background-image: url('waterbomb_icon.png');
 }
 
 #spit {
     position: absolute;
     width: 10px;
     height: 17px;
-    background-image: url('../images/spit.png');
+    background-image: url('spit.png');
     left:50px;
     top:0px;
     visibility: hidden;
@@ -63,7 +63,7 @@ body{
     position: inherit;
     width: 23px;
     height: 23px;
-    background-image: url('../images/waterbomb.png');
+    background-image: url('waterbomb.png');
     left:0px;
     top: 32px;
 }
@@ -75,7 +75,7 @@ body{
     top:        120px;
     left:       680px;
     opacity: 1.0;
-    background: url("../images/controlButtonRight.png") 100% 100% no-repeat;
+    background: url("images/controlButtonRight.png") 100% 100% no-repeat;
     background-size: cover;
 }
 
@@ -86,7 +86,7 @@ body{
     left :      0px;
     top:        120px;
     opacity: 1.0;
-    background: url("../images/controlButtonLeft.png") 100% 100% no-repeat;
+    background: url("images/controlButtonLeft.png") 100% 100% no-repeat;
     background-size: cover;
 }
 
@@ -95,7 +95,7 @@ body{
     width: 800px;
     height:600px;
     position: absolute;
-    background: url("../images/background.jpg") 100% 100% no-repeat;
+    background: url("images/background.jpg") 100% 100% no-repeat;
     background-size: cover;
 }
 
@@ -128,7 +128,7 @@ body{
     left: 120px;
 
     opacity: 0.7;
-    background: url("../images/balcony.png") 100% 100% no-repeat;
+    background: url("images/balcony.png") 100% 100% no-repeat;
     background-size: cover;
 }
 #infopanel {
@@ -206,4 +206,36 @@ body{
         inset 0 -2px 6px rgba(0,0,0,0.4);
     position: relative;
     overflow: hidden;
+}
+
+.ordinary{
+    background-image: url('images/BigMan.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 69px;
+    height: 104px;
+}
+
+.retired{
+    background-image: url('images/retired.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 94px;
+    height: 104px;
+}
+
+.hooligan{
+    background-image: url('images/hooligan.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 63px;
+    height: 104px;
+}
+
+.policeman{
+    background-image: url('images/officier.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 69px;
+    height: 104px;
 }
