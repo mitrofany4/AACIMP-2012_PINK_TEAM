@@ -18,6 +18,7 @@ var speedd=3000;
 function onCreate(){
     levelchange(1);
     progress(0,10);
+    startTime();
     myTimer();
     peopleappear(num);
 }

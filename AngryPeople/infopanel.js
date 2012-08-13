@@ -1,4 +1,4 @@
-var seconds = 60;
+var seconds = 120;
 
 function levelchange (level) {
     var levelnum = document.getElementById('levelnumber');
@@ -11,41 +11,36 @@ function progress (first, second ) {
                 pr.children[0].innerHTML=first;
                 pr.children[1].innerHTML=second;
 }
+//timer
 
-/*
-function leveltime1 () {
-                seconds-=1;
-                var minutes = Math.floor(seconds / 60);
-                var timer = document.getElementById('time');
-                timer.children[0].innerHTML=minutes;
-                if (seconds < 10)
-                timer.children[1].innerHTML='0'+seconds;
-                else
-                timer.children[1].innerHTML=seconds;
-                if (seconds > 0) {
-//                <!--Time Over functions-->
-//                alert('TIME OVER');
-//                    clearInterval(intervid1);
-//                    $.mobile.changePage( "index.html", { transition: "slideup"} );
-                }
-    setTimeout(leveltime1,1000);
-}
-*/
 var timer;
 
-var time;
-function myTimer(){
+function startTime(){
     var minutes = Math.floor(seconds / 60);
-/*    time = document.getElementById('time');
-    time.children[0].innerHTML=minutes;
-    if (seconds < 10)
-        time.children[1].innerHTML='0'+seconds;
+    var sec=seconds-minutes*60;
+    var text='Time: '+minutes.toString()+':';
+    if (sec < 10)
+        text+='0'+sec.toString();
     else
-        time.children[1].innerHTML=seconds;*/
+        text+=sec.toString();
+    $('#time').text(text);
+}
+
+function myTimer(){
     clearInterval(timer);
     timer = setInterval(function() {
-        $('#time').text(seconds--);
-        if (seconds == -1) {
+        seconds--;
+        var minutes = Math.floor(seconds / 60);
+        var sec=seconds-minutes*60;
+        var text='Time: '+minutes.toString()+':';
+
+        if (sec < 10)
+            text+='0'+sec.toString();
+        else
+            text+=sec.toString();
+
+        $('#time').text(text);
+        if (seconds == 0) {
             clearInterval(timer);
             alert('done');
         }
