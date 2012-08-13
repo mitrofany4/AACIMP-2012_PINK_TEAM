@@ -85,22 +85,19 @@ function addDiv(_i){
 //make a css of ordinary person
 function set_human(human,dir,type){
 
-    human.style.backgroundRepeat="no-repeat";
-    human.style.position='absolute';
+    if (type=="ord"){
+        human.className="ordinary";
+
+    } else if (type=="ret"){
+                 human.className="retired";
+             }else if (type=="hoo"){
+                        human.className="hooligan";
+                }else human.className="policeman";
 
     if (dir=="left"){   //change direction
         human.style.webkitTransform="scale(-1,1)";
         human.style.transform="scale(-1,1)";
     }
-    if (type=="ord"){
-        human.style.backgroundImage=ordinary_url;
-        human.style.width='69px';
-        human.style.height='104px';
-    } else if (type=="ret"){
-            human.style.backgroundImage=retired_url;
-            human.style.width='94px';
-            human.style.height='104px';
-        }
 }
 
 //make a css of ordinary person
@@ -169,10 +166,17 @@ function get_type(){
     var type;
     var d=getRandom();
 
-    if (d>=0.75){
+    if (d<=0.5){
         type="ord";
-    } else{
-        type="ret";
+    } else{ if (d<=0.75)
+                type="ret";
+            else { if (d<=0.85)
+                         type="hoo";
+                   else {
+                         type="pol";
+                    }
+
+            }
     }
     return type;
 }
@@ -204,10 +208,30 @@ function create_person(_i,type) {
 
                     ArrPerson[_i] = new Retired(xxx.offsetWidth - 90, "left");
                 }
+                        }
+            else {
+                if  (type == "hoo")  {
+                    if (d == "right") {
+                        ArrPerson[_i] = new Hooligan(60, "right");
+                    }
+                    else {
 
+                        ArrPerson[_i] = new Hooligan(xxx.offsetWidth - 90, "left");
+                    }
+                }
+                else if (type == "pol")  {
+                        if (d == "right") {
+                            ArrPerson[_i] = new Policeman(60, "right");
+                        }
+                        else {
+
+                            ArrPerson[_i] = new Policeman(xxx.offsetWidth - 90, "left");
+                        }
+                }
+                }
             }
 
-        }
+
     addDiv(_i);
     people_in_window++;
     DivHuman[_i] = document.getElementById("human" + _i.toString());
@@ -222,7 +246,6 @@ function create_person(_i,type) {
     function peopleappear(num) {
         var i = 0;
         var t;
-        window.scrollTo(0, 1);
         var interval = setInterval(function () {
             if (i < num) {
                 t=get_type();
