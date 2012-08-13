@@ -58,6 +58,56 @@ function Retired(pos,dir){
             this.xpos += this.speed;
 
     }
-
 }
 
+function Hooligan(pos,dir){
+
+    //variables
+
+    this.xpos=pos,
+        this.ypos=20,
+        this.speed=2,
+        this.dir=dir,
+        this.percent=0,
+        this.koef=1,
+        this.type="hoo";
+
+
+    //functions
+
+    if (this.dir === "left"){
+        this.speed *= (-1);
+    }
+
+    this.update=function(){
+        if ((this.xpos < Math.abs(this.speed) + 20) || (this.xpos > Math.abs(this.speed) + 5))
+            this.xpos += this.speed;
+
+    }
+}
+
+function Policeman(pos,dir){
+
+    //variables
+
+    this.xpos=pos,
+        this.ypos=20,
+        this.speed=2,
+        this.dir=dir,
+        this.percent=0,
+        this.koef=1,
+        this.type="pol";
+
+
+    //functions
+
+    if (this.dir === "left"){
+        this.speed *= (-1);
+    }
+
+    this.update=function(){
+        if ((this.xpos < Math.abs(this.speed) + 20) || (this.xpos > Math.abs(this.speed) + 5))
+            this.xpos += this.speed;
+
+    }
+}

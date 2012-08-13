@@ -17,7 +17,7 @@ var speedd=3000;
 //creation of level
 function onCreate(){
 
-    //optimizeInterface();
+    optimizeInterface();
     levelchange(1);
     progress(0,10);
     startTime();
@@ -89,8 +89,10 @@ function set_human(human,dir,type){
         human.className="ordinary";
 
     } else if (type=="ret"){
-        human.className="retired";
-        }
+                 human.className="retired";
+             }else if (type=="hoo"){
+                        human.className="hooligan";
+                }else human.className="policeman";
 
     if (dir=="left"){   //change direction
         human.style.webkitTransform="scale(-1,1)";
@@ -164,10 +166,17 @@ function get_type(){
     var type;
     var d=getRandom();
 
-    if (d>=0.25){
+    if (d<=0.5){
         type="ord";
-    } else{
-        type="ret";
+    } else{ if (d<=0.75)
+                type="ret";
+            else { if (d<=0.85)
+                         type="hoo";
+                   else {
+                         type="pol";
+                    }
+
+            }
     }
     return type;
 }
@@ -199,10 +208,30 @@ function create_person(_i,type) {
 
                     ArrPerson[_i] = new Retired(xxx.offsetWidth - 90, "left");
                 }
+                        }
+            else {
+                if  (type == "hoo")  {
+                    if (d == "right") {
+                        ArrPerson[_i] = new Hooligan(60, "right");
+                    }
+                    else {
 
+                        ArrPerson[_i] = new Hooligan(xxx.offsetWidth - 90, "left");
+                    }
+                }
+                else if (type == "pol")  {
+                        if (d == "right") {
+                            ArrPerson[_i] = new Policeman(60, "right");
+                        }
+                        else {
+
+                            ArrPerson[_i] = new Policeman(xxx.offsetWidth - 90, "left");
+                        }
+                }
+                }
             }
 
-        }
+
     addDiv(_i);
     people_in_window++;
     DivHuman[_i] = document.getElementById("human" + _i.toString());
@@ -217,7 +246,6 @@ function create_person(_i,type) {
     function peopleappear(num) {
         var i = 0;
         var t;
-        window.scrollTo(0, 1);
         var interval = setInterval(function () {
             if (i < num) {
                 t=get_type();
