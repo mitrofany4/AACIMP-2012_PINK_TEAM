@@ -65,17 +65,11 @@ function rightAction(){
 
 // clinging
 function clingLeft() {
-    //heroInterval = setTimeout(function(){
-        leftAction();
-    //    clingLeft();
-    //}, 20);
+    leftAction();
 }
 
 function clingRight(){
-    // heroInterval = setTimeout(function(){
-        rightAction();
-    //    clingRight();
-    //}, 20);
+    rightAction();
 }
 
 // event Handlers For Mouse and touch events
@@ -83,20 +77,8 @@ $("#rightcontrolbutton").bind('vmousedown', function(){
     clingRight();
 });
 
-$("#rightcontrolbutton").bind('vmouseup', function(){
-    endOfTouch();
-});
-
 $("#leftcontrolbutton").bind('vmousedown', function(){
     clingLeft();
-});
-
-$("#leftcontrolbutton").bind('vmouseup', function(){
-    endOfTouch();
-});
-
-$("#gamearea").bind('vmouseup', function(){
-    bodyEndOfTouch();
 });
 
 // stops clinging

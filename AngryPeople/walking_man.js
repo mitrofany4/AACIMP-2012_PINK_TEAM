@@ -7,37 +7,9 @@
  */
 // create a Person
 
-var ordinary_url = "url('BigMan.png')";
-var retired_url = "url('retired.png')";
-/*
- var retired = {
-        xpos    :   0,
-        ypos    :   20,
-        speed   :   5,
-        dir     :   "left",
-        percent :   0,
-        koef    :   0.5
-}
+var ordinary_url = "url('images/BigMan.png')";
+var retired_url = "url('images/retired.png')";
 
-var ordinary = {
-    xpos    :   0,
-    ypos    :   20,
-    speed   :   3,
-    dir     :   "left",
-    percent :   0,
-    koef    :   1
-}
-
-function Person(dir,pos){
-
-
-    this.update=function(){
-        if ((this.xpos < Math.abs(this.speed) + 15) || (this.xpos > Math.abs(this.speed) + 15))
-            this.xpos += this.speed;
-
-    }
-}
-*/
 function Ordinary(pos,dir){
 
     //variables
@@ -48,7 +20,7 @@ function Ordinary(pos,dir){
     this.dir=dir,
     this.percent=0,
     this.koef=1,
-    this.type="ord"
+    this.type="ord";
 
     //functions
     if (this.dir === "left"){
@@ -72,7 +44,7 @@ function Retired(pos,dir){
     this.dir=dir,
     this.percent=0,
     this.koef=0.5,
-    this.type="ret"
+    this.type="ret";
 
 
     //functions
@@ -86,15 +58,56 @@ function Retired(pos,dir){
             this.xpos += this.speed;
 
     }
-
 }
 
+function Hooligan(pos,dir){
 
-/*function updatePerson(___person){
+    //variables
 
-    // Navigation
-    if ((___person.xpos < Math.abs(___person.speed) + 15) || (___person.xpos > Math.abs(___person.speed) + 15))
-        ___person.xpos += ___person.speed;
+    this.xpos=pos,
+        this.ypos=20,
+        this.speed=2,
+        this.dir=dir,
+        this.percent=0,
+        this.koef=1,
+        this.type="hoo";
 
+
+    //functions
+
+    if (this.dir === "left"){
+        this.speed *= (-1);
+    }
+
+    this.update=function(){
+        if ((this.xpos < Math.abs(this.speed) + 20) || (this.xpos > Math.abs(this.speed) + 5))
+            this.xpos += this.speed;
+
+    }
 }
-*/
+
+function Policeman(pos,dir){
+
+    //variables
+
+    this.xpos=pos,
+        this.ypos=20,
+        this.speed=2,
+        this.dir=dir,
+        this.percent=0,
+        this.koef=1,
+        this.type="pol";
+
+
+    //functions
+
+    if (this.dir === "left"){
+        this.speed *= (-1);
+    }
+
+    this.update=function(){
+        if ((this.xpos < Math.abs(this.speed) + 20) || (this.xpos > Math.abs(this.speed) + 5))
+            this.xpos += this.speed;
+
+    }
+}

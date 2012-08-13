@@ -208,3 +208,35 @@ body{
     position: relative;
     overflow: hidden;
 }
+
+.ordinary{
+    background-image: url('images/BigMan.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 69px;
+    height: 104px;
+}
+
+.retired{
+    background-image: url('images/retired.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 94px;
+    height: 104px;
+}
+
+.hooligan{
+    background-image: url('images/hooligan.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 63px;
+    height: 104px;
+}
+
+.policeman{
+    background-image: url('images/officier.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 69px;
+    height: 104px;
+}

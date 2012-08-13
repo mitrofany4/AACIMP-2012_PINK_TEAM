@@ -2,23 +2,23 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta name="viewport" content="user-scalable=no" />
+    <meta name="viewport" content="user-scalable=no " />
 
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />-->
 
-    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
-    -->
-    <!--<script type="text/javascript" src="optimizationmobile.js" ></script>-->
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>-->
+    <!--<script type="text/javascript" src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>-->
 
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/jquery-mobile.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery.timers.min.js"></script>
 
 
     <title>game area</title>
     <link rel="stylesheet" type="text/css" href="templetes.css" />
+
 </head>
-<body onload="peopleappear(num)">
+<body onload="onCreate()">
 
 <div id="gamearea" onclick="Shoot()" >
 
@@ -66,7 +66,7 @@
             LEVEL &nbsp <span> </span>
             </td>
             <td id="time">
-            Time: &nbsp <span>1</span>:<span>00</span>
+
             </td>
         </tr>
         <tr align="center">
@@ -81,6 +81,7 @@
             </td>
         </tr>
     </table>
+
     </div>
 
 
@@ -103,6 +104,7 @@
 <script src = "weapon_choose.js" type="text/javascript"></script>
 <script src = "walking_man.js" type="text/javascript"></script>
 <script src = "PeopleMovements.js" type="text/javascript"></script>
+<script src = "js/optimizationmobile.js" type="text/javascript"></script>
 
 
 </body>
