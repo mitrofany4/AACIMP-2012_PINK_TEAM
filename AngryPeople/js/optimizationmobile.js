@@ -20,8 +20,8 @@ function optimizeInterface(){
     zoom = bodyScreen.offsetHeight/gameareaScreen.offsetHeight;
 
     gameareaScreen.style.zoom = zoom;
-    //var metaTags = document.getElementsByTagName("meta");
-    //if(metaTags.name = "viewport"){
-    //   metaTags.content = "initial-scaling = " + zoom + "maximum-scale = 2.0 minimum-scal = 0.5 user-scalable = no";
-    //}
 }
+
+document.getElementsByTagName("body")[0].onresize(function() {
+    optimizeInterface();
+});
