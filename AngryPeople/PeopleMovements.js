@@ -83,22 +83,17 @@ function addDiv(_i){
 //make a css of ordinary person
 function set_human(human,dir,type){
 
-    human.style.backgroundRepeat="no-repeat";
-    human.style.position='absolute';
+    if (type=="ord"){
+        human.className="ordinary";
+
+    } else if (type=="ret"){
+        human.className="retired";
+        }
 
     if (dir=="left"){   //change direction
         human.style.webkitTransform="scale(-1,1)";
         human.style.transform="scale(-1,1)";
     }
-    if (type=="ord"){
-        human.style.backgroundImage=ordinary_url;
-        human.style.width='69px';
-        human.style.height='104px';
-    } else if (type=="ret"){
-            human.style.backgroundImage=retired_url;
-            human.style.width='94px';
-            human.style.height='104px';
-        }
 }
 
 //make a css of ordinary person
@@ -167,7 +162,7 @@ function get_type(){
     var type;
     var d=getRandom();
 
-    if (d>=0.75){
+    if (d>=0.25){
         type="ord";
     } else{
         type="ret";
