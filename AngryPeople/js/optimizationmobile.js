@@ -19,8 +19,6 @@ function optimizeInterface(){
 
     zoom = bodyScreen.offsetHeight/gameareaScreen.offsetHeight;
 
-    //alert(bodyScreen.offsetHeight + " " + gameareaScreen.offsetHeight);
-
     var metaTags = document.getElementsByTagName("meta");
     if(metaTags.name = "viewport"){
        metaTags.content = "initial-scaling = " + zoom + "maximum-scale = 2.0 minimum-scal = 0.5 user-scalable = no";
