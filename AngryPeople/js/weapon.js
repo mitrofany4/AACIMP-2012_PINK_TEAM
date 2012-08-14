@@ -45,5 +45,10 @@ function Weapon(xpos, ypos, gravity){
                     angry_update(h,val);
                 }
             }
+
+            if (bombAmount == 0){
+                var waterbombIcon = document.getElementById("waterbomb_icon");
+                waterbombIcon.style.opacity = 0.2;
+            }
         }
 }
