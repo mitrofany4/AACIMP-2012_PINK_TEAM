@@ -5,6 +5,7 @@ html,body{
     height:100%;
 }
 
+
 .hero1 {
     position: inherit;
     width: 105px;
@@ -85,7 +86,7 @@ body{
     width:      120px;
     height:     300px;
     top:        120px;
-    left:       953px;
+    /*left:       953px;*/
     opacity: 0.5;
     background: url("../images/controlButtonRight.png") 100% 100% no-repeat;
     background-size: cover;
@@ -103,6 +104,10 @@ body{
 }
 
 #gamearea {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
     /*background-color: green;*/
     width:  1072px;
     height: 603px;
@@ -121,6 +126,7 @@ body{
 }
 
 #menubutton {
+    user-select: none;
     /*background-color: #fff873;*/
     background-color: rgba(255,248,115,0.75);
     /*opacity: 0.3;*/
@@ -229,10 +235,10 @@ body{
 }
 
 .retired{
-    background: url('../images/oldman_fin.png') no-repeat;
-    background-size: cover;
+    background: url('../images/oldman_fin.png') 100% 100% no-repeat;
+    background-size: contain;
     position: absolute;
-    width: 117px;
+    width: 90px;
     height: 104px;
     transform: translate3d(0,0,0);
     -webkit-transform: translate3d(0,0,0); /* safari and chrome */
