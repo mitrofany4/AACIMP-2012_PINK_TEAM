@@ -4,7 +4,7 @@ var bombAmount = 3,
     weaponAmount;
 var mousePosX = 0, mousePosY = 0;
 var clickCount = 0;
-
+var drop = new Array();
 // checking the mouse in a gamezone
 function mouseCoordinatesChecking(x, y){
     // gamefield - except the control buttons
@@ -38,7 +38,7 @@ function fireAction(di){
 
 
         // creates a new spit
-        var drop = new Array();
+
             if (heroModel.weaponInUse == 0){
                 drop[di] = new Weapon(heroPosX + 20, heroPosY, 0.5);
                 drop[di].amount = -1;
