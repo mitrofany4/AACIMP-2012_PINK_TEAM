@@ -297,7 +297,7 @@ body{
     background: yellow;
     width: 100px;
     padding: 25px;
-    height: 100px;
+    height: 80px;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
     -o-transition-duration: 0.3s;
@@ -308,7 +308,7 @@ body{
     border-radius: 0 0 5px 0;
 }
 #slideout:hover {
-    left: 150px;
+    left: 149px;
 }
 #slideout:hover #slideout_inner {
     left: 0px;
