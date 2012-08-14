@@ -5,6 +5,7 @@ html,body{
     height:100%;
 }
 
+
 .hero1 {
     position: inherit;
     width: 105px;
@@ -84,6 +85,10 @@ body{
 }
 
 #gamearea {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
     /*background-color: green;*/
     width:  1072px;
     height: 603px;
@@ -102,6 +107,7 @@ body{
 }
 
 #menubutton {
+    user-select: none;
     /*background-color: #fff873;*/
     background-color: rgba(255,248,115,0.75);
     /*opacity: 0.3;*/
