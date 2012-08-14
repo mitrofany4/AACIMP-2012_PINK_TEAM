@@ -45,6 +45,8 @@ body{
     left:50px;
     top:0px;
     visibility: hidden;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0); /* safari and chrome */
 }
 
 #waterbomb {
@@ -55,6 +57,8 @@ body{
     left:0px;
     top: 32px;
     visibility: hidden;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0); /* safari and chrome */
 }
 
 #rightcontrolbutton {
@@ -202,6 +206,8 @@ body{
     position: absolute;
     width: 63px;
     height: 104px;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0); /* safari and chrome */
 }
 
 .retired{
@@ -210,6 +216,8 @@ body{
     position: absolute;
     width: 117px;
     height: 104px;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0); /* safari and chrome */
 }
 
 .hooligan{
@@ -218,6 +226,8 @@ body{
     position: absolute;
     width: 82px;
     height: 104px;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0); /* safari and chrome */
 }
 
 .policeman{
@@ -226,4 +236,6 @@ body{
     position: absolute;
     width: 109px;
     height: 104px;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0); /* safari and chrome */
 }

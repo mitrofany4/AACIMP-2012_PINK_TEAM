@@ -15,7 +15,7 @@ function Ordinary(pos,dir){
     //variables
 
     this.xpos=pos,
-    this.ypos=20,
+    this.ypos=5,
     this.speed=2,
     this.dir=dir,
     this.percent=0,
@@ -39,7 +39,7 @@ function Retired(pos,dir){
     //variables
 
     this.xpos=pos,
-    this.ypos=20,
+    this.ypos=5,
     this.speed=1,
     this.dir=dir,
     this.percent=0,
@@ -65,7 +65,7 @@ function Hooligan(pos,dir){
     //variables
 
     this.xpos=pos,
-        this.ypos=20,
+        this.ypos=5,
         this.speed=2,
         this.dir=dir,
         this.percent=0,
@@ -91,7 +91,7 @@ function Policeman(pos,dir){
     //variables
 
     this.xpos=pos,
-        this.ypos=20,
+        this.ypos=5,
         this.speed=2,
         this.dir=dir,
         this.percent=0,

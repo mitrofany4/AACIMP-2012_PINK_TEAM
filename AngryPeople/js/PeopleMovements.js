@@ -95,8 +95,8 @@ function set_human(human,dir,type){
                 }else human.className="policeman";
 
     if (dir=="left"){   //change direction
-        human.style.webkitTransform="scale(-1,1)";
-        human.style.transform="scale(-1,1)";
+        human.style.webkitTransform="scale3d(-1,1,1)";
+        human.style.transform="scale3d(-1,1,1)";
     }
 }
 
@@ -181,7 +181,7 @@ function create_person(_i,type) {
 
     if (type == "ord") {
         if (d == "right") {
-            ArrPerson[_i] = new Ordinary(60, "right");
+            ArrPerson[_i] = new Ordinary(20, "right");
         }
         else {
 
@@ -194,17 +194,17 @@ function create_person(_i,type) {
         {
             if (type == "ret") {
                 if (d == "right") {
-                    ArrPerson[_i] = new Retired(60, "right");
+                    ArrPerson[_i] = new Retired(20, "right");
                 }
                 else {
 
-                    ArrPerson[_i] = new Retired(xxx.offsetWidth - 90, "left");
+                    ArrPerson[_i] = new Retired(xxx.offsetWidth - 117, "left");
                 }
                         }
             else {
                 if  (type == "hoo")  {
                     if (d == "right") {
-                        ArrPerson[_i] = new Hooligan(60, "right");
+                        ArrPerson[_i] = new Hooligan(20, "right");
                     }
                     else {
 
@@ -213,11 +213,11 @@ function create_person(_i,type) {
                 }
                 else if (type == "pol")  {
                         if (d == "right") {
-                            ArrPerson[_i] = new Policeman(60, "right");
+                            ArrPerson[_i] = new Policeman(20, "right");
                         }
                         else {
 
-                            ArrPerson[_i] = new Policeman(xxx.offsetWidth - 90, "left");
+                            ArrPerson[_i] = new Policeman(xxx.offsetWidth - 109, "left");
                         }
                 }
                 }
