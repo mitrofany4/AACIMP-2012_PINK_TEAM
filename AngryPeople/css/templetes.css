@@ -67,7 +67,7 @@ body{
     width:      120px;
     height:     300px;
     top:        120px;
-    left:       953px;
+    /*left:       953px;*/
     opacity: 0.5;
     background: url("../images/controlButtonRight.png") 100% 100% no-repeat;
     background-size: cover;
@@ -85,10 +85,6 @@ body{
 }
 
 #gamearea {
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
     /*background-color: green;*/
     width:  1072px;
     height: 603px;

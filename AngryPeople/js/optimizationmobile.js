@@ -20,6 +20,15 @@ function optimizeInterface(){
     zoom = bodyScreen.offsetHeight/gameareaScreen.offsetHeight;
 
     gameareaScreen.style.zoom = zoom;
+    addRightPannel();
+
+}
+
+//add a new div element of person
+function addRightPannel(){
+    var bttn = document.getElementById("rightcontrolbutton");
+    var buttonTop = gameareaScreen.offsetWidth - bttn.offsetWidth;
+    bttn.style.left = buttonTop + 'px';
 }
 
 document.getElementsByTagName("body")[0].onresize(function() {
