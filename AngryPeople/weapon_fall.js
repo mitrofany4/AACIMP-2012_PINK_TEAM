@@ -29,8 +29,8 @@ function countChange (count){
 
 function fireAction(di){
         // new spit position
-        var heroPosX = getHeroPostiton();
-        var heroPosY = balconyPos;
+    var heroPosX = getHeroPostiton();
+    var heroPosY = balconyPos;
 
         // creates a new weapon
             if (heroModel.weaponInUse == 0){
@@ -41,7 +41,6 @@ function fireAction(di){
                 var spitName="spit"+di.toString();
                 newSpitDiv.setAttribute('id',spitName);
                 spit.appendChild(newSpitDiv);
-                console.log(di);
             }
             else if (heroModel.weaponInUse == 1){
                 drop[di] = new Weapon(heroPosX, heroPosY, 1);
@@ -58,7 +57,10 @@ function fireAction(di){
         draw = function(drop) {
             if (drop.amount != 0){
                 if (heroModel.weaponInUse == 0){
-                    if (spit.style.offsetTop >510){
+                    if (spit.style.offsetTop > 510){
+                        spit.style.display="none";
+                    }
+                    else if (drop.yvel == 0){
                         spit.style.visibility="hidden";
                     }
                     else {
@@ -69,6 +71,9 @@ function fireAction(di){
                 }
                 else if (heroModel.weaponInUse == 1){
                     if (waterbomb.style.offsetTop >510){
+                        waterbomb.style.display="none";
+                    }
+                    else if (drop.yvel == 0){
                         waterbomb.style.visibility="hidden";
                     }
                     else {
@@ -80,6 +85,9 @@ function fireAction(di){
             }
             else {
                 waterbomb.style.visibility="hidden";
+                heroModel.weaponInUse = 0;
+                waterbomb.style.left = drop.xpos + 'px';
+                waterbomb.style.top = drop.ypos + 'px';
             }
         };
 
@@ -87,19 +95,22 @@ function fireAction(di){
         update = function() {
             drop[di].weaponUpdate();
             draw(drop[di]);
+            console.log('!');
         };
 
         // sets update interval until new spit creating
         intervalID = setInterval(update, 50);
+
 }
 
 function Shoot(){
     var cC = clickCount;
     // checking if mouse is in a game zone
-    if (mouseCoordinatesChecking(mousePosX, mousePosY)){
+    if (mouseCoordinatesChecking(mousePosX, mousePosY) && !block){
+        console.log(heroModel.weaponInUse);
         fireAction(cC);
         clickCount ++;
-        //block = true;
+        block = true;
     }
 }
 

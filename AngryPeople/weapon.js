@@ -25,11 +25,11 @@ function Weapon(xpos, ypos, gravity){
             this.yvel += this.yacc;
             this.ypos += this.yvel;
 
-            if (returnWeapon().offsetTop > 510) {
-                returnWeapon().style.visibility="hidden";
-                returnWeapon().style.top=0+'px';
-                this.ypos = 0;
-                this.xpos = 100;
+            if (spit.offsetTop > 510 || waterbomb.offsetTop > 510) {
+                spit.style.top = 0 +'px';
+                waterbomb.style.top = 0 +'px';
+                this.ypos = balconyPos;
+                this.xpos = getHeroPostiton() + 20;
                 this.yvel = 0;
                 this.yacc = 0;
                 block = false;
