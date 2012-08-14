@@ -85,6 +85,10 @@ body{
 }
 
 #gamearea {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
     /*background-color: green;*/
     width:  1072px;
     height: 603px;
