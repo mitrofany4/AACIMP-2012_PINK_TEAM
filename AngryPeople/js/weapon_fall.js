@@ -5,6 +5,7 @@ var bombAmount = 3,
 var mousePosX = 0, mousePosY = 0;
 var clickCount = 0;
 var drop = new Array();
+
 // checking the mouse in a gamezone
 function mouseCoordinatesChecking(x, y){
     // gamefield - except the control buttons
@@ -52,9 +53,14 @@ function fireAction(di){
                 waterbomb.appendChild(newBombDiv);
             }
 
+    if (drop[di].amount == 0){
+        heroModel.weaponInUse = 0;
+        drop[di].ypos = heroPosY - 40;
+        drop[di].xpos = heroPosX + 48;
+    }
+
         // object drawing
         draw = function(drop) {
-            if (drop.amount != 0){
                 if (heroModel.weaponInUse == 0){
                     if (spit.style.offsetTop > 510){
                         spit.style.display="none";
@@ -81,20 +87,12 @@ function fireAction(di){
                         waterbomb.style.visibility="visible";
                     }
                 }
-            }
-            else {
-                waterbomb.style.visibility="hidden";
-                heroModel.weaponInUse = 0;
-                waterbomb.style.left = drop.xpos + 'px';
-                waterbomb.style.top = drop.ypos + 'px';
-            }
         };
 
         // updates coordinates and redraw the object
         update = function() {
             drop[di].weaponUpdate();
             draw(drop[di]);
-            console.log('!');
         };
 
         // sets update interval until new spit creating
