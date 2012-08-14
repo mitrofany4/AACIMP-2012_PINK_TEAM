@@ -295,9 +295,8 @@ body{
     top: 0px;
     left: -150px;
     background: yellow;
-    width: 100px;
-    padding: 25px;
-    height: 80px;
+    width: 150px;
+    height: 105px;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
     -o-transition-duration: 0.3s;

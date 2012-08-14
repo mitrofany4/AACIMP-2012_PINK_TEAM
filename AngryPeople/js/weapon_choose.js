@@ -10,11 +10,15 @@ function setSpit (){
 function setBomb (){
     waterbomb = document.getElementById("waterbomb");
     heroModel.weaponInUse = 1;
-    slideImage.src = "images/waterbomb_icon.png";
+    if (bombAmount !=0){
+        slideImage.src = "images/waterbomb_icon.png";
+    }
 }
 
 function setTomato (){
     tomato = document.getElementById("tomato");
     heroModel.weaponInUse = 2;
-    slideImage.src = "images/tomato_icon.png";
+    if (tomatoAmount !=0){
+        slideImage.src = "images/tomato_icon.png";
+    }
 }
