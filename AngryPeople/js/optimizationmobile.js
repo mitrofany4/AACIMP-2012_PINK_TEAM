@@ -12,6 +12,7 @@
 var bodyScreen = document.getElementsByTagName("body")[0];
 var gameareaScreen = document.getElementById("gamearea");
 var zoom;
+var resized;
 
 
 function optimizeInterface(){
