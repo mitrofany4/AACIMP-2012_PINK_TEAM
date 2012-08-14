@@ -277,7 +277,7 @@ body{
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 51px;
+    width: 50px;
     padding: 12px 0;
     text-align: center;
     background: yellow;
@@ -308,7 +308,7 @@ body{
     border-radius: 0 0 5px 0;
 }
 #slideout:hover {
-    left: 149px;
+    left: 145px;
 }
 #slideout:hover #slideout_inner {
     left: 0px;
