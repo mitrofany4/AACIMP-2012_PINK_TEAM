@@ -43,6 +43,9 @@ function myTimer(){
         if (seconds == 0) {
             clearInterval(timer);
             alert('done');
+            for (var i=0; i<num; i++){
+                DivHuman[i].style.display="none";
+            }
         }
     }   , 1000);
 }
