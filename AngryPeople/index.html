@@ -24,15 +24,19 @@
     <div id="gamearea" onclick="Shoot()" >
 
     <!--Weapon and Menu Controls-->
-    <div id="weaponpanel" onfocus="this.blur()" align="center">
-        <table   >
-            <tr >
+    <div id="weaponpanel" align="center">
+        <table>
+            <tr>
                 <td id="spit_icon" onmousedown="setSpit()"></td>
                 <td style="width: 30px; height: 30px;"> - &infin;</td>
             </tr>
             <tr align="center">
                 <td  id="waterbomb_icon"  onmousedown="setBomb();"></td>
                 <td  id = "bomb_count" style="width: 30px; height: 30px;" > - <span> 3 </span> </td>
+            </tr>
+            <tr align="center">
+                <td  id="tomato_icon"  onmousedown="setTomato();"></td>
+                <td  id = "tomato_count" style="width: 30px; height: 30px;" > - <span> 3 </span> </td>
             </tr>
         </table>
     </div>

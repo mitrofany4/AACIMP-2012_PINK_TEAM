@@ -8,3 +8,8 @@ function setBomb (){
     waterbomb = document.getElementById("waterbomb");
     heroModel.weaponInUse = 1;
 }
+
+function setTomato (){
+    tomato = document.getElementById("tomato");
+    heroModel.weaponInUse = 2;
+}
