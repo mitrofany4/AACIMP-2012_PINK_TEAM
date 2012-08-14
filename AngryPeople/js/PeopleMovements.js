@@ -119,6 +119,7 @@ function peoplemovement(_person,_human)
 //update angry bar
 
 function angry_update(_i,value){
+
     if (ArrPerson[_i].type=="pol"){
         ArrPerson[_i].percent=100;
         clearInterval(gameinterval);
@@ -128,7 +129,7 @@ function angry_update(_i,value){
     }
 
             ArrPerson[_i].percent+=value*ArrPerson[_i].koef;
-    }
+
             if (ArrPerson[_i].percent>=100){
                 ArrPerson[_i].percent=100;
                 angry++;
@@ -137,8 +138,7 @@ function angry_update(_i,value){
             }
             draw_progressbar(_i,DivHuman[_i],ArrPerson[_i].percent);
 
-
-
+}
 // progressbar drawing for everybody
 
 function draw_progressbar(_i,human,percent){
