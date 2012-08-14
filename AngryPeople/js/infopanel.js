@@ -14,7 +14,7 @@ function progress (first, second ) {
 //progress(1,10);
 
 var timer;
-var seconds = 60;
+var seconds = 120;
 function startTime(){
     var minutes = Math.floor(seconds / 60);
     var sec=seconds-minutes*60;
