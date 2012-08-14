@@ -140,7 +140,6 @@ function Shoot(){
     var cC = clickCount;
     // checking if mouse is in a game zone
     if (mouseCoordinatesChecking(mousePosX, mousePosY) && !block){
-        console.log(heroModel.weaponInUse);
         fireAction(cC);
         clickCount ++;
         block = true;

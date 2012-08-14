@@ -24,22 +24,27 @@
     <div id="gamearea" onclick="Shoot()" >
 
     <!--Weapon and Menu Controls-->
-    <div id="weaponpanel" align="center">
-        <table>
-            <tr>
-                <td id="spit_icon" onmousedown="setSpit()"></td>
-                <td style="width: 30px; height: 30px;"> - &infin;</td>
-            </tr>
-            <tr align="center">
-                <td  id="waterbomb_icon"  onmousedown="setBomb();"></td>
-                <td  id = "bomb_count" style="width: 30px; height: 30px;" > - <span> 3 </span> </td>
-            </tr>
-            <tr align="center">
-                <td  id="tomato_icon"  onmousedown="setTomato();"></td>
-                <td  id = "tomato_count" style="width: 30px; height: 30px;" > - <span> 3 </span> </td>
-            </tr>
-        </table>
-    </div>
+        <div id="slideout">
+            Weapon
+            <div id="slideout_inner">
+                <form>
+                    <table>
+                        <tr>
+                            <td id="spit_icon" onmousedown="setSpit()"></td>
+                            <td style="width: 30px; height: 30px;"> - &infin;</td>
+                        </tr>
+                        <tr align="center">
+                            <td  id="waterbomb_icon"  onmousedown="setBomb();"></td>
+                            <td  id = "bomb_count" style="width: 30px; height: 30px;" > - <span> 3 </span> </td>
+                        </tr>
+                        <tr align="center">
+                            <td  id="tomato_icon"  onmousedown="setTomato();"></td>
+                            <td  id = "tomato_count" style="width: 30px; height: 30px;" > - <span> 3 </span> </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
 
     <div id="menubutton" onclick="window.location='main.html';">
         <table  id="tablemenu" style="height: 100%; width: 100%; ">
@@ -104,7 +109,6 @@
 
     <!--Stone-->
     <div id="stone"></div>
-
 </div>
 
 <script src = "js/HeroMovements.js" type="text/javascript"> </script>
