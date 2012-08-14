@@ -33,7 +33,7 @@ function initObjects(){
 function leftAction(){
     initObjects();
     // checking if the object is out of balcony
-    var absoluteLeftBarrier = balcony.offsetLeft;
+    var absoluteLeftBarrier = balcony.offsetLeft - 30;
     if (heroModel.position >= absoluteLeftBarrier){
         // hero position without 'px'
         var position = parseInt(heroObject.style.left);
@@ -50,7 +50,7 @@ function leftAction(){
 function rightAction(){
     initObjects();
     // checking if the object is out of balcony
-    var absoluteRightBarrier = balcony.offsetWidth + balcony.offsetLeft - heroObject.offsetWidth;
+    var absoluteRightBarrier = balcony.offsetWidth + balcony.offsetLeft - heroObject.offsetWidth + 30;
     if (heroModel.position <= absoluteRightBarrier){
         // hero position without 'px'
         var position = parseInt(heroObject.style.left);

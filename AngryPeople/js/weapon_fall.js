@@ -5,7 +5,6 @@ var bombAmount = 3,
 var mousePosX = 0, mousePosY = 0;
 var clickCount = 0;
 var drop = new Array();
-
 // checking the mouse in a gamezone
 function mouseCoordinatesChecking(x, y){
     // gamefield - except the control buttons

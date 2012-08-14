@@ -13,7 +13,7 @@ var num=10;  //count of people
 var people_in_window=0;
 var angry=0; //number of 100% angry people
 var speedd=3000;
-
+var gameinterval;
 //creation of level
 function onCreate(){
 
@@ -95,23 +95,10 @@ function set_human(human,dir,type){
                 }else human.className="policeman";
 
     if (dir=="left"){   //change direction
-        human.style.webkitTransform="scale(-1,1)";
-        human.style.transform="scale(-1,1)";
+        human.style.webkitTransform="scale3d(-1,1,1)";
+        human.style.transform="scale3d(-1,1,1)";
+        human.style.MozTransform="scale3d(-1,1,1)";
     }
-}
-
-//make a css of ordinary person
-function set_retired(human,dir){
-    human.style.backgroundImage=retired_url;
-    human.style.backgroundRepeat="no-repeat"
-    human.style.width='94px';
-    human.style.height='104px';
-    human.style.position='absolute';
-    if (dir=="left"){  //change direction
-        human.style.webkitTransform="scale(-1,1)";
-        human.style.transform="scale(-1,1)";
-    }
-//    human.style.bottom='100px'
 }
 
 //movement of every person
@@ -134,23 +121,29 @@ function peoplemovement(_person,_human)
 
 function angry_update(_i,value){
 
-    ArrPerson[_i].percent+=value*ArrPerson[_i].koef;
-
-    if (ArrPerson[_i].percent>=100){
+    if (ArrPerson[_i].type=="pol"){
         ArrPerson[_i].percent=100;
-        angry++;
-        progress(angry,num);
-        DivHuman[_i].style.display="none";
+        clearInterval(gameinterval);
+        seconds=1;
+        alert("Ouch!!!");
+
     }
-    draw_progressbar(_i,DivHuman[_i],ArrPerson[_i].percent);
 
- }
+            ArrPerson[_i].percent+=value*ArrPerson[_i].koef;
 
+            if (ArrPerson[_i].percent>=100){
+                ArrPerson[_i].percent=100;
+                angry++;
+                progress(angry,num);
+                DivHuman[_i].style.display="none";
+            }
+            draw_progressbar(_i,DivHuman[_i],ArrPerson[_i].percent);
+
+}
 // progressbar drawing for everybody
 
 function draw_progressbar(_i,human,percent){
     var newDiv = document.createElement("div");
-    var name="Bar"+_i.toString();
     newDiv.className="meter";
     newDiv.style.width=human.offsetWidth+'px';
     newDiv.style.position="inherit";
@@ -189,7 +182,7 @@ function create_person(_i,type) {
 
     if (type == "ord") {
         if (d == "right") {
-            ArrPerson[_i] = new Ordinary(60, "right");
+            ArrPerson[_i] = new Ordinary(20, "right");
         }
         else {
 
@@ -202,17 +195,17 @@ function create_person(_i,type) {
         {
             if (type == "ret") {
                 if (d == "right") {
-                    ArrPerson[_i] = new Retired(60, "right");
+                    ArrPerson[_i] = new Retired(20, "right");
                 }
                 else {
 
-                    ArrPerson[_i] = new Retired(xxx.offsetWidth - 90, "left");
+                    ArrPerson[_i] = new Retired(xxx.offsetWidth - 117, "left");
                 }
                         }
             else {
                 if  (type == "hoo")  {
                     if (d == "right") {
-                        ArrPerson[_i] = new Hooligan(60, "right");
+                        ArrPerson[_i] = new Hooligan(20, "right");
                     }
                     else {
 
@@ -221,11 +214,11 @@ function create_person(_i,type) {
                 }
                 else if (type == "pol")  {
                         if (d == "right") {
-                            ArrPerson[_i] = new Policeman(60, "right");
+                            ArrPerson[_i] = new Policeman(20, "right");
                         }
                         else {
 
-                            ArrPerson[_i] = new Policeman(xxx.offsetWidth - 90, "left");
+                            ArrPerson[_i] = new Policeman(xxx.offsetWidth - 109, "left");
                         }
                 }
                 }
@@ -246,7 +239,7 @@ function create_person(_i,type) {
     function peopleappear(num) {
         var i = 0;
         var t;
-        var interval = setInterval(function () {
+        gameinterval = setInterval(function () {
             if (i < num) {
                 t=get_type();
                 create_person(i,t);
@@ -256,7 +249,7 @@ function create_person(_i,type) {
                 i++;
             }
             else {
-                clearInterval(interval);
+                clearInterval(gameinterval);
             }
         }, 5000);
     }

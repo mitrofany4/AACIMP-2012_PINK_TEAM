@@ -7,9 +7,9 @@ html,body{
 
 .hero1 {
     position: inherit;
-    width: 48px;
-    height: 100px;
-    background:url('images/hero.png') 100% 100% no-repeat;
+    width: 105px;
+    height: 105px;
+    background:url('../images/hero_fin.png') 100% 100% no-repeat;
     background-size: cover;
 
     -webkit-transform: translate3d(0, 0, 0);
@@ -17,56 +17,50 @@ html,body{
     -webkit-transition-timing-function: linear;
 }
 
-
 body{
     padding:0px;
     margin:0px;
     text-align:center;
-
-}
-
-#hero {
-    position: inherit;
-    width: 48px;
-    height: 100px;
-    background:url('images/hero.png') 100% 100% no-repeat;
-    background-size: cover;
-    /*left:120px;*/
-    /*top:20px;"*/
 }
 
 #spit_icon {
     position: absolute;
     width: 30px;
     height: 30px;
-    background-image: url('spit_icon.png');
+    background-image: url('../images/spit_icon.png');
 }
 
 #waterbomb_icon {
     position: inherit;
     width: 30px;
     height: 30px;
-    background-image: url('waterbomb_icon.png');
+    background-image: url('../images/waterbomb_icon.png');
 }
 
 #spit {
     position: absolute;
     width: 10px;
     height: 17px;
-    background-image: url('spit.png');
+    background-image: url('../images/spit.png');
     left:50px;
     top:0px;
     visibility: hidden;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+     -moz-transform: translate3d(0,0,0);/* safari and chrome */
 }
 
 #waterbomb {
     position: inherit;
     width: 23px;
     height: 23px;
-    background-image: url('waterbomb.png');
+    background-image: url('../images/waterbomb.png');
     left:0px;
     top: 32px;
     visibility: hidden;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0); /* safari and chrome */
+    -moz-transform: translate3d(0,0,0);
 }
 
 #rightcontrolbutton {
@@ -74,9 +68,9 @@ body{
     width:      120px;
     height:     300px;
     top:        120px;
-    left:       680px;
-    opacity: 1.0;
-    background: url("images/controlButtonRight.png") 100% 100% no-repeat;
+    left:       953px;
+    opacity: 0.5;
+    background: url("../images/controlButtonRight.png") 100% 100% no-repeat;
     background-size: cover;
 }
 
@@ -86,23 +80,22 @@ body{
     height:     300px;
     left :      0px;
     top:        120px;
-    opacity: 1.0;
-    background: url("images/controlButtonLeft.png") 100% 100% no-repeat;
+    opacity: 0.5;
+    background: url("../images/controlButtonLeft.png") 100% 100% no-repeat;
     background-size: cover;
 }
 
 #gamearea {
     /*background-color: green;*/
-    width: 800px;
-    height:600px;
+    width:  1072px;
+    height: 603px;
     position: absolute;
-    background: url("images/background.jpg") 100% 100% no-repeat;
+    background: url("../images/back_fin.jpg") 100% 100% no-repeat;
     background-size: cover;
 }
 
 #weaponpanel {
-    background-color: #fff873;
-    opacity: 0.8;
+    background-color: rgba(255,248,115,0.75);
     width: 120px;
     height:120px;
     position: inherit;
@@ -111,36 +104,35 @@ body{
 }
 
 #menubutton {
-    background-color: #fff873;
-    opacity: 0.3;
+    /*background-color: #fff873;*/
+    background-color: rgba(255,248,115,0.75);
+    /*opacity: 0.3;*/
     width: 120px;
     height:120px;
     position: inherit;
-    left: 680px;
+    left: 953px;
     border-top-left-radius: 40px;
     border-bottom-right-radius: 40px;
 }
 
 #balcony {
-    width: 560px;
-    height:50px;
+    width: 674px;
+    height: 43px;
     position: inherit;
     top: 70px;
-    left: 120px;
-
-    opacity: 0.7;
-    background: url("images/balcony.png") 100% 100% no-repeat;
+    left: 180px;
+    opacity: 0.9;
+    background: url("../images/balcony_fin.png") 100% 100% no-repeat;
     background-size: cover;
 }
 #infopanel {
-    background-color: #fff873;
+    background-color: rgba(255,248,115,0.9);
     position: inherit;
     top:370px;
-    left: 200px;
+    left: 340px;
     width: 400px;
     height: 50px;
     border-radius: 10px;
-    opacity: 0.75
 }
 
 .meter {
@@ -210,33 +202,44 @@ body{
 }
 
 .ordinary{
-    background-image: url('images/BigMan.png');
-    background-repeat: no-repeat;
-    position: absolute;
-    width: 69px;
-    height: 104px;
-}
-
-.retired{
-    background-image: url('images/retired.png');
-    background-repeat: no-repeat;
-    position: absolute;
-    width: 94px;
-    height: 104px;
-}
-
-.hooligan{
-    background-image: url('images/hooligan.png');
-    background-repeat: no-repeat;
+    background: url('../images/student_fin.png') 100% 100% no-repeat;
+    background-size: cover;
     position: absolute;
     width: 63px;
     height: 104px;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0); /* safari and chrome */
+    -moz-transform: translate3d(0,0,0);
+}
+
+.retired{
+    background: url('../images/oldman_fin.png') no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 117px;
+    height: 104px;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0); /* safari and chrome */
+    -moz-transform: translate3d(0,0,0);
+}
+
+.hooligan{
+    background: url('../images/hooligan_fin.png') 100% 100% no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 82px;
+    height: 104px;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0); /* safari and chrome */
+    -moz-transform: translate3d(0,0,0);
 }
 
 .policeman{
-    background-image: url('images/officier.png');
-    background-repeat: no-repeat;
+    background: url('../images/cop_fin.png') 100% 100% no-repeat;
+    background-size: cover;
     position: absolute;
-    width: 69px;
+    width: 109px;
     height: 104px;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0); /* safari and chrome */
 }

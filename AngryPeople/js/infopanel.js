@@ -1,9 +1,8 @@
-var seconds = 120;
-
 function levelchange (level) {
     var levelnum = document.getElementById('levelnumber');
     levelnum.children[0].innerHTML=level;
 }
+//levelchange(1);
 
 
 function progress (first, second ) {
@@ -12,9 +11,10 @@ function progress (first, second ) {
                 pr.children[1].innerHTML=second;
 }
 //timer
+//progress(1,10);
 
 var timer;
-
+var seconds = 120;
 function startTime(){
     var minutes = Math.floor(seconds / 60);
     var sec=seconds-minutes*60;
@@ -43,11 +43,15 @@ function myTimer(){
         if (seconds == 0) {
             clearInterval(timer);
             alert('done');
+            for (var i=0; i<num; i++){
+                DivHuman[i].style.display="none";
+            }
         }
     }   , 1000);
 }
 
-
+//startTime();
+//myTimer();
 
 //var intervid1  = setInterval(leveltime1,1000);
 
