@@ -97,6 +97,7 @@ function set_human(human,dir,type){
     if (dir=="left"){   //change direction
         human.style.webkitTransform="scale3d(-1,1,1)";
         human.style.transform="scale3d(-1,1,1)";
+        human.style.MozTransform="scale3d(-1,1,1)";
     }
 }
 
