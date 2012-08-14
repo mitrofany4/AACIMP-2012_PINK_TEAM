@@ -18,11 +18,16 @@ var resized;
 function optimizeInterface(){
     window.scrollTo(0, 1);
 
+    var old = gameareaScreen.offsetWidth;
+
     zoom = bodyScreen.offsetHeight/gameareaScreen.offsetHeight;
 
     gameareaScreen.style.zoom = zoom;
-    addRightPannel();
+    // for firefox
+    gameareaScreen.style.MozTransform = "scale(" + zoom + ")";
+    gameareaScreen.style.MozTransformOrigin = "0 0";
 
+    addRightPannel();
 }
 
 //add a new div element of person

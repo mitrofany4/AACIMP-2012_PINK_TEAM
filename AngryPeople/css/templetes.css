@@ -28,21 +28,24 @@ body{
     position: absolute;
     width: 30px;
     height: 30px;
-    background-image: url('../images/spit_icon.png');
+    background: url('../images/spit_icon.png') no-repeat;
+    background-size: cover;
 }
 
 #waterbomb_icon {
     position: inherit;
     width: 30px;
     height: 30px;
-    background-image: url('../images/waterbomb_icon.png');
+    background: url('../images/waterbomb_icon.png') no-repeat;
+    background-size: cover;
 }
 
 #tomato_icon {
     position: inherit;
     width: 30px;
     height: 30px;
-    background-image: url('../images/tomato_icon.png');
+    background: url('../images/tomato_icon.png') no-repeat;
+    background-size: cover;
 }
 
 #spit {
