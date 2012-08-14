@@ -5,6 +5,10 @@ html,body{
     height:100%;
 }
 
+@font-face {
+    font-family: "gamefont";
+    src: url("../fonts/DeathPhont.ttf");
+}
 
 .hero1 {
     position: inherit;
@@ -139,6 +143,7 @@ body{
     left: 953px;
     border-top-left-radius: 40px;
     border-bottom-right-radius: 40px;
+    font-family: "gamefont";
 }
 
 #balcony {
@@ -159,6 +164,7 @@ body{
     width: 400px;
     height: 50px;
     border-radius: 10px;
+    font-family: "gamefont";
 }
 
 .meter {
