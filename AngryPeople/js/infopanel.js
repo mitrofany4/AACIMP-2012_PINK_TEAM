@@ -2,7 +2,7 @@ function levelchange (level) {
     var levelnum = document.getElementById('levelnumber');
     levelnum.children[0].innerHTML=level;
 }
-levelchange(1);
+//levelchange(1);
 
 
 function progress (first, second ) {
@@ -11,10 +11,10 @@ function progress (first, second ) {
                 pr.children[1].innerHTML=second;
 }
 //timer
-progress(1,10);
+//progress(1,10);
 
 var timer;
-
+var seconds = 60;
 function startTime(){
     var minutes = Math.floor(seconds / 60);
     var sec=seconds-minutes*60;

@@ -2,87 +2,21 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Две колонки</title>
-    <style type="text/css">
-        BODY {
-            font-family: Verdana, Arial, sans-serif; /* Рубленый шрифт на странице */
-        }
-        #top { /* Верхняя часть с заголовком страницы */
-            background: #e3e8cc; /* Цвет фона */
-            border: solid 1px black; /* Параметры рамки  */
-            padding: 15px 0 15px 10px; /* Поля вокруг текста */
-            margin-bottom: 15px; /* Расстояние между заголовком и колонками */
-            font-size: 24px; /* Размер шрифта */
-            font-weight: bold; /* Жирное начертание */
-            color: black; /* Цвет символов */
-        }
-        #menu { /* Навигация по сайту */
-            width: 100px; /* Ширина меню */
-            background: #e3e8cc; /* Цвет фона */
-            border: solid 1px black; /* Параметры рамки */
-            float: left; /* Состыковка с другим слоем по горизонтали */
-            padding: 3px; /* Поля вокруг текста */
-        }
-        #menu A { /* Ссылки в меню */
-            font-size: 90%; /* Размер текста */
-        }
-        #content { /* Основное содержание страницы */
-            background: #e3e8cc; /* Цвет фона */
-            border: solid 1px black; /* Параметры рамки */
-            margin-left: 115px; /* Отступ слева */
-            margin-bottom: 15px /* Отступ снизу */
-        }
-        #bottom { /* Нижняя часть */
-            background: #e3e8cc; /* Цвет фона */
-            border: solid 1px black; /* Параметры рамки */
-            font-size: 90%; /* Размер шрифта */
-            padding: 3px; /* Поля вокруг текста */
-        }
-        H1 { /* Заголовок страницы */
-            text-align: center; /* Выравнивание по центру */
-            font-size: 210%; /* Размер шрифта */
-            font-family: "Times New Roman", Times, serif; /* Шрифт с засечками */
-            font-weight: normal; /* Нормальное начертание */
-            color: black; /* Цвет текста */
-            padding: 0; /* Убираем значение полей */
-            margin: 0; /* Обнуляем значения отступов */
-        }
-        #content P {
-            font-size: 90%; /* Размер шрифта */
-            text-align: justify; /* Выравнивание по ширине */
-            padding: 10px; /* Поля вокруг текста */
-            margin: 0 /* Обнуляем отступы */
-        }
-    </style>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/jquery-mobile.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+    <title>Game Menu</title>
 </head>
 <body>
-<div id="top">Заголовок сайта</div>
-<div id="menu">
-    <a href="link1.html">Ссылка 1</a><br>
-    <a href="link2.html">Ссылка 2</a><br>
-    <a href="link3.html">Ссылка 3</a><br>
-    <a href="link4.html">Ссылка 4</a><br>
-</div>
-<div id="content">
-    <h1>Lorem ipsum dolor sit amet</h1>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diem nonummy
-        nibh euismod tincidunt ut lacreet dolore magna aliguam erat
-        volutpat. Ut wisis enim ad minim veniam, quis nostrud exerci tution ullamcorper
-        suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis te feugifacilisi.
-        Duis autem dolor in hendrerit in vulputate velit esse molestie consequat, vel
-        illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio
-        dignissim qui blandit praesent luptatum zzril delenit au gue duis dolore te feugat
-        nulla facilisi.</p>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diem nonummy
-        nibh euismod tincidunt ut lacreet dolore magna aliguam erat volutpat. Ut wisis
-        enim ad minim veniam, quis nostrud exerci tution ullamcorper suscipit lobortis
-        nisl ut aliquip ex ea commodo consequat.Duis te feugifacilisi. Duis autem dolor
-        in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
-        feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
-        blandit praesent luptatum zzril delenit au gue duis dolore te feugat nulla facilisi.</p>
-</div>
-<div id="bottom">
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+<div data-role="page" class="dialog-actionsheet">
+
+
+    <div data-role="content" data-theme="a" aling="center" >
+        <h3>Game Menu</h3>
+        <a href="index.html" data-role="button" data-rel="dialog" data-transition="slidedown" >Restart</a>
+        <a href="main.html" data-role="button" data-rel="dialog" data-transition="slidedown" >Main menu</a>
+        <a href="index.html" data-role="button" data-rel="back" data-theme="a">Cancel</a>
+    </div>
 </div>
 </body>
 </html>
