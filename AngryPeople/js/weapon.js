@@ -54,11 +54,13 @@ function Weapon(xpos, ypos, gravity){
             }
 
             if (bombAmount == 0){
-                var waterbombIcon = document.getElementById("waterbomb_icon");
+                var waterbombIcon = document.getElementById("waterbomb_icon")
+                slideImage.src = "images/spit_icon.png";
                 waterbombIcon.style.opacity = 0.2;
             }
             if (tomatoAmount == 0){
                 var tomatoIcon = document.getElementById("tomato_icon");
+                slideImage.src = "images/spit_icon.png";
                 tomatoIcon.style.opacity = 0.2;
             }
         }
