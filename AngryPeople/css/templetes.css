@@ -216,7 +216,7 @@ body{
 }
 
 .retired{
-    background: url('../images/oldman_fin.png') no-repeat;
+    background: url('../images/oldman_fin.png') 100% 100% no-repeat;
     background-size: contain;
     position: absolute;
     width: 90px;
