@@ -89,6 +89,10 @@ body{
 }
 
 #rightcontrolbutton {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
     position:   inherit;
     width:      120px;
     height:     300px;
@@ -100,6 +104,10 @@ body{
 }
 
 #leftcontrolbutton {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
     position:   inherit;
     width:      120px;
     height:     300px;
