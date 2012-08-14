@@ -8,12 +8,16 @@ var drop = new Array();
 
 // checking the mouse in a gamezone
 function mouseCoordinatesChecking(x, y){
+    // reletive coordinates for zoom
+    var xRelative = x/zoom;
+    var yRelative = y/zoom;
     // gamefield - except the control buttons
     var topBarrier = balconyPos;
     var leftBarrier = document.getElementById("leftcontrolbutton").offsetWidth;
     var rightBarrier = document.getElementById("rightcontrolbutton").offsetLeft;
 
-    return (x > leftBarrier && x < rightBarrier && y > topBarrier);
+//    alert(leftBarrier + " " + x/zoom + " " + rightBarrier);
+    return (xRelative > leftBarrier && xRelative < rightBarrier && yRelative > topBarrier);
 }
 
 function countChange (count){
