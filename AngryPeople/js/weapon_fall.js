@@ -33,7 +33,7 @@ function fireAction(di){
 
         // creates a new weapon
             if (heroModel.weaponInUse == 0){
-                drop[di] = new Weapon(heroPosX + 20, heroPosY, 0.5);
+                drop[di] = new Weapon(heroPosX + 48, heroPosY - 40, 0.5);
                 drop[di].amount = -1;
                 weaponAmount = -1;
                 var newSpitDiv = document.createElement("spitdiv");
