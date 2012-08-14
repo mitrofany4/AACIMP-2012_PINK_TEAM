@@ -1,6 +1,7 @@
 var intervalID;
 var block = false;
 var bombAmount = 3,
+    tomatoAmount = 3,
     weaponAmount;
 var mousePosX = 0, mousePosY = 0;
 var clickCount = 0;
@@ -23,6 +24,14 @@ function countChange (count){
             count -= 1;
             bombCount.children[0].innerHTML = count;
             bombAmount = count;
+        }
+    }
+    if (heroModel.weaponInUse == 2){
+        var tomatoCount = document.getElementById('tomato_count');
+        if (count > 0){
+            count -= 1;
+            tomatoCount.children[0].innerHTML = count;
+            tomatoAmount = count;
         }
     }
 }
@@ -51,6 +60,16 @@ function fireAction(di){
                 var bombName="waterbomb"+di.toString();
                 newBombDiv.setAttribute('id',bombName);
                 waterbomb.appendChild(newBombDiv);
+            }
+            else if (heroModel.weaponInUse == 2){
+                drop[di] = new Weapon(heroPosX, heroPosY, 0.8);
+                drop[di].amount = tomatoAmount;
+                weaponAmount = tomatoAmount;
+                countChange(tomatoAmount);
+                var newTomatoDiv = document.createElement("tomatodiv");
+                var tomatoName="tomato"+di.toString();
+                newTomatoDiv.setAttribute('id',tomatoName);
+                tomato.appendChild(newTomatoDiv);
             }
 
     if (drop[di].amount == 0){
@@ -85,6 +104,19 @@ function fireAction(di){
                         waterbomb.style.left = drop.xpos + 'px';
                         waterbomb.style.top = drop.ypos + 'px';
                         waterbomb.style.visibility="visible";
+                    }
+                }
+                else if (heroModel.weaponInUse == 2){
+                    if (tomato.style.offsetTop >510){
+                        tomato.style.display="none";
+                    }
+                    else if (drop.yvel == 0){
+                        tomato.style.visibility="hidden";
+                    }
+                    else {
+                        tomato.style.left = drop.xpos + 'px';
+                        tomato.style.top = drop.ypos + 'px';
+                        tomato.style.visibility="visible";
                     }
                 }
         };
