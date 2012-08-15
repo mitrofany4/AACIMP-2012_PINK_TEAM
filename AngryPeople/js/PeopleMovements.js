@@ -142,13 +142,32 @@ function peoplemovement(_person,_human)
 {
     var interval=setInterval(function(){
         var xxx=document.getElementById("gamearea");
-        if ((_person.xpos>5)&&(_person.xpos<=xxx.offsetWidth-_human.offsetWidth+5)){
+        if ((_person.xpos<1)&&(_person.dir=="right")||(_person.xpos>=xxx.offsetWidth-_human.offsetWidth+5)&&(_person.dir=="left")){
+            _human.style.visibility="hidden";
+            clearInterval(interval);
+        }
+        else  if ((_person.xpos<20)&&(_person.dir=="left")||(_person.xpos>=xxx.offsetWidth-_human.offsetWidth+10)&&(_person.dir=="right")){
+                _person.speed *= (-1);
+            if (_person.dir=="right"){   //change direction
+                _human.style.webkitTransform = 'scale3d(-1,1,1)';
+                _human.style.transform = 'scale3d(-1,1,1)';
+                _human.style.MozTransform = 'scale3d(-1,1,1)';
+            }
+            else {
+                _human.style.webkitTransform = 'scale3d(1,1,1)';
+                _human.style.transform = 'scale3d(1,1,1)';
+                _human.style.MozTransform = 'scale3d(1,1,1)';
+            }
+
+             }
+        update_human(_person,_human);
+ /*       if ((_person.xpos>5)&&(_person.xpos<=xxx.offsetWidth-_human.offsetWidth+5)){
             update_human(_person,_human);
         }
         else {
             _human.style.visibility="hidden";
             clearInterval(interval);
-        }
+        }*/
     }, 50);
 }
 
