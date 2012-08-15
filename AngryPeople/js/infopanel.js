@@ -43,7 +43,7 @@ function myTimer(){
         if (seconds == 0) {
             clearInterval(timer);
 //            alert('done');
-//            timeisend('');
+            timeisend('You Winner');
             for (var i=0; i<num; i++){
                 DivHuman[i].style.display="none";
             }
@@ -59,9 +59,6 @@ function timeisend(textinbox) {
     $("#textdialog").text(textinbox);
 }
 //timeisend('You Winner');
-//startTime();
-//myTimer();
 
-//var intervid1  = setInterval(leveltime1,1000);
 
 
