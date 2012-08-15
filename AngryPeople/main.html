@@ -5,7 +5,7 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="user-scalable=no" />
 
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.1.1.css" />
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/jquery-mobile.js" type="text/javascript"></script>
     <title>Main Menu</title>
@@ -54,20 +54,24 @@
         <h1>Choose Level</h1>
     </div><!-- /header -->
     <div id="levelschangemenu" data-role="controlgroup">
-        <button href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external"> Level 1</button>
-        <button href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external"> Level 2</button>
-        <button href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external"> Level 3</button>
+        <a href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external"> Level 1</a>
+        <a href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external"> Level 2</a>
+        <a href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external"> Level 3</a>
     </div>
     <script type="text/javascript">
         var output = "LOCALSTORAGE DATA:\n------------------------------------\n";
         var level = 1;
         localStorage.setItem('level',0);
+
         if (localStorage)
         {
             level = localStorage['level'];
+            alert(level);
             var tempx=$('#levelschangemenu');
             for(var i = level+1; i < 3;i++ ) {
-                alert(tempx.childElementCount);
+//                alert(tempx.childElementCount);
+
+                  levelschangemenu.children[0].children[i].display = 'none';
             }
         } else
             localStorage.setItem('level',0);
@@ -82,7 +86,7 @@
         } else {
             output += 'Your browser does not support local storage.'
         }
-        alert(output);
+//        alert(output);
 
     </script>
 </div>

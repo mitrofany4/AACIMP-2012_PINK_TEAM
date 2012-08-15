@@ -42,7 +42,8 @@ function myTimer(){
         $('#time').text(text);
         if (seconds == 0) {
             clearInterval(timer);
-            alert('done');
+//            alert('done');
+//            timeisend('');
             for (var i=0; i<num; i++){
                 DivHuman[i].style.display="none";
             }
@@ -50,6 +51,14 @@ function myTimer(){
     }   , 1000);
 }
 
+function timeisend(textinbox) {
+    $("#dialogback").css("display","block");
+    dialogendoftime.style.top = (gamearea.offsetHeight - dialogendoftime.offsetHeight)/2 + 'px';
+    dialogendoftime.style.left = (gamearea.offsetWidth - dialogendoftime.offsetWidth)/2 + 'px';
+    $("#dialogendoftime").css("display","block");
+    $("#textdialog").text(textinbox);
+}
+//timeisend('You Winner');
 //startTime();
 //myTimer();
 
