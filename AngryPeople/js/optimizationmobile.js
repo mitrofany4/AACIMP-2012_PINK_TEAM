@@ -37,6 +37,7 @@ function addRightPannel(){
     bttn.style.left = buttonTop + 'px';
 }
 
-document.getElementsByTagName("body")[0].onresize(function() {
+/*document.getElementsByTagName("body").onresize(function() {
     optimizeInterface();
 });
+    */

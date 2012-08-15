@@ -23,6 +23,7 @@ function onCreate(){
     startTime();
     myTimer();
     peopleappear(num);
+ //   hooligan_shoot(1);
 }
 
 // randoms
@@ -58,6 +59,21 @@ draw_human = function(person, human) {
 
 //calculation of next coordinates and redrawing
 update_human = function(person,human) {
+
+    if ((person.type=='hoo')&&(person.xpos<=heroModel.position+100)&&(person.xpos>=heroModel.position-3*person.speed)){
+        var divv=$('#st');
+        console.log(divv);
+        divv.css({'top'       :  (person.ypos+human.offsetHeight/2)+'px',
+                  'left'      :  (person.xpos+human.offsetWidth/2)+'px',
+                  'visibility':  'visible',
+                  'background':  "url('../images/stone.png') 100% 100% no-repeat",
+                  'width'     :  '24px',
+                  'height'    :  '18px',
+                  'position'  :  'absolute'});
+        hooligan_shoot(divv);
+
+    }
+
     person.update();
     draw_human(person,human);
 };
@@ -95,16 +111,35 @@ function set_human(human,dir,type){
                 }else human.className="policeman";
 
     if (dir=="left"){   //change direction
-        human.style.webkitTransform="scale3d(-1,1,1)";
-        human.style.transform="scale3d(-1,1,1)";
-        human.style.MozTransform="scale3d(-1,1,1)";
+        human.style.webkitTransform = 'scale3d(-1,1,1)';
+        human.style.transform = 'scale3d(-1,1,1)';
+        human.style.MozTransform = 'scale3d(-1,1,1)';
     }
+}
+
+
+//hooligan shooting
+
+function hooligan_shoot(){
+  //  var d=document.getElementById('stone');
+    var d=$('#st');
+    d.css('visibility','visible');
+
+    var interval=setInterval(function(){
+        var t=d.css('offsetTop');
+        if (t>=10){
+            d.top(t+10+'px');
+            consol.log('t');
+        }
+        else {//d.css('visibility','hidden');
+            clearInterval(interval);
+        }
+    }, 50);
 }
 
 //movement of every person
 function peoplemovement(_person,_human)
 {
-
     var interval=setInterval(function(){
         var xxx=document.getElementById("gamearea");
         if ((_person.xpos>5)&&(_person.xpos<=xxx.offsetWidth-_human.offsetWidth+5)){
@@ -242,7 +277,8 @@ function create_person(_i,type) {
         gameinterval = setInterval(function () {
             if (i < num) {
                 t=get_type();
-                create_person(i,t);
+                //create_person(i,"hoo");
+                create_person(i,get_type());
                 draw_human(ArrPerson[i],DivHuman[i]);
                 draw_progressbar(i,DivHuman[i],ArrPerson[i].percent);
                 peoplemovement(ArrPerson[i],DivHuman[i]);

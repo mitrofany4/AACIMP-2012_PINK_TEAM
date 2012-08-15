@@ -1,5 +1,5 @@
 @charset "windows-1251";
-/* CSS Document */
+
 html,body{
     min-height:100%;
     height:100%;
@@ -261,6 +261,7 @@ body{
     height: 104px;
     transform: translate3d(0,0,0);
     -webkit-transform: translate3d(0,0,0); /* safari and chrome */
+    -moz-transform: translate3d(0,0,0);
 }
 
 .retired{
@@ -332,3 +333,12 @@ body{
 #slideout:hover #slideout_inner {
     left: 0px;
 }
+
+.stones {
+    background: url('../images/stone.png') 100% 100% no-repeat;
+    width:24px;
+    height:18px;
+    position:absolute;
+    visibility:hidden;
+}
+
