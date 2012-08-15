@@ -61,8 +61,5 @@ function Weapon(xpos, ypos, gravity){
                 var tomatoIcon = document.getElementById("tomato_icon");
                 tomatoIcon.style.opacity = 0.2;
             }
-            if  (bombAmount == 0 && tomatoAmount == 0){
-                slideImage.src = "images/spit_icon.png";
-            }
         }
 }
