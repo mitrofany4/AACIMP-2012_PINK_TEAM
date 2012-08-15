@@ -1,6 +1,10 @@
 @charset "windows-1251";
 
 html,body{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
     min-height:100%;
     height:100%;
 }
@@ -144,7 +148,7 @@ body{
 #menubutton {
     user-select: none;
     /*background-color: #fff873;*/
-    background-color: rgba(255,248,115,0.75);
+    /*background-color: rgba(255,248,115,0.75);*/
     /*opacity: 0.3;*/
     width: 120px;
     height:120px;
@@ -171,6 +175,7 @@ body{
     left: 260px;
     width: 170px;
     height: 50px;
+    background-color: rgba(197, 197, 197, 0.81);
     border-radius: 10px;
     font-family: "gamefont";
     font-size: 15pt;
@@ -182,6 +187,7 @@ body{
     left: 640px;
     width: 150px;
     height: 50px;
+    background-color: rgba(197, 197, 197, 0.81);
     border-radius: 10px;
     font-family: "gamefont";
     font-size: 15pt;
@@ -301,7 +307,7 @@ body{
     width: 50px;
     padding: 12px 0;
     text-align: center;
-    background: yellow;
+    background: rgba(197, 197, 197, 0.81);
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
     -o-transition-duration: 0.3s;
@@ -309,13 +315,15 @@ body{
     -webkit-border-radius: 0 5px 5px 0;
     -moz-border-radius: 0 5px 5px 0;
     border-radius: 0 0px 20px 0;
+    font-family: "gamefont";
+    font-size: 15pt;
 }
 
 #slideout_inner {
     position: fixed;
     top: 0px;
     left: -100px;
-    background: yellow;
+    background: rgba(197, 197, 197, 0.81);
     width: 100px;
     height: 105px;
     -webkit-transition-duration: 0.3s;
@@ -334,11 +342,14 @@ body{
     left: 0px;
 }
 
-#stone {
-    background: url('../images/stone.png');
+#stones {
+    background: url('../images/stone.png') 100% 100% no-repeat;
+    background-size: cover;
     width:24px;
     height:18px;
+    left : 250px;
+    top : 550px;
     position:absolute;
-    visibility: visible;
+    visibility:hidden;
 }
 

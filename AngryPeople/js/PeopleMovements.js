@@ -9,15 +9,13 @@ var randX;
 var randInt;
 var ArrPerson = new Array(); //array of person models
 var DivHuman = new Array(); // array of people`s divs
-var Stone = new Array();
-var interval;
-var st = 0;
 var num=10;  //count of people
 var people_in_window=0;
 var angry=0; //number of 100% angry people
 var speedd=3000;
 var gameinterval;
-var stone = document.getElementById('stone');
+
+var stone1 = document.getElementById('stones');
 
 //creation of level
 function onCreate(){
@@ -28,30 +26,7 @@ function onCreate(){
     startTime();
     myTimer();
     peopleappear(num);
- //   hooligan_shoot(1);
-}
-
-function Hoolweapon(xpos, ypos, gravity){
-
-    this.xpos = xpos,
-    this.ypos = ypos,
-    this.yvel = 0,
-    this.yacc = 0,
-    this.gravity = gravity
-
-    this.stoneUpdate = function(person){
-        this.yacc += this.gravity;
-        this.yvel += this.yacc;
-        this.ypos -= this.yvel;
-
-        if (stone.offsetTop < balconyPos){
-            this.ypos = person.ypos;
-            this.xpos = person.xpos;
-            this.yvel = 0;
-            this.yacc = 0;
-            clearInterval(interval);
-        }
-    }
+    //hooligan_shoot(heroModel.position);
 }
 
 // randoms
@@ -88,17 +63,9 @@ draw_human = function(person, human) {
 //calculation of next coordinates and redrawing
 update_human = function(person,human) {
 
-    if ((person.type=='hoo')&&(person.xpos<=heroModel.position+100)&&(person.xpos>=heroModel.position-3*person.speed)){
-        /*var divv=$('#st');
-        divv.css({'top'       :  (person.ypos+human.offsetHeight/2)+'px',
-                  'left'      :  (person.xpos+human.offsetWidth/2)+'px',
-                  'visibility':  'visible',
-                  'background':  "url('../images/stone.png') 100% 100% no-repeat",
-                  'width'     :  '24px',
-                  'height'    :  '18px',
-                  'position'  :  'absolute'});*/
-        hooligan_shoot(person, st);
-        st++;
+    if ((person.type=='hoo')&&(person.xpos==heroModel.position)){
+        hooligan_shoot(heroModel.position, gameareaScreen.offsetHeight - person.ypos - 30);
+
     }
 
     person.update();
@@ -144,27 +111,26 @@ function set_human(human,dir,type){
     }
 }
 
-
+var t;
 //hooligan shooting
+function hooligan_shoot(posx, posy){
 
-function hooligan_shoot(person, s){
-    Stone[s] = new Hoolweapon(person.xpos, person.ypos, 0.5);
-    var newStoneDiv = document.createElement("stonediv");
-    var stoneName="stone"+s.toString();
-    newStoneDiv.setAttribute('id',stoneName);
-    stone.appendChild(newStoneDiv);
+    stone1.style.left = posx + "px";
+    stone1.style.top = posy + "px";
+    //alert(stone1.style.left + " " + stone1.style.top);
+    stone1.style.visibility = 'visible';
 
-    draw_stone = function(weap) {
-        stone.style.left = weap.xpos + 'px';
-        stone.style.top = weap.ypos + 'px';
-        console.log(weap.ypos);
-    }
-
-    update_stone = function(person) {
-        Stone[s].stoneUpdate(person);
-        draw_stone(Stone[s]);
-    };
-    interval = setInterval(update_stone(person), 50);
+    var interval1 = setInterval(function(){
+        t = stone1.offsetTop;
+        if (t >= 10){
+            t -= 10;
+            stone1.style.top = t + "px";
+        }
+        else {
+            stone1.style.visibility = 'hidden';
+            clearInterval(interval1);
+        }
+    }, 50);
 }
 
 //movement of every person
@@ -172,13 +138,32 @@ function peoplemovement(_person,_human)
 {
     var interval=setInterval(function(){
         var xxx=document.getElementById("gamearea");
-        if ((_person.xpos>5)&&(_person.xpos<=xxx.offsetWidth-_human.offsetWidth+5)){
+        if ((_person.xpos<1)&&(_person.dir=="right")||(_person.xpos>=xxx.offsetWidth-_human.offsetWidth+5)&&(_person.dir=="left")){
+            _human.style.visibility="hidden";
+            clearInterval(interval);
+        }
+        else  if ((_person.xpos<20)&&(_person.dir=="left")||(_person.xpos>=xxx.offsetWidth-_human.offsetWidth+10)&&(_person.dir=="right")){
+                _person.speed *= (-1);
+            if (_person.dir=="right"){   //change direction
+                _human.style.webkitTransform = 'scale3d(-1,1,1)';
+                _human.style.transform = 'scale3d(-1,1,1)';
+                _human.style.MozTransform = 'scale3d(-1,1,1)';
+            }
+            else {
+                _human.style.webkitTransform = 'scale3d(1,1,1)';
+                _human.style.transform = 'scale3d(1,1,1)';
+                _human.style.MozTransform = 'scale3d(1,1,1)';
+            }
+
+             }
+        update_human(_person,_human);
+ /*       if ((_person.xpos>5)&&(_person.xpos<=xxx.offsetWidth-_human.offsetWidth+5)){
             update_human(_person,_human);
         }
         else {
             _human.style.visibility="hidden";
             clearInterval(interval);
-        }
+        }*/
     }, 50);
 }
 
@@ -307,8 +292,8 @@ function create_person(_i,type) {
         gameinterval = setInterval(function () {
             if (i < num) {
                 t=get_type();
-                create_person(i,"hoo");
-                //create_person(i,get_type());
+                //create_person(i,"hoo");
+                create_person(i,get_type());
                 draw_human(ArrPerson[i],DivHuman[i]);
                 draw_progressbar(i,DivHuman[i],ArrPerson[i].percent);
                 peoplemovement(ArrPerson[i],DivHuman[i]);
