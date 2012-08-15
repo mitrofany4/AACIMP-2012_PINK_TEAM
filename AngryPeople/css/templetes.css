@@ -144,7 +144,7 @@ body{
 #menubutton {
     user-select: none;
     /*background-color: #fff873;*/
-    background-color: rgba(255,248,115,0.75);
+    /*background-color: rgba(255,248,115,0.75);*/
     /*opacity: 0.3;*/
     width: 120px;
     height:120px;
@@ -171,6 +171,7 @@ body{
     left: 260px;
     width: 170px;
     height: 50px;
+    background-color: rgba(197, 197, 197, 0.81);
     border-radius: 10px;
     font-family: "gamefont";
     font-size: 15pt;
@@ -182,6 +183,7 @@ body{
     left: 640px;
     width: 150px;
     height: 50px;
+    background-color: rgba(197, 197, 197, 0.81);
     border-radius: 10px;
     font-family: "gamefont";
     font-size: 15pt;
@@ -301,7 +303,7 @@ body{
     width: 50px;
     padding: 12px 0;
     text-align: center;
-    background: yellow;
+    background: rgba(197, 197, 197, 0.81);
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
     -o-transition-duration: 0.3s;
@@ -309,13 +311,15 @@ body{
     -webkit-border-radius: 0 5px 5px 0;
     -moz-border-radius: 0 5px 5px 0;
     border-radius: 0 5px 5px 0;
+    font-family: "gamefont";
+    font-size: 15pt;
 }
 
 #slideout_inner {
     position: fixed;
     top: 0px;
     left: -150px;
-    background: yellow;
+    background: rgba(197, 197, 197, 0.81);
     width: 150px;
     height: 105px;
     -webkit-transition-duration: 0.3s;
