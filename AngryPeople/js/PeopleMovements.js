@@ -14,6 +14,9 @@ var people_in_window=0;
 var angry=0; //number of 100% angry people
 var speedd=3000;
 var gameinterval;
+
+var stone1 = document.getElementById('stones');
+
 //creation of level
 function onCreate(){
 
@@ -23,7 +26,7 @@ function onCreate(){
     startTime();
     myTimer();
     peopleappear(num);
- //   hooligan_shoot(1);
+    //hooligan_shoot(heroModel.position);
 }
 
 // randoms
@@ -60,17 +63,8 @@ draw_human = function(person, human) {
 //calculation of next coordinates and redrawing
 update_human = function(person,human) {
 
-    if ((person.type=='hoo')&&(person.xpos<=heroModel.position+100)&&(person.xpos>=heroModel.position-3*person.speed)){
-        var divv=$('#st');
-        console.log(divv);
-        divv.css({'top'       :  (person.ypos+human.offsetHeight/2)+'px',
-                  'left'      :  (person.xpos+human.offsetWidth/2)+'px',
-                  'visibility':  'visible',
-                  'background':  "url('../images/stone.png') 100% 100% no-repeat",
-                  'width'     :  '24px',
-                  'height'    :  '18px',
-                  'position'  :  'absolute'});
-        hooligan_shoot(divv);
+    if ((person.type=='hoo')&&(person.xpos==heroModel.position)){
+        hooligan_shoot(heroModel.position, gameareaScreen.offsetHeight - person.ypos - 30);
 
     }
 
@@ -117,22 +111,24 @@ function set_human(human,dir,type){
     }
 }
 
-
+var t;
 //hooligan shooting
+function hooligan_shoot(posx, posy){
 
-function hooligan_shoot(){
-  //  var d=document.getElementById('stone');
-    var d=$('#st');
-    d.css('visibility','visible');
+    stone1.style.left = posx + "px";
+    stone1.style.top = posy + "px";
+    //alert(stone1.style.left + " " + stone1.style.top);
+    stone1.style.visibility = 'visible';
 
-    var interval=setInterval(function(){
-        var t=d.css('offsetTop');
-        if (t>=10){
-            d.top(t+10+'px');
-            consol.log('t');
+    var interval1 = setInterval(function(){
+        t = stone1.offsetTop;
+        if (t >= 10){
+            t -= 10;
+            stone1.style.top = t + "px";
         }
-        else {//d.css('visibility','hidden');
-            clearInterval(interval);
+        else {
+            stone1.style.visibility = 'hidden';
+            clearInterval(interval1);
         }
     }, 50);
 }

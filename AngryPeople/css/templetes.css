@@ -342,10 +342,13 @@ body{
     left: 0px;
 }
 
-.stones {
+#stones {
     background: url('../images/stone.png') 100% 100% no-repeat;
+    background-size: cover;
     width:24px;
     height:18px;
+    left : 250px;
+    top : 550px;
     position:absolute;
     visibility:hidden;
 }
