@@ -64,7 +64,7 @@ draw_human = function(person, human) {
 update_human = function(person,human) {
 
     if ((person.type=='hoo')&&(person.xpos==heroModel.position)){
-        hooligan_shoot(heroModel.position, gameareaScreen.offsetHeight - person.ypos - 30);
+        hooligan_shoot(heroModel.position, gameareaScreen.offsetHeight - person.ypos + 30);
 
     }
 
@@ -292,8 +292,8 @@ function create_person(_i,type) {
         gameinterval = setInterval(function () {
             if (i < num) {
                 t=get_type();
-                //create_person(i,"hoo");
-                create_person(i,get_type());
+                create_person(i,"hoo");
+                //create_person(i,get_type());
                 draw_human(ArrPerson[i],DivHuman[i]);
                 draw_progressbar(i,DivHuman[i],ArrPerson[i].percent);
                 peoplemovement(ArrPerson[i],DivHuman[i]);
