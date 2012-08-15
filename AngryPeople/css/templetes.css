@@ -308,15 +308,15 @@ body{
     transition-duration: 0.3s;
     -webkit-border-radius: 0 5px 5px 0;
     -moz-border-radius: 0 5px 5px 0;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 0px 20px 0;
 }
 
 #slideout_inner {
     position: fixed;
     top: 0px;
-    left: -150px;
+    left: -100px;
     background: yellow;
-    width: 150px;
+    width: 100px;
     height: 105px;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
@@ -325,10 +325,10 @@ body{
     text-align: left;
     -webkit-border-radius: 0 0 5px 0;
     -moz-border-radius: 0 0 5px 0;
-    border-radius: 0 0 5px 0;
+    border-radius: 0 0 20px 0;
 }
 #slideout:hover {
-    left: 145px;
+    left: 95px;
 }
 #slideout:hover #slideout_inner {
     left: 0px;
