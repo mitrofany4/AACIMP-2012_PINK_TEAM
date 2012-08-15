@@ -58,22 +58,23 @@
     <div id="levelschangemenu" data-role="controlgroup">
         <a href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external"> Level 1</a>
         <a href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external"> Level 2</a>
-        <a href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external"> Level 3</a>
+        <a id="butlev3" href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external"> Level 3</a>
     </div>
     <script type="text/javascript">
         var output = "LOCALSTORAGE DATA:\n------------------------------------\n";
         var level = 1;
-        localStorage.setItem('level',0);
+        localStorage.setItem('level',1);
 
         if (localStorage)
         {
             level = localStorage['level'];
-            alert(level);
+//            alert(level);
             var tempx=$('#levelschangemenu');
-            for(var i = level+1; i < 3;i++ ) {
+            for(var i = parseInt(level)+1; i < 3;i++ ) {
 //                alert(tempx.childElementCount);
 
-                  levelschangemenu.children[0].children[i].display = 'none';
+                  levelschangemenu.children[i].style.display = "none";
+//                butlev3.style.display = "none"
             }
         } else
             localStorage.setItem('level',0);
