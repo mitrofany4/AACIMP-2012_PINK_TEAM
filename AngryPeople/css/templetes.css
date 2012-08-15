@@ -334,11 +334,11 @@ body{
     left: 0px;
 }
 
-.stones {
-    background: url('../images/stone.png') 100% 100% no-repeat;
+#stone {
+    background: url('../images/stone.png');
     width:24px;
     height:18px;
     position:absolute;
-    visibility:hidden;
+    visibility: visible;
 }
 

@@ -78,6 +78,7 @@ function fireAction(di){
 
     if (drop[di].amount == 0){
         heroModel.weaponInUse = 0;
+        slideImage.src = "images/spit_icon.png";
         drop[di].ypos = heroPosY - 40;
         drop[di].xpos = heroPosX + 48;
     }

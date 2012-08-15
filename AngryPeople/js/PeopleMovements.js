@@ -9,11 +9,16 @@ var randX;
 var randInt;
 var ArrPerson = new Array(); //array of person models
 var DivHuman = new Array(); // array of people`s divs
+var Stone = new Array();
+var interval;
+var st = 0;
 var num=10;  //count of people
 var people_in_window=0;
 var angry=0; //number of 100% angry people
 var speedd=3000;
 var gameinterval;
+var stone = document.getElementById('stone');
+
 //creation of level
 function onCreate(){
 
@@ -24,6 +29,29 @@ function onCreate(){
     myTimer();
     peopleappear(num);
  //   hooligan_shoot(1);
+}
+
+function Hoolweapon(xpos, ypos, gravity){
+
+    this.xpos = xpos,
+    this.ypos = ypos,
+    this.yvel = 0,
+    this.yacc = 0,
+    this.gravity = gravity
+
+    this.stoneUpdate = function(person){
+        this.yacc += this.gravity;
+        this.yvel += this.yacc;
+        this.ypos -= this.yvel;
+
+        if (stone.offsetTop < balconyPos){
+            this.ypos = person.ypos;
+            this.xpos = person.xpos;
+            this.yvel = 0;
+            this.yacc = 0;
+            clearInterval(interval);
+        }
+    }
 }
 
 // randoms
@@ -61,17 +89,16 @@ draw_human = function(person, human) {
 update_human = function(person,human) {
 
     if ((person.type=='hoo')&&(person.xpos<=heroModel.position+100)&&(person.xpos>=heroModel.position-3*person.speed)){
-        var divv=$('#st');
-        console.log(divv);
+        /*var divv=$('#st');
         divv.css({'top'       :  (person.ypos+human.offsetHeight/2)+'px',
                   'left'      :  (person.xpos+human.offsetWidth/2)+'px',
                   'visibility':  'visible',
                   'background':  "url('../images/stone.png') 100% 100% no-repeat",
                   'width'     :  '24px',
                   'height'    :  '18px',
-                  'position'  :  'absolute'});
-        hooligan_shoot(divv);
-
+                  'position'  :  'absolute'});*/
+        hooligan_shoot(person, st);
+        st++;
     }
 
     person.update();
@@ -120,21 +147,24 @@ function set_human(human,dir,type){
 
 //hooligan shooting
 
-function hooligan_shoot(){
-  //  var d=document.getElementById('stone');
-    var d=$('#st');
-    d.css('visibility','visible');
+function hooligan_shoot(person, s){
+    Stone[s] = new Hoolweapon(person.xpos, person.ypos, 0.5);
+    var newStoneDiv = document.createElement("stonediv");
+    var stoneName="stone"+s.toString();
+    newStoneDiv.setAttribute('id',stoneName);
+    stone.appendChild(newStoneDiv);
 
-    var interval=setInterval(function(){
-        var t=d.css('offsetTop');
-        if (t>=10){
-            d.top(t+10+'px');
-            consol.log('t');
-        }
-        else {//d.css('visibility','hidden');
-            clearInterval(interval);
-        }
-    }, 50);
+    draw_stone = function(weap) {
+        stone.style.left = weap.xpos + 'px';
+        stone.style.top = weap.ypos + 'px';
+        console.log(weap.ypos);
+    }
+
+    update_stone = function(person) {
+        Stone[s].stoneUpdate(person);
+        draw_stone(Stone[s]);
+    };
+    interval = setInterval(update_stone(person), 50);
 }
 
 //movement of every person
@@ -277,8 +307,8 @@ function create_person(_i,type) {
         gameinterval = setInterval(function () {
             if (i < num) {
                 t=get_type();
-                //create_person(i,"hoo");
-                create_person(i,get_type());
+                create_person(i,"hoo");
+                //create_person(i,get_type());
                 draw_human(ArrPerson[i],DivHuman[i]);
                 draw_progressbar(i,DivHuman[i],ArrPerson[i].percent);
                 peoplemovement(ArrPerson[i],DivHuman[i]);
