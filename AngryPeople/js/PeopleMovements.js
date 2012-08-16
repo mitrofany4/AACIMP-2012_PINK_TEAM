@@ -21,6 +21,8 @@ var stone1 = document.getElementById('stones');
 
 //creation of level
 function onCreate(){
+    if (!(localStorage['level'])
+    localStorage.setItem('level',0);
     if (localStorage)
     {
         level = parseInt(localStorage['level']);
