@@ -16,23 +16,27 @@ var angry=0; //number of 100% angry people
 var speedd=3000;
 var gameinterval;
 var stonePos;
+var level = 0;
 
-var medal = document.getElementById("medal");
+var medal = document.getElementById('medal');
 var stone1 = document.getElementById('stones');
 
 //creation of level
 function onCreate(){
-    if (localStorage)
-    {
-        level = parseInt(localStorage['level']);
+//    if (!(localStorage['level'])
+//    localStorage.setItem('level',0);
+//    if (localStorage)
+//    {
+//        if ((localStorage['level'])
+//        level = parseInt(localStorage['level']);
         seconds = 120 + level*30;
         numtowin = 10 + level*5;
         num = 10 + level*5;
-    } else
-    {
-        localStorage.setItem('level',0);
-        level = 0;
-    }
+//    } else
+//    {
+//        localStorage.setItem('level',0);
+//        level = 0;
+//    }
     optimizeInterface();
     levelchange(level+1);
     progress(0,numtowin);
