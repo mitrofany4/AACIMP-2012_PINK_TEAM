@@ -336,7 +336,7 @@ body{
     border-radius: 0 0 20px 0;
 }
 #slideout:hover {
-    left: 95px;
+    left: 98px;
 }
 #slideout:hover #slideout_inner {
     left: 0px;
