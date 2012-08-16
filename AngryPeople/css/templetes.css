@@ -353,3 +353,15 @@ body{
     visibility:hidden;
 }
 
+#dialogendoftime {
+    position:absolute;
+    background-color: rgba(197, 197, 197, 0.81);
+    width: 300px;
+    height: 150px;
+    left: 400;
+    top: 200;
+    display: none;
+    z-index: 16;
+    border-radius: 10px;
+    font-family: "gamefont";
+}
