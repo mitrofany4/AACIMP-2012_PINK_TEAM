@@ -17,6 +17,7 @@ var speedd=3000;
 var gameinterval;
 var stonePos;
 
+var medal = document.getElementById("medal");
 var stone1 = document.getElementById('stones');
 
 //creation of level
@@ -192,7 +193,6 @@ function angry_update(_i,value){
         ArrPerson[_i].percent=100;
         clearInterval(gameinterval);
         seconds=1;
-        alert("Ouch!!!");
         timeisend("Try Again");
 
     }
@@ -203,8 +203,13 @@ function angry_update(_i,value){
                 ArrPerson[_i].percent=100;
                 angry++;
                 if (angry == 5){
-                    var medal = document.getElementById("medal");
-                    medal.src = "images/silver_icon.png";
+                    medal.src = "images/bronze_medal.png";
+                }
+                else if (angry == 10){
+                    medal.src = "images/silver_medal.png";
+                }
+                else if (angry == 15){
+                    medal.src = "images/gold_medal.png";
                 }
                 progress(angry,num);
                 DivHuman[_i].style.display="none";
