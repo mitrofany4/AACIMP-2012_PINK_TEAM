@@ -298,8 +298,8 @@ function create_person(_i,type) {
         gameinterval = setInterval(function () {
             if (i < num) {
                 t=get_type();
-                create_person(i,"hoo");
-                //create_person(i,get_type());
+                //create_person(i,"hoo");
+                create_person(i,get_type());
                 draw_human(ArrPerson[i],DivHuman[i]);
                 draw_progressbar(i,DivHuman[i],ArrPerson[i].percent);
                 peoplemovement(ArrPerson[i],DivHuman[i]);
