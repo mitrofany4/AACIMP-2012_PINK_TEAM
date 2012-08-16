@@ -26,7 +26,7 @@ function onCreate(){
         level = parseInt(localStorage['level']);
         seconds = 120 + level*30;
         numtowin = 10 + level*5;
-        num = 11 + level*5;
+        num = 10 + level*5;
     } else
     {
         localStorage.setItem('level',0);
@@ -143,7 +143,7 @@ function hooligan_shoot(posx, posy){
             posx = getHeroPostiton()
             if (stone1.style.left > posx + 'px' && stone1.style.left < posx + 80 + 'px'){
                 clearInterval(gameinterval);
-                timeisend("Try again");
+                timeisend("Try Again");
             }
             clearInterval(interval1);
         }
@@ -193,7 +193,7 @@ function angry_update(_i,value){
         clearInterval(gameinterval);
         seconds=1;
         alert("Ouch!!!");
-        timeisend("Try againf");
+        timeisend("Try Again");
 
     }
 

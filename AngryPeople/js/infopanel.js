@@ -46,7 +46,7 @@ function myTimer(){
             if ($("#progress").children[0] >= 7)
                 timeisend('You are the winner!');
             else
-                timeisend("Try again");
+                timeisend("Try Again");
 
             for (var i=0; i<num; i++){
                 DivHuman[i].style.display="none";
@@ -60,6 +60,15 @@ function timeisend(textinbox) {
     $("#dialogendoftime").css("top", parseInt(gamearea.offsetHeight - dialogendoftime.offsetHeight)/2 + 'px');
     $("#dialogendoftime").css("left",parseInt(gamearea.offsetWidth - dialogendoftime.offsetWidth)/2 + 'px');
     $("#dialogendoftime").css("display","block");
+    if (textinbox = "Try Again")
+    {
+        $("#tryagain").style.display = "block";
+        $("#youwin").style.display = "none";
+    } else
+    {
+        $("#tryagain").style.display = "none";
+        $("#youwin").style.display = "block";
+    }
     $("#textdialog").text(textinbox);
 }
 
