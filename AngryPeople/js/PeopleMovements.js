@@ -9,6 +9,7 @@ var randX;
 var randInt;
 var ArrPerson = new Array(); //array of person models
 var DivHuman = new Array(); // array of people`s divs
+var numtowin = 10;
 var num=10;  //count of people
 var people_in_window=0;
 var angry=0; //number of 100% angry people
@@ -20,10 +21,20 @@ var stone1 = document.getElementById('stones');
 
 //creation of level
 function onCreate(){
-
+    if (localStorage)
+    {
+        level = parseInt(localStorage['level']);
+        seconds = 120 + level*30;
+        numtowin = 10 + level*5;
+        num = 11 + level*5;
+    } else
+    {
+        localStorage.setItem('level',0);
+        level = 0;
+    }
     optimizeInterface();
-    levelchange(1);
-    progress(0,10);
+    levelchange(level+1);
+    progress(0,numtowin);
     startTime();
     myTimer();
     peopleappear(num);

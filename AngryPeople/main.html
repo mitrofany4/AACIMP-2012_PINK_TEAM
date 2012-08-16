@@ -24,31 +24,33 @@
     </div><!-- /header -->
     <div data-role="controlgroup">
         <a href="#chooselevelpage" data-role="button" >Start</a>
-        <a href="#optionspage" data-role="button"  >Options</a>
-        <a href="" data-role="button" >Scores</a>
+        <!--<a href="#optionspage" data-role="button"  >Options</a>-->
+        <!--<a href="" data-role="button" >Scores</a>-->
         <a href="#aboutpage" data-role="button" >About</a>
         <!--<button onclick="javascript: close_window();">Exit</button>-->
     </div>
 </div><!-- /page -->
 
-<!--Options page-->
-<div data-role="page" id="optionspage">
-    <div data-role="header">
-        <a href="#mainpage" date-role="button" data-icon="back" >Back</a>
-        <h1>Game Angry People</h1>
-    </div><!-- /header -->
-</div><!-- /page -->
+<!--&lt;!&ndash;Options page&ndash;&gt;-->
+<!--<div data-role="page" id="optionspage">-->
+    <!--<div data-role="header">-->
+        <!--<a href="#mainpage" date-role="button" data-icon="back" >Back</a>-->
+        <!--<h1>Game Angry People</h1>-->
+    <!--</div>&lt;!&ndash; /header &ndash;&gt;-->
+<!--</div>&lt;!&ndash; /page &ndash;&gt;-->
 
-<!--About page-->
-<div data-role="page" id="aboutpage">
-    <div data-role="header">
-        <a href="#mainpage" date-role="button" data-icon="back"  >Back</a>
-        <h1>Game Angry People</h1>
-    </div><!-- /header -->
-    <div data-role="content" date-theme="z" align="center">
-        It's about !!!!!!!!!
-    </div>
-</div><!-- /page -->
+
+
+<!--&lt;!&ndash;About page&ndash;&gt;-->
+<!--<div data-role="page" id="aboutpage">-->
+    <!--<div data-role="header">-->
+        <!--<a href="#mainpage" date-role="button" data-icon="back"  >Back</a>-->
+        <!--<h1>Game Angry People</h1>-->
+    <!--</div>&lt;!&ndash; /header &ndash;&gt;-->
+    <!--<div data-role="content" date-theme="z" align="center">-->
+        <!--It's about !!!!!!!!!-->
+    <!--</div>-->
+<!--</div>&lt;!&ndash; /page &ndash;&gt;-->
 
 <div data-role="page" id="chooselevelpage">
     <div data-role="header">
@@ -56,39 +58,42 @@
         <h1>Choose Level</h1>
     </div><!-- /header -->
     <div id="levelschangemenu" data-role="controlgroup">
-        <a href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external"> Level 1</a>
-        <a href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external"> Level 2</a>
-        <a id="butlev3" href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external"> Level 3</a>
+        <a href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external" onclick="localStorage.setItem('level',0); alert($(this).text)"> Level 1</a>
+        <a href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external" onclick="localStorage.setItem('level',1);"> Level 2</a>
+        <a href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external" onclick="localStorage.setItem('level',2); "> Level 3</a>
     </div>
     <script type="text/javascript">
         var output = "LOCALSTORAGE DATA:\n------------------------------------\n";
         var level = 1;
-        localStorage.setItem('level',1);
-
+        localStorage.setItem('levelsolve',0);
         if (localStorage)
         {
-            level = localStorage['level'];
+            levelsolve = parseInt(localStorage['levelsolve']);
 //            alert(level);
             var tempx=$('#levelschangemenu');
-            for(var i = parseInt(level)+1; i < 3;i++ ) {
+            for(var i = parseInt(levelsolve)+1; i < 3;i++ ) {
 //                alert(tempx.childElementCount);
 
                   levelschangemenu.children[i].style.display = "none";
 //                butlev3.style.display = "none"
             }
         } else
-            localStorage.setItem('level',0);
-        if (localStorage) {
-            if (localStorage.length) {
-                for (var i = 0; i < localStorage.length; i++) {
-                    output += localStorage.key(i) + ': ' + localStorage.getItem(localStorage.key(i)) + '\n';
-                }
-            } else {
-                output += 'There is no data stored for this domain.';
-            }
-        } else {
-            output += 'Your browser does not support local storage.'
+        {
+            localStorage.setItem('levelsolve',0);
+            level = 0;
         }
+        alert(levelsolve);
+//        if (localStorage) {
+//            if (localStorage.length) {
+//                for (var i = 0; i < localStorage.length; i++) {
+//                    output += localStorage.key(i) + ': ' + localStorage.getItem(localStorage.key(i)) + '\n';
+//                }
+//            } else {
+//                output += 'There is no data stored for this domain.';
+//            }
+//        } else {
+//            output += 'Your browser does not support local storage.'
+//        }
 //        alert(output);
 
     </script>
