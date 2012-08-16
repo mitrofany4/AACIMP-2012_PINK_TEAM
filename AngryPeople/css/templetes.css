@@ -365,3 +365,10 @@ body{
     border-radius: 10px;
     font-family: "gamefont";
 }
+
+#medal{
+    position:absolute;
+    background: url('../images/bronze_medal.png') 100% 100% no-repeat;
+    width: 30px;
+    height: 30px;
+}

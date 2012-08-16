@@ -193,7 +193,7 @@ function angry_update(_i,value){
         clearInterval(gameinterval);
         seconds=1;
         alert("Ouch!!!");
-        timeisend("Try againf");
+        timeisend("Try again");
 
     }
 
@@ -202,6 +202,10 @@ function angry_update(_i,value){
             if (ArrPerson[_i].percent>=100){
                 ArrPerson[_i].percent=100;
                 angry++;
+                if (angry == 5){
+                    var medal = document.getElementById("medal");
+                    medal.src = "images/silver_icon.png";
+                }
                 progress(angry,num);
                 DivHuman[_i].style.display="none";
             }
@@ -307,9 +311,9 @@ function create_person(_i,type) {
         gameinterval = setInterval(function () {
             if (i < num) {
                 t=get_type();
-                //create_person(i,"hoo");
+                create_person(i,"hoo");
                 create_person(i,get_type());
-                draw_human(ArrPerson[i],DivHuman[i]);
+                //draw_human(ArrPerson[i],DivHuman[i]);
                 draw_progressbar(i,DivHuman[i],ArrPerson[i].percent);
                 peoplemovement(ArrPerson[i],DivHuman[i]);
                 i++;
