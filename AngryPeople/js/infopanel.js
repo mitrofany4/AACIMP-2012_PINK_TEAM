@@ -44,7 +44,7 @@ function myTimer(){
             clearInterval(timer);
 
             if ($("#progress").children[0] >= 7)
-                timeisend('You Winner');
+                timeisend('You are the winner!');
             else
                 timeisend("Try again");
 
