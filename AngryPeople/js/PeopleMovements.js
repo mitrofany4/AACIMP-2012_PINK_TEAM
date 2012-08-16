@@ -14,6 +14,7 @@ var people_in_window=0;
 var angry=0; //number of 100% angry people
 var speedd=3000;
 var gameinterval;
+var stonePos;
 
 var stone1 = document.getElementById('stones');
 
@@ -122,12 +123,17 @@ function hooligan_shoot(posx, posy){
 
     var interval1 = setInterval(function(){
         t = stone1.offsetTop;
-        if (t >= 10){
+        if (t >= balconyPos){
             t -= 10;
             stone1.style.top = t + "px";
         }
         else {
             stone1.style.visibility = 'hidden';
+            posx = getHeroPostiton()
+            if (stone1.style.left == posx + 'px'){
+                clearInterval(gameinterval);
+                seconds=1;
+            }
             clearInterval(interval1);
         }
     }, 50);
@@ -292,8 +298,8 @@ function create_person(_i,type) {
         gameinterval = setInterval(function () {
             if (i < num) {
                 t=get_type();
-                //create_person(i,"hoo");
-                create_person(i,get_type());
+                create_person(i,"hoo");
+                //create_person(i,get_type());
                 draw_human(ArrPerson[i],DivHuman[i]);
                 draw_progressbar(i,DivHuman[i],ArrPerson[i].percent);
                 peoplemovement(ArrPerson[i],DivHuman[i]);
