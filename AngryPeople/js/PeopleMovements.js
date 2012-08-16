@@ -64,8 +64,8 @@ draw_human = function(person, human) {
 //calculation of next coordinates and redrawing
 update_human = function(person,human) {
 
-    if ((person.type=='hoo')&&(person.xpos==heroModel.position)){
-        hooligan_shoot(heroModel.position, gameareaScreen.offsetHeight - person.ypos + 30);
+    if ((person.type=='hoo')&&(person.xpos==heroModel.position + 40)){
+        hooligan_shoot(heroModel.position + 40, gameareaScreen.offsetHeight - person.ypos + 30);
 
     }
 
@@ -130,7 +130,7 @@ function hooligan_shoot(posx, posy){
         else {
             stone1.style.visibility = 'hidden';
             posx = getHeroPostiton()
-            if (stone1.style.left == posx + 'px'){
+            if (stone1.style.left > posx + 'px' && stone1.style.left < posx + 80 + 'px'){
                 clearInterval(gameinterval);
                 seconds=1;
             }
