@@ -143,7 +143,7 @@ function hooligan_shoot(posx, posy){
             posx = getHeroPostiton()
             if (stone1.style.left > posx + 'px' && stone1.style.left < posx + 80 + 'px'){
                 clearInterval(gameinterval);
-                seconds=1;
+                timeisend("Try again");
             }
             clearInterval(interval1);
         }
@@ -193,6 +193,7 @@ function angry_update(_i,value){
         clearInterval(gameinterval);
         seconds=1;
         alert("Ouch!!!");
+        timeisend("Try againf");
 
     }
 
@@ -298,9 +299,6 @@ function create_person(_i,type) {
     set_human(DivHuman[_i], ArrPerson[_i].dir, ArrPerson[_i].type);
 
     }
-
-
-
 
 // appearance of num people with interval 5000 msc
     function peopleappear(num) {

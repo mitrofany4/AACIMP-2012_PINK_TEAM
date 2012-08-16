@@ -3,6 +3,7 @@ var block = false;
 var bombAmount = 3,
     tomatoAmount = 3,
     weaponAmount;
+
 var mousePosX = 0, mousePosY = 0;
 var clickCount = 0;
 var drop = new Array();

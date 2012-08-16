@@ -42,8 +42,12 @@ function myTimer(){
         $('#time').text(text);
         if (seconds == 0) {
             clearInterval(timer);
-//            alert('done');
-            timeisend('You Winner');
+
+            if ($("#progress").children[0] >= 7)
+                timeisend('You Winner');
+            else
+                timeisend("Try again");
+
             for (var i=0; i<num; i++){
                 DivHuman[i].style.display="none";
             }
@@ -58,7 +62,6 @@ function timeisend(textinbox) {
     $("#dialogendoftime").css("display","block");
     $("#textdialog").text(textinbox);
 }
-timeisend('You Winner');
 
 
 
