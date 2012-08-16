@@ -14,7 +14,7 @@ var gameareaScreen = document.getElementById("gamearea");
 var zoom;
 var resized;
 window.addEventListener('resize',optimizeInterface);
-
+window.attachEvent('onresize',optimizeInterface);
 function optimizeInterface(){
     window.scrollTo(0, 1);
 

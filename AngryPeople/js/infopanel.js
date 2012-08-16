@@ -53,12 +53,12 @@ function myTimer(){
 
 function timeisend(textinbox) {
     $("#dialogback").css("display","block");
-    dialogendoftime.style.top = (gamearea.offsetHeight - dialogendoftime.offsetHeight)/2 + 'px';
-    dialogendoftime.style.left = (gamearea.offsetWidth - dialogendoftime.offsetWidth)/2 + 'px';
+    $("#dialogendoftime").css("top", parseInt(gamearea.offsetHeight - dialogendoftime.offsetHeight)/2 + 'px');
+    $("#dialogendoftime").css("left",parseInt(gamearea.offsetWidth - dialogendoftime.offsetWidth)/2 + 'px');
     $("#dialogendoftime").css("display","block");
     $("#textdialog").text(textinbox);
 }
-//timeisend('You Winner');
+timeisend('You Winner');
 
 
 
