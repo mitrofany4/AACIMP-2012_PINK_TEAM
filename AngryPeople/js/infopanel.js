@@ -71,6 +71,5 @@ function timeisend(textinbox) {
         localStorage.setItem('levelsolve',level);
     }
 }
-progress(7,10);
 
 
