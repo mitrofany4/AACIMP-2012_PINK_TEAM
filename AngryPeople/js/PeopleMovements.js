@@ -23,18 +23,18 @@ var stone1 = document.getElementById('stones');
 function onCreate(){
 //    if (!(localStorage['level'])
 //    localStorage.setItem('level',0);
-    if (localStorage)
-    {
-        if ((localStorage['level'])
-        level = parseInt(localStorage['level']);
-        seconds = 120 + level*30;
-        numtowin = 10 + level*5;
-        num = 10 + level*5;
-    } else
-    {
-        localStorage.setItem('level',0);
-        level = 0;
-    }
+//    if (localStorage)
+//    {
+//        if ((localStorage['level'])
+//        level = parseInt(localStorage['level']);
+//        seconds = 120 + level*30;
+//        numtowin = 10 + level*5;
+//        num = 10 + level*5;
+//    } else
+//    {
+//        localStorage.setItem('level',0);
+//        level = 0;
+//    }
     optimizeInterface();
     levelchange(level+1);
     progress(0,numtowin);

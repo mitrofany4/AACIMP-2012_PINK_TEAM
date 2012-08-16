@@ -68,43 +68,43 @@
         <a href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external" onclick="localStorage.setItem('level',1);"> Level 2</a>
         <a href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="right"  rel="external" onclick="localStorage.setItem('level',2);"> Level 3</a>
     </div>
-    <script type="text/javascript">
-        var output = "LOCALSTORAGE DATA:\n------------------------------------\n";
-        var level = 1;
-        localStorage.setItem('levelsolve',0);
-        if (localStorage)
-        {
-            levelsolve = parseInt(localStorage['levelsolve']);
-//            alert(level);
-            var tempx=$('#levelschangemenu');
-            for(var i = parseInt(levelsolve)+1; i < 3;i++ ) {
-//                alert(tempx.childElementCount);
+    <!--<script type="text/javascript">-->
+        <!--var output = "LOCALSTORAGE DATA:\n------------------------------------\n";-->
+        <!--var level = 1;-->
+        <!--localStorage.setItem('levelsolve',0);-->
+        <!--if (localStorage)-->
+        <!--{-->
+            <!--levelsolve = parseInt(localStorage['levelsolve']);-->
+<!--//            alert(level);-->
+            <!--var tempx=$('#levelschangemenu');-->
+            <!--for(var i = parseInt(levelsolve)+1; i < 3;i++ ) {-->
+<!--//                alert(tempx.childElementCount);-->
 
-                  levelschangemenu.children[i].style.display = "none";
-//                butlev3.style.display = "none"
-            }
-        } else
-        {
-            localStorage.setItem('levelsolve',0);
-            level = 0;
-        }
+                  <!--levelschangemenu.children[i].style.display = "none";-->
+<!--//                butlev3.style.display = "none"-->
+            <!--}-->
+        <!--} else-->
+        <!--{-->
+            <!--localStorage.setItem('levelsolve',0);-->
+            <!--level = 0;-->
+        <!--}-->
 
 
-//        alert(levelsolve);
-//        if (localStorage) {
-//            if (localStorage.length) {
-//                for (var i = 0; i < localStorage.length; i++) {
-//                    output += localStorage.key(i) + ': ' + localStorage.getItem(localStorage.key(i)) + '\n';
-//                }
-//            } else {
-//                output += 'There is no data stored for this domain.';
-//            }
-//        } else {
-//            output += 'Your browser does not support local storage.'
-//        }
-//        alert(output);
+<!--//        alert(levelsolve);-->
+<!--//        if (localStorage) {-->
+<!--//            if (localStorage.length) {-->
+<!--//                for (var i = 0; i < localStorage.length; i++) {-->
+<!--//                    output += localStorage.key(i) + ': ' + localStorage.getItem(localStorage.key(i)) + '\n';-->
+<!--//                }-->
+<!--//            } else {-->
+<!--//                output += 'There is no data stored for this domain.';-->
+<!--//            }-->
+<!--//        } else {-->
+<!--//            output += 'Your browser does not support local storage.'-->
+<!--//        }-->
+<!--//        alert(output);-->
 
-    </script>
+    <!--</script>-->
 </div>
 </body>
 </html>
