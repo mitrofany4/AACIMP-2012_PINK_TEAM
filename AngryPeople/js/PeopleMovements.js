@@ -27,9 +27,9 @@ function onCreate(){
 //    {
 //        if ((localStorage['level'])
 //        level = parseInt(localStorage['level']);
-//        seconds = 120 + level*30;
-//        numtowin = 10 + level*5;
-//        num = 10 + level*5;
+        seconds = 120 + level*30;
+        numtowin = 10 + level*5;
+        num = 10 + level*5;
 //    } else
 //    {
 //        localStorage.setItem('level',0);
